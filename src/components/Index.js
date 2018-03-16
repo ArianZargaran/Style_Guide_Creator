@@ -8,9 +8,7 @@ class Index extends Component {
 
     return (
       <section>
-        <h1>
-          <a>{children}</a>
-        </h1>
+        <h1>{children}</h1>
         <ol>{this.renderIndexList()}</ol>
       </section>
     );

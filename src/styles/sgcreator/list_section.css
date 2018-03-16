@@ -1,0 +1,43 @@
+/* LIST SECTION */
+#root > div > section:first-child {
+  background: var(--primaryColor);
+  display: flex;
+  flex-direction: column;
+}
+
+/* LIST SECTION TITLE */
+#root > div:first-child > section > h1 {
+  margin: 20px 20px 0;
+  color: white;
+  font-size: 48px;
+  cursor: pointer;
+}
+
+/* LIST SECTION LIST */
+#root > div:first-child > section > ol {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+/* LIST SECTION LINK */
+#root > div:first-child > section > ol > a {
+  padding: 1px 20px;
+  text-decoration: none;
+  color: white;
+  width: 200px;
+  cursor: pointer;
+}
+
+/* LIST SECTION LINK:HOVER */
+#root > div:first-child > section > ol > a:hover {
+  filter: opacity(0.5) drop-shadow(0 0 0 var(--primaryColor));
+  font-weight: 900;
+  color: black;
+}
+
+/* LIST SECTION LINK ELEMENT */
+#root > div:first-child > section > ol > a > li {
+  list-style-type: decimal-leading-zero;
+  margin: 10px;
+}

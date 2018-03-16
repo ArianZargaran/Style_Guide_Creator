@@ -1,0 +1,40 @@
+#root > div > section:nth-child(2) {
+  display: flex;
+  width: 100%;
+}
+
+#root > div > section:nth-child(2) > div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+#root > div > section:nth-child(2) > div > div > div > div.box {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.ya-small-text {
+  font-size: 12px;
+}
+.ya-base-text {
+  font-size: 16px;
+}
+.ya-medium-text {
+  font-size: 18px;
+}
+.ya-large-text {
+  font-size: 20px;
+}
+.ya-xlarge-text {
+  font-size: 22px;
+}
+.ya-xxlarge-text {
+  font-size: 26px;
+}
+.ya-huge-text {
+  font-size: 32px;
+  font-weight: 900;
+}

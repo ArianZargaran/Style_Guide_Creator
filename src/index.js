@@ -3,7 +3,10 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import App from "./components/App";
-import "./styles/index.css";
+
+import "./styles/sgcreator/hook.css";
+import "./styles/sgcreator/list_section.css";
+import "./styles/sgcreator/representation_section.css";
 
 import "./styles/StyleGuide.css";
 
