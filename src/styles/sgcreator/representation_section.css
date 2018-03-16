@@ -11,11 +11,13 @@
   flex-direction: column;
 }
 
+/* FIRST APROX */
 #root > div > section:nth-child(2) > div > div > div > div.box {
   padding: 10px;
   background: rgba(0, 0, 0, 0.1);
 }
 
+/* JUST FOR SAMPLE */
 .ya-small-text {
   font-size: 12px;
 }
