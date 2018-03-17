@@ -1,27 +1,28 @@
 /* LIST SECTION */
-#root > div > section:first-child {
+.sgcreator-category_list {
   background: var(--primaryColor);
   display: flex;
   flex-direction: column;
 }
 
 /* LIST SECTION TITLE */
-#root > div:first-child > section > h1 {
+.sgcreator-category_header {
   margin: 20px 20px 0;
   color: white;
   font-size: 48px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 /* LIST SECTION LIST */
-#root > div:first-child > section > ol {
+.sgcreator-category_list > ol {
   display: flex;
   flex-direction: column;
   width: 400px;
 }
 
 /* LIST SECTION LINK */
-#root > div:first-child > section > ol > a {
+.sgcreator-category_list > ol > a {
   padding: 1px 20px;
   text-decoration: none;
   color: white;
@@ -30,14 +31,14 @@
 }
 
 /* LIST SECTION LINK:HOVER */
-#root > div:first-child > section > ol > a:hover {
+.sgcreator-category_list > ol > a:hover {
   filter: opacity(0.5) drop-shadow(0 0 0 var(--primaryColor));
   font-weight: 900;
   color: black;
 }
 
 /* LIST SECTION LINK ELEMENT */
-#root > div:first-child > section > ol > a > li {
+.sgcreator-category_list > ol > a > li {
   list-style-type: decimal-leading-zero;
   margin: 10px;
 }

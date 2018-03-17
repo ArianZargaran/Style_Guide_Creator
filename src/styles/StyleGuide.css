@@ -1,3 +1,6 @@
 :root {
+  /* COLORS */
   --primaryColor: #e75a40;
+  /* FONT FAMILIES */
+  --headersFontFamily: sans-serif;
 }

@@ -1,9 +1,4 @@
-#root > div > section:nth-child(2) {
-  display: flex;
-  width: 100%;
-}
-
-#root > div > section:nth-child(2) > div {
+.sgcreator-visualization {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -12,7 +7,7 @@
 }
 
 /* FIRST APROX */
-#root > div > section:nth-child(2) > div > div > div > div.box {
+.box {
   padding: 10px;
   background: rgba(0, 0, 0, 0.1);
 }

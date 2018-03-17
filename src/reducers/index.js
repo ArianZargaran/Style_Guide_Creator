@@ -1,10 +1,8 @@
 import { combineReducers } from "redux";
 import ListReducer from "./reducer-list";
-import fetchElReducer from "./reducer-fetchEl";
 
 const reducers = combineReducers({
-  list: ListReducer,
-  element: fetchElReducer
+  list: ListReducer
 });
 
 export default reducers;

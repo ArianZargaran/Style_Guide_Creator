@@ -1,7 +1,7 @@
 export default function() {
-  return [
-    {
-      name: "typography",
+  return {
+    typography: {
+      url: "typography",
       section: "Typography",
       tag: "p",
       className: {
@@ -14,8 +14,8 @@ export default function() {
         hugeTextClass: "ya-huge-text"
       }
     },
-    {
-      name: "buttons",
+    buttons: {
+      url: "buttons",
       section: "Buttons",
       tag: "p",
       className: {
@@ -24,8 +24,8 @@ export default function() {
         styleguideInvertedBlock: "ya-styleguide_inverted-block"
       }
     },
-    {
-      name: "lists",
+    lists: {
+      url: "lists",
       section: "Lists",
       tag: "p",
       className: {
@@ -38,8 +38,8 @@ export default function() {
         listAnchorSecondarySmall: "list-links list-links--secondary list-small"
       }
     },
-    {
-      name: "links",
+    links: {
+      url: "links",
       section: "Links",
       tag: "p",
       className: {
@@ -49,8 +49,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "icons",
+    icons: {
+      url: "icons",
       section: "Icons",
       tag: "p",
       className: {
@@ -60,8 +60,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "breadcrumbs",
+    breadcrumbs: {
+      url: "breadcrumbs",
       section: "Breadcrumbs",
       tag: "p",
       className: {
@@ -71,8 +71,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "table",
+    table: {
+      url: "table",
       section: "Table",
       tag: "p",
       className: {
@@ -82,8 +82,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "grid",
+    grid: {
+      url: "grid",
       section: "Grid",
       tag: "p",
       className: {
@@ -93,8 +93,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "colors",
+    colors: {
+      url: "colors",
       section: "Colors",
       tag: "p",
       className: {
@@ -104,8 +104,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "highlights",
+    highlights: {
+      url: "highlights",
       section: "Highlights",
       tag: "p",
       className: {
@@ -115,8 +115,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "editorial_header",
+    editorialHeader: {
+      url: "editorial_header",
       section: "Editorial header",
       tag: "p",
       className: {
@@ -126,8 +126,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "article_section",
+    articleSection: {
+      url: "article_section",
       section: "Article section",
       tag: "p",
       className: {
@@ -137,8 +137,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "guides_section",
+    guidesSection: {
+      url: "guides-section",
       section: "Guides section",
       tag: "p",
       className: {
@@ -148,8 +148,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "page_header",
+    pageHeader: {
+      url: "page-header",
       section: "Page header",
       tag: "p",
       className: {
@@ -159,8 +159,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "quote",
+    quote: {
+      url: "quote",
       section: "Quote",
       tag: "p",
       className: {
@@ -170,8 +170,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "featured_icons",
+    featuredIcons: {
+      url: "featured_icons",
       section: "Featured icons",
       tag: "p",
       className: {
@@ -181,8 +181,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "featured_spotlight",
+    featuredSpotlight: {
+      url: "featured_spotlight",
       section: "Featured spotlight",
       tag: "p",
       className: {
@@ -192,8 +192,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "featured_list",
+    featuredList: {
+      url: "featured_list",
       section: "Featured list",
       tag: "p",
       className: {
@@ -203,8 +203,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "featured_block",
+    featuredBlock: {
+      url: "featured_block",
       section: "Featured block",
       tag: "p",
       className: {
@@ -214,8 +214,8 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    {
-      name: "article_navigation",
+    navigation: {
+      url: "article_navigation",
       section: "Article navigation",
       tag: "p",
       className: {
@@ -225,5 +225,5 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     }
-  ];
+  };
 }
