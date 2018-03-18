@@ -28,7 +28,7 @@ export default class Router extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div className="sgcreator-hook">
           <Categories />
           <Switch>
             <Route path="/navigation" component={Navigation} />
