@@ -214,7 +214,7 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    navigation: {
+    articleNavigation: {
       url: "article_navigation",
       section: "Article navigation",
       tag: "p",

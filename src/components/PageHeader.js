@@ -2,29 +2,24 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Categories from "./Categories";
 
-class List extends Component {
+class PageHeader extends Component {
   render() {
     return (
-      <div className="sgcreator-hook">
-        <Categories />
-        <section className="sgcreator-visualization">
-          <h1>{this.props.list.typography.section}</h1>
-          {Object.keys(this.props.list.typography.className).map((item, i) => (
-            <div key={i}>
-              <p className={this.props.list.typography.className[item]}>
-                Lorem impsum dolor emet
-              </p>
-              <div className="box">{`<${
-                this.props.list.typography.tag
-              } class="${
-                this.props.list.typography.className[item]
-              }">Lorem impsum dolor emet</${
-                this.props.list.typography.tag
-              }>`}</div>
-            </div>
-          ))}
-        </section>
-      </div>
+      <section className="sgcreator-visualization">
+        <h1>{this.props.list.pageHeader.section}</h1>
+        {Object.keys(this.props.list.pageHeader.className).map((item, i) => (
+          <div key={i}>
+            <p className={this.props.list.pageHeader.className[item]}>
+              Lorem impsum dolor emet
+            </p>
+            <div className="box">{`<${this.props.list.pageHeader.tag} class="${
+              this.props.list.pageHeader.className[item]
+            }">Lorem impsum dolor emet</${
+              this.props.list.pageHeader.tag
+            }>`}</div>
+          </div>
+        ))}
+      </section>
     );
   }
 }
@@ -33,4 +28,4 @@ function mapStateToProps(state) {
   return { list: state.list };
 }
 
-export default connect(mapStateToProps)(List);
+export default connect(mapStateToProps)(PageHeader);
