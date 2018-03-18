@@ -1,9 +1,0 @@
-/* HOOK */
-#root {
-  font-family: sans-serif;
-}
-
-/* APP.JS */
-#root > div {
-  display: flex;
-}
