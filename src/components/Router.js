@@ -31,10 +31,10 @@ export default class Router extends Component {
         <div className="sgcreator-hook">
           <Categories />
           <Switch>
-            <Route path="/navigation" component={ArticleNavigation} />
-            <Route path="/featured-blog" component={FeaturedBlock} />
+            <Route path="/article-navigation" component={ArticleNavigation} />
+            <Route path="/featured-block" component={FeaturedBlock} />
             <Route path="/featured-list" component={FeaturedList} />
-            <Route path="/fetured-spotlight" component={FeaturedSpotlight} />
+            <Route path="/featured-spotlight" component={FeaturedSpotlight} />
             <Route path="/featured-icons" component={FeaturedIcons} />
             <Route path="/quote" component={Quote} />
             <Route path="/page-header" component={PageHeader} />

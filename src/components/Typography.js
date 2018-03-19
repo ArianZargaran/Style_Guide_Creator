@@ -9,10 +9,14 @@ class Typography extends Component {
         <h1>{this.props.list.typography.section}</h1>
         {Object.keys(this.props.list.typography.className).map((item, i) => (
           <div key={i}>
-            <p className={this.props.list.typography.className[item]}>
-              Lorem impsum dolor emet
-            </p>
-            <div className="box">{`<${this.props.list.typography.tag} class="${
+            <div className="sgcreator-sample-box">
+              <p className={this.props.list.typography.className[item]}>
+                Lorem impsum dolor emet
+              </p>
+            </div>
+            <div className="sgcreator-tag-box">{`<${
+              this.props.list.typography.tag
+            } class="${
               this.props.list.typography.className[item]
             }">Lorem impsum dolor emet</${
               this.props.list.typography.tag

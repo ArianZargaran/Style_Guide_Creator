@@ -17,11 +17,11 @@ export default function() {
     buttons: {
       url: "buttons",
       section: "Buttons",
-      tag: "p",
+      tag: "a",
       className: {
-        buttonPrimary: "ya-button-primary",
-        buttonSecondary: "ya-button-secondary",
-        styleguideInvertedBlock: "ya-styleguide_inverted-block"
+        buttonPrimary: "ya-button ya-button_primary",
+        buttonSecondary: "ya-button ya-button_secondary",
+        buttonInvertedBlock: "ya-button ya-button_inverted-block"
       }
     },
     lists: {
@@ -116,8 +116,8 @@ export default function() {
       }
     },
     editorialHeader: {
-      url: "editorial_header",
-      section: "Editorial header",
+      url: "editorial-header",
+      section: "Editorial Header",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",
@@ -127,8 +127,8 @@ export default function() {
       }
     },
     articleSection: {
-      url: "article_section",
-      section: "Article section",
+      url: "article-section",
+      section: "Article Section",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",
@@ -139,7 +139,7 @@ export default function() {
     },
     guidesSection: {
       url: "guides-section",
-      section: "Guides section",
+      section: "Guides Section",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",
@@ -150,7 +150,7 @@ export default function() {
     },
     pageHeader: {
       url: "page-header",
-      section: "Page header",
+      section: "Page Header",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",
@@ -171,8 +171,8 @@ export default function() {
       }
     },
     featuredIcons: {
-      url: "featured_icons",
-      section: "Featured icons",
+      url: "featured-icons",
+      section: "Featured Icons",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",
@@ -182,8 +182,8 @@ export default function() {
       }
     },
     featuredSpotlight: {
-      url: "featured_spotlight",
-      section: "Featured spotlight",
+      url: "featured-spotlight",
+      section: "Featured Spotlight",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",
@@ -193,8 +193,8 @@ export default function() {
       }
     },
     featuredList: {
-      url: "featured_list",
-      section: "Featured list",
+      url: "featured-list",
+      section: "Featured List",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",
@@ -204,8 +204,8 @@ export default function() {
       }
     },
     featuredBlock: {
-      url: "featured_block",
-      section: "Featured block",
+      url: "featured-block",
+      section: "Featured Block",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",
@@ -215,8 +215,8 @@ export default function() {
       }
     },
     articleNavigation: {
-      url: "article_navigation",
-      section: "Article navigation",
+      url: "article-navigation",
+      section: "Article Navigation",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",

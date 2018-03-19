@@ -1,3 +1,4 @@
+/* VISUAL REPRESENTATION SECTION */
 .sgcreator-visualization {
   display: flex;
   justify-content: center;
@@ -6,32 +7,23 @@
   flex-direction: column;
 }
 
-/* FIRST APROX */
-.box {
-  padding: 10px;
+/* SAMPLE APROX */
+.sgcreator-sample-box {
+  margin: 5px 0;
+  padding: 5px 0;
+}
+
+/* TAG BOX */
+.sgcreator-tag-box {
+  padding: 7px 9px;
+  margin: 5px 0;
   background: rgba(0, 0, 0, 0.1);
 }
 
-/* JUST FOR SAMPLE */
-.ya-small-text {
-  font-size: 12px;
+.sgcreator-sample-box_background {
+  padding: 20px 0;
 }
-.ya-base-text {
-  font-size: 16px;
-}
-.ya-medium-text {
-  font-size: 18px;
-}
-.ya-large-text {
-  font-size: 20px;
-}
-.ya-xlarge-text {
-  font-size: 22px;
-}
-.ya-xxlarge-text {
-  font-size: 26px;
-}
-.ya-huge-text {
-  font-size: 32px;
-  font-weight: 900;
+
+div[itemid="2"] .sgcreator-sample-box_background {
+  background: rgba(0, 0, 0, 0.2);
 }

@@ -1,5 +1,10 @@
+/**/
+body {
+  background: var(--color_background);
+}
+
 /* HOOK */
 .sgcreator-hook {
-  font-family: var(--headersFontFamily);
+  font-family: var(--text_font-family);
   display: flex;
 }

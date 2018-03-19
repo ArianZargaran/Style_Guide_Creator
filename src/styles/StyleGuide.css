@@ -1,6 +1,68 @@
 :root {
   /* COLORS */
-  --primaryColor: #e75a40;
+  --color_main: #5c80bc;
+  --color_secondary: #cdd1c4;
+  --color_tertiary: #4d5061;
+  --color_complementary: #e8c547;
+  --color_desaturated: #30323d;
+  --color_background: #fff;
+
   /* FONT FAMILIES */
-  --headersFontFamily: sans-serif;
+  --header_font-family: Monospace, sans-serif;
+  --text_font-family: Arial, sans-serif;
+  /* FONT SIZES */
+  --base_font-size: 16px;
+  --h1_font-size: 32px;
+}
+
+/* TYPOGRAPHY */
+.ya-small-text {
+  font-size: calc(var(--base_font-size) - 4px);
+}
+.ya-base-text {
+  font-size: var(--base_font-size);
+}
+.ya-medium-text {
+  font-size: calc(var(--base_font-size) + 2px);
+}
+.ya-large-text {
+  font-size: calc(var(--base_font-size) + 4px);
+}
+.ya-xlarge-text {
+  font-size: calc(var(--base_font-size) + 6px);
+}
+.ya-xxlarge-text {
+  font-size: calc(var(--base_font-size) + 8px);
+}
+.ya-huge-text {
+  font-size: calc(var(--base_font-size) * 2);
+}
+
+/* BUTTONS */
+.ya-button {
+  text-decoration: none;
+  padding: 12px 10px;
+  border: 0.5px solid transparent;
+  border-radius: 2px;
+}
+.ya-button:active {
+  color: white;
+}
+.ya-button:hover {
+  background: var(--color_desaturated);
+  color: var(--color_background);
+}
+
+.ya-button_primary {
+  color: var(--color_background);
+  background: var(--color_main);
+}
+.ya-button_secondary {
+  color: var(--color_main);
+  background: var(--color_background);
+  border-color: var(--color_desaturated);
+}
+.ya-button_inverted-block {
+  color: var(--color_main);
+  background: var(--color_background);
 }
