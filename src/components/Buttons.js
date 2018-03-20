@@ -7,7 +7,11 @@ class Buttons extends Component {
       <section className="sgcreator-visualization">
         <h1>{this.props.list.buttons.section}</h1>
         {Object.keys(this.props.list.buttons.className).map((item, i) => (
+<<<<<<< HEAD
           <div key={i} className={`sgcreator-sample-box_wrapper`} itemID={i}>
+=======
+          <div key={i} className={`sgcreator-button-wrapper`} itemID={i}>
+>>>>>>> refs/remotes/origin/master
             <div className="sgcreator-sample-box">
               <div className="sgcreator-sample-box_background">
                 <a className={this.props.list.buttons.className[item]}>

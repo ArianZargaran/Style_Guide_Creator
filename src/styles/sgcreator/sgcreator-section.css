@@ -11,7 +11,10 @@
 .sgcreator-sample-box {
   margin: 5px 0;
   padding: 5px 0;
+<<<<<<< HEAD
   list-style-position: inside;
+=======
+>>>>>>> refs/remotes/origin/master
 }
 
 /* TAG BOX */
@@ -25,7 +28,10 @@
   padding: 20px 0;
 }
 
+<<<<<<< HEAD
 /* APPLIED TO BUTTONS */
+=======
+>>>>>>> refs/remotes/origin/master
 div[itemid="2"] .sgcreator-sample-box_background {
   background: rgba(0, 0, 0, 0.2);
 }
