@@ -1,12 +1,13 @@
 /* LIST SECTION */
 .sgcreator-category_list {
-  background: var(--primaryColor);
+  background: var(--color_main);
   display: flex;
   flex-direction: column;
 }
 
 /* LIST SECTION TITLE */
 .sgcreator-category_header {
+  font-family: var(--header_font-family);
   margin: 20px 20px 0;
   color: white;
   font-size: 48px;
@@ -32,7 +33,7 @@
 
 /* LIST SECTION LINK:HOVER */
 .sgcreator-category_list > ol > a:hover {
-  filter: opacity(0.5) drop-shadow(0 0 0 var(--primaryColor));
+  filter: opacity(0.5) drop-shadow(0 0 0 var(--color_main));
   font-weight: 900;
   color: black;
 }

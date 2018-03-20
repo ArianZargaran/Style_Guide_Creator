@@ -9,8 +9,8 @@ class Categories extends Component {
 
     return (
       <section className="sgcreator-category_list">
-        <Link to="/" className="sgcreator-category_header">
-          {children}
+        <Link to="/">
+          <h1 className="sgcreator-category_header">{children}</h1>
         </Link>
         <ol>{this.renderIndexList()}</ol>
       </section>
@@ -20,11 +20,7 @@ class Categories extends Component {
   renderIndexList() {
     return _.map(this.props.list).map((elem, idx) => {
       return (
-        <Link
-          to={elem.url}
-          key={elem.section}
-          style={{ textDecoration: "none" }}
-        >
+        <Link to={elem.url} key={elem.section}>
           <li>{elem.section}</li>
         </Link>
       );

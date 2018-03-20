@@ -1,30 +1,36 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Categories from "./Categories";
 
-class List extends Component {
+class Lists extends Component {
   render() {
     return (
-      <div className="sgcreator-hook">
-        <Categories />
-        <section className="sgcreator-visualization">
-          <h1>{this.props.list.typography.section}</h1>
-          {Object.keys(this.props.list.typography.className).map((item, i) => (
-            <div key={i}>
-              <p className={this.props.list.typography.className[item]}>
-                Lorem impsum dolor emet
-              </p>
-              <div className="box">{`<${
-                this.props.list.typography.tag
-              } class="${
-                this.props.list.typography.className[item]
-              }">Lorem impsum dolor emet</${
-                this.props.list.typography.tag
-              }>`}</div>
+      <section className="sgcreator-visualization">
+        <h1>{this.props.list.lists.section}</h1>
+        {Object.keys(this.props.list.lists.className).map((item, i) => (
+          <div className="sgcreator-sample-box">
+            <div className="sgcreator-sample-box_background">
+              <ol>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Dicta optio cumque dolore hic ea facilis</li>
+                <li>Minus, possimus, veniam, incidunt eligendi</li>
+              </ol>
             </div>
-          ))}
-        </section>
-      </div>
+            <div className="sgcreator-tag-box">
+              {`<${this.props.list.lists.tag[i]} class="${
+                this.props.list.lists.className[item]
+              }">`}
+              {<br />}
+              {`  <li>Lorem ipsum dolor sit amet.</li>`}
+              {<br />}
+              {`  <li>Dicta optio cumque dolore hic ea facilis</li>`}
+              {<br />}
+              {`  <li>Minus, possimus, veniam, incidunt eligendi</li>`}
+              {<br />}
+              {`</${this.props.list.lists.tag[i]}>`}
+            </div>
+          </div>
+        ))}
+      </section>
     );
   }
 }
@@ -33,4 +39,4 @@ function mapStateToProps(state) {
   return { list: state.list };
 }
 
-export default connect(mapStateToProps)(List);
+export default connect(mapStateToProps)(Lists);
