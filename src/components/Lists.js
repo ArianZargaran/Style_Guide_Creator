@@ -9,7 +9,6 @@ class Lists extends Component {
         {Object.keys(this.props.list.lists.className).map((item, i) => (
           <div className="sgcreator-sample-box">
             <div className="sgcreator-sample-box_background">
-<<<<<<< HEAD
               <ol>
                 <li>Lorem ipsum dolor sit amet.</li>
                 <li>Dicta optio cumque dolore hic ea facilis</li>
@@ -28,7 +27,6 @@ class Lists extends Component {
               {`  <li>Minus, possimus, veniam, incidunt eligendi</li>`}
               {<br />}
               {`</${this.props.list.lists.tag[i]}>`}
-=======
               <ul>
                 <li>Lorem ipsum dolor sit amet.</li>
                 <li>Dicta optio cumque dolore hic ea facilis</li>
@@ -36,14 +34,13 @@ class Lists extends Component {
               </ul>
             </div>
             <div className="sgcreator-tag-box">
-              {`<${this.props.list.lists.tag} href="/" class="${
+              {`<${this.props.list.lists.tag[i]} href="/" class="${
                 this.props.list.lists.className[item]
               }">
                 <li>Lorem ipsum dolor sit amet.</li>
                 <li>Dicta optio cumque dolore hic ea facilis</li>
                 <li>Minus, possimus, veniam, incidunt eligendi</li>
-              </${this.props.list.lists.tag}>`}
->>>>>>> refs/remotes/origin/master
+              </${this.props.list.lists.tag[i]}>`}
             </div>
           </div>
         ))}
