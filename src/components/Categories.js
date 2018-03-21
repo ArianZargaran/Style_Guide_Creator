@@ -8,11 +8,11 @@ class Categories extends Component {
     const { children = "YourApp Name" } = this.props;
 
     return (
-      <section className="sgcreator-category_list">
+      <section className="sgcreator-categories_section">
         <Link to="/">
           <h1 className="sgcreator-category_header">{children}</h1>
         </Link>
-        <ol>{this.renderIndexList()}</ol>
+        <ol className="sgcreator-categories_list">{this.renderIndexList()}</ol>
       </section>
     );
   }
@@ -21,7 +21,7 @@ class Categories extends Component {
     return _.map(this.props.list).map((elem, idx) => {
       return (
         <Link to={elem.url} key={elem.section}>
-          <li>{elem.section}</li>
+          <li className="sgcreator-categories_list_item">{elem.section}</li>
         </Link>
       );
     });

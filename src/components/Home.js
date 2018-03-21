@@ -1,9 +1,8 @@
 import React from "react";
-import Categories from "./Categories";
 
 const Home = () => {
   return (
-    <section className="sgcreator-visualization">
+    <section className="sgcreator-representation_section">
       <h1>Select a category to Get Started &#9876;</h1>
     </section>
   );

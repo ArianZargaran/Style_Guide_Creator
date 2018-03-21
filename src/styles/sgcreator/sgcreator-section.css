@@ -1,5 +1,5 @@
 /* VISUAL REPRESENTATION SECTION */
-.sgcreator-visualization {
+.sgcreator-representation_section {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -7,31 +7,25 @@
   flex-direction: column;
 }
 
-/* SAMPLE APROX */
-.sgcreator-sample-box {
-  margin: 5px 0;
+/* BOXES */
+/* SAMPLE BOX */
+.sgcreator-item-box {
+  background: MediumSeaGreen;
   padding: 5px 0;
-<<<<<<< HEAD
-  list-style-position: inside;
-=======
->>>>>>> refs/remotes/origin/master
 }
 
 /* TAG BOX */
 .sgcreator-tag-box {
+  background: aliceblue;
   padding: 7px 9px;
   margin: 5px 0;
   background: rgba(0, 0, 0, 0.1);
 }
 
-.sgcreator-sample-box_background {
-  padding: 20px 0;
+.sgcreator-sample-box {
+  background: tomato;
 }
 
-<<<<<<< HEAD
-/* APPLIED TO BUTTONS */
-=======
->>>>>>> refs/remotes/origin/master
-div[itemid="2"] .sgcreator-sample-box_background {
-  background: rgba(0, 0, 0, 0.2);
+.sgcreator-sample-box p {
+  margin-bottom: 0;
 }
