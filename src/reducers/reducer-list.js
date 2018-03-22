@@ -27,48 +27,49 @@ export default function() {
     lists: {
       url: "lists",
       section: "Lists",
-      tag: ["ul", "ol", "ul", "ol", "ul", "ol", "ul"],
+      tag: [["ul", "ol"], ["ul", "ol"], ["ul", "ol"], ["ul", "ol"]],
       className: {
-        olListItem: "ya-list_item",
-        ulListItem: "ya-list_item",
-        listLinks: "ya-list-links",
-        listAnchor: "ya-list-anchor",
-        listAnchorSmall: "ya-list-anchor list-small",
-        listAnchorSecondary: "ya-list-links list-links--secondary",
-        listAnchorSecondarySmall: "list-links list-links--secondary list-small"
+        ListItem: ["ya-list ya-ul-list", "ya-list ya-ol-list"],
+        listLinks: [
+          "ya-list ya-ul-list ya-ul-list_linked",
+          "ya-list ya-ol-list ya-ol-list_linked"
+        ],
+        listAnchor: [
+          "ya-list ya-ul-list ya-ul-list-anchor",
+          "ya-list ya-ol-list ya-ol-list-anchor"
+        ],
+        listAnchorSmall: [
+          "ya-list  ya-ul-list ya-ul-list-anchor ya-list-small",
+          "ya-list  ya-ol-list ya-ol-list-anchor ya-list-small"
+        ]
       }
     },
     links: {
       url: "links",
       section: "Links",
-      tag: "p",
+      tag: "a",
       className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
+        linkPrimary: "ya-link ya-primary-link",
+        LinkSecondary: "ya-link ya-secondary-link"
       }
     },
-    icons: {
-      url: "icons",
-      section: "Icons",
-      tag: "p",
-      className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
-      }
-    },
+    // icons: {
+    //   url: "icons",
+    //   section: "Icons",
+    //   tag: "i",
+    //   className: {
+    //     smallTextClass: "ya-small-button",
+    //     mediumTextClass: "ya-medium-button",
+    //     largeTextClass: "ya-large-button",
+    //     xlargeTextClass: "ya-xlarge-button"
+    //   }
+    // },
     breadcrumbs: {
       url: "breadcrumbs",
       section: "Breadcrumbs",
-      tag: "p",
+      tag: "a",
       className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
+        smallTextClass: "ya-breadcrumbs"
       }
     },
     table: {

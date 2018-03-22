@@ -10,20 +10,14 @@
 /* BOXES */
 /* SAMPLE BOX */
 .sgcreator-item-box {
-  background: MediumSeaGreen;
   padding: 5px 0;
 }
 
 /* TAG BOX */
 .sgcreator-tag-box {
-  background: aliceblue;
   padding: 7px 9px;
   margin: 5px 0;
   background: rgba(0, 0, 0, 0.1);
-}
-
-.sgcreator-sample-box {
-  background: tomato;
 }
 
 .sgcreator-sample-box p {

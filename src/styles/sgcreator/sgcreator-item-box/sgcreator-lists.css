@@ -1,5 +1,9 @@
 .sgcreator-sample-box {
-  padding-bottom: 0;
+  padding: 0;
+}
+
+.sgcreator-item-box {
+  padding-left: 0;
 }
 
 .sgcreator-item-box_lists {

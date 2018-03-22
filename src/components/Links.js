@@ -14,12 +14,12 @@ class Links extends Component {
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <p className={this.props.list.links.className[item]}>
+                <a href="" className={this.props.list.links.className[item]}>
                   Lorem impsum dolor emet
-                </p>
+                </a>
               </div>
               <div className="sgcreator-tag-box">
-                {`<${this.props.list.links.tag} class="${
+                {`<${this.props.list.links.tag} href="/" class="${
                   this.props.list.links.className[item]
                 }">Lorem impsum dolor emet</${this.props.list.links.tag}>`}
               </div>
