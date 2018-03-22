@@ -11,6 +11,7 @@
 /* SAMPLE BOX */
 .sgcreator-item-box {
   padding: 5px 0;
+  background: mediumseagreen;
 }
 
 /* TAG BOX */
@@ -18,6 +19,10 @@
   padding: 7px 9px;
   margin: 5px 0;
   background: rgba(0, 0, 0, 0.1);
+}
+
+.sgcreator-sample-box {
+  background: TOMATO;
 }
 
 .sgcreator-sample-box p {
