@@ -5,13 +5,13 @@ export default function() {
       section: "Typography",
       tag: "p",
       className: {
-        smallTextClass: "ya-small-text",
-        baseTextClass: "ya-base-text",
-        mediumTextClass: "ya-medium-text",
-        largeTextClass: "ya-large-text",
-        xlargeTextClass: "ya-xlarge-text",
-        xxlargeTextClass: "ya-xxlarge-text",
-        hugeTextClass: "ya-huge-text"
+        smallText: "ya-small-text",
+        baseText: "ya-base-text",
+        mediumText: "ya-medium-text",
+        largeText: "ya-large-text",
+        xlargeText: "ya-xlarge-text",
+        xxlargeText: "ya-xxlarge-text",
+        hugeText: "ya-huge-text"
       }
     },
     buttons: {
@@ -29,7 +29,7 @@ export default function() {
       section: "Lists",
       tag: [["ul", "ol"], ["ul", "ol"], ["ul", "ol"], ["ul", "ol"]],
       className: {
-        ListItem: ["ya-list ya-ul-list", "ya-list ya-ol-list"],
+        listItem: ["ya-list ya-ul-list", "ya-list ya-ol-list"],
         listLinks: [
           "ya-list ya-ul-list ya-ul-list_linked",
           "ya-list ya-ol-list ya-ol-list_linked"
@@ -50,7 +50,7 @@ export default function() {
       tag: "a",
       className: {
         linkPrimary: "ya-link ya-primary-link",
-        LinkSecondary: "ya-link ya-secondary-link"
+        linkSecondary: "ya-link ya-secondary-link"
       }
     },
     // icons: {
@@ -69,18 +69,15 @@ export default function() {
       section: "Breadcrumbs",
       tag: "a",
       className: {
-        smallTextClass: "ya-breadcrumbs"
+        breadcrumbsBar: "ya-breadcrumbs"
       }
     },
     table: {
       url: "table",
       section: "Table",
-      tag: "p",
+      tag: "table",
       className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
+        tableDisplay: "ya-table"
       }
     },
     grid: {
@@ -97,23 +94,23 @@ export default function() {
     colors: {
       url: "colors",
       section: "Colors",
-      tag: "p",
+      tag: "div",
       className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
+        "Main Color": "ya-main-color_background",
+        "Secondary Color": "ya-secondary-color_background",
+        "Tertiary Color": "ya-tertiary-color_background",
+        "Complementary Color": "ya-complementary-color_background",
+        "Desaturated Color": "ya-desaturated-color_background",
+        "Background Color": "ya-background-color_background"
       }
     },
     highlights: {
       url: "highlights",
       section: "Highlights",
-      tag: "p",
+      tag: "div",
       className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
+        "Highlight Module Right": "ya-higlight-module ya-higlight-right",
+        "Highlight Module Left": "ya-higlight-module ya-higlight-left"
       }
     },
     editorialHeader: {

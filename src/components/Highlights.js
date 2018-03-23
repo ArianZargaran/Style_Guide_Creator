@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import "../styles/sgcreator/sgcreator-item-box/sgcreator-highlights.css";
+
 class Highlights extends Component {
   render() {
     return (
@@ -9,19 +11,23 @@ class Highlights extends Component {
         <div className="sgcreator-representation_wrapper">
           {Object.keys(this.props.list.highlights.className).map((item, i) => (
             <div
-              className="sgcreator-item-box sgcreator-item-box_highlights"
+              className="sgcreator-item-box sgcreator-item-box_highlights sgcreator-align-left"
               itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <p className={this.props.list.highlights.className[item]}>
-                  Lorem impsum dolor emet
-                </p>
+                <div className={this.props.list.highlights.className[item]}>
+                  <h1>{`This is a ${item}`}</h1>
+                </div>
               </div>
               <div className="sgcreator-tag-box">
                 {`<${this.props.list.highlights.tag} class="${
                   this.props.list.highlights.className[item]
-                }">Lorem impsum dolor emet</${this.props.list.highlights.tag}>`}
+                }">`}
+                {<br />}
+                {`    <h1>This is a ${item}</h1>`}
+                {<br />}
+                {`</${this.props.list.highlights.tag}>`}
               </div>
             </div>
           ))}

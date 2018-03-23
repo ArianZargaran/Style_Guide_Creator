@@ -144,3 +144,81 @@
 .ya-breadcrumbs:hover {
   color: var(--color_desaturated);
 }
+
+/* TABLE */
+.ya-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid var(--color_background);
+  background: var(--color_secondary);
+}
+
+.ya-table,
+.ya-table th,
+.ya-table td {
+  border: 1px solid var(--color_background);
+}
+
+.ya-table th,
+.ya-table td {
+  padding: 7px;
+}
+
+.ya-table th {
+  background: var(--color_tertiary);
+  color: var(--color_secondary);
+}
+
+.ya-table td {
+  color: var(--color_tertiary);
+}
+
+/* COLORS */
+
+.ya-main-color_background {
+  background: var(--color_main);
+}
+
+.ya-secondary-color_background {
+  background: var(--color_secondary);
+}
+
+.ya-tertiary-color_background {
+  background: var(--color_tertiary);
+  color: var(--color_background);
+}
+
+.ya-complementary-color_background {
+  background: var(--color_complementary);
+}
+
+.ya-desaturated-color_background {
+  background: var(--color_desaturated);
+  color: var(--color_background);
+}
+
+.ya-background-color_background {
+  background: var(--color_background);
+}
+
+/* HIGHLIGHTS */
+
+.ya-higlight-module {
+  font-size: calc(var(--base_font-size) + 8px);
+  position: absolute;
+  padding: 15px;
+  width: 80%;
+}
+
+.ya-higlight-right {
+  background: var(--color_secondary);
+  color: var(--color_background);
+  right: 0;
+  text-align: left;
+}
+
+.ya-higlight-left {
+  background: var(--color_complementary);
+  left: 0;
+  text-align: right;
+}

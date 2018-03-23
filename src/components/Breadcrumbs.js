@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import "../styles/sgcreator/sgcreator-item-box/sgcreator-breadcrumbs.css";
-
 class Breadcrumbs extends Component {
   render() {
     return (
@@ -10,11 +8,7 @@ class Breadcrumbs extends Component {
         <h1>{this.props.list.breadcrumbs.section}</h1>
         <div className="sgcreator-representation_wrapper">
           {Object.keys(this.props.list.breadcrumbs.className).map((item, i) => (
-            <div
-              className="sgcreator-item-box sgcreator-item-box_breadcrumbs"
-              itemID={i}
-              key={i}
-            >
+            <div className="sgcreator-item-box" itemID={i} key={i}>
               <div className="sgcreator-sample-box">
                 <nav>
                   <p>
@@ -41,7 +35,7 @@ class Breadcrumbs extends Component {
                   </p>
                 </nav>
               </div>
-              <div className="sgcreator-tag-box">
+              <div className="sgcreator-tag-box sgcreator-align-left">
                 {`<nav>`}
                 {<br />}
                 {`    <p>`}

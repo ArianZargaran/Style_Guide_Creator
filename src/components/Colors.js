@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import "../styles/sgcreator/sgcreator-item-box/sgcreator-colors.css";
+
 class Colors extends Component {
   render() {
     return (
@@ -14,14 +16,12 @@ class Colors extends Component {
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <p className={this.props.list.colors.className[item]}>
-                  Lorem impsum dolor emet
-                </p>
+                <p className={this.props.list.colors.className[item]}>{item}</p>
               </div>
               <div className="sgcreator-tag-box">
                 {`<${this.props.list.colors.tag} class="${
                   this.props.list.colors.className[item]
-                }">Lorem impsum dolor emet</${this.props.list.colors.tag}>`}
+                }"></${this.props.list.colors.tag}>`}
               </div>
             </div>
           ))}
