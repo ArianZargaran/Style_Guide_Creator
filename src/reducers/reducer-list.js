@@ -53,17 +53,35 @@ export default function() {
         linkSecondary: "ya-link ya-secondary-link"
       }
     },
-    // icons: {
-    //   url: "icons",
-    //   section: "Icons",
-    //   tag: "i",
-    //   className: {
-    //     smallTextClass: "ya-small-button",
-    //     mediumTextClass: "ya-medium-button",
-    //     largeTextClass: "ya-large-button",
-    //     xlargeTextClass: "ya-xlarge-button"
-    //   }
-    // },
+    icons: {
+      url: "icons",
+      section: "Icons",
+      tag: "i",
+      className: {
+        "Hyphen Icon": "fas fa-minus",
+        "Plus Icon": "fas fa-plus",
+        "Asterisk Icon": "fas fa-asterisk",
+        "Chevron Right Icon": "fas fa-chevron-right",
+        "Chevron Down Icon": "fas fa-chevron-down",
+        "Hash Icon": "fab fa-slack-hash",
+        "Code Parenthesis": "fas fa-code",
+        "Exclamation Icon": "fas fa-exclamation"
+      }
+    },
+    logo: {
+      url: "logo",
+      section: "Logo",
+      tag: "img",
+      className: {
+        "Hyphen Icon": "fas fa-minus",
+        "Plus Icon": "fas fa-plus",
+        "Asterisk Icon": "fas fa-asterisk",
+        "Chevron Right Icon": "fas fa-chevron-right",
+        "Chevron Down Icon": "fas fa-chevron-down",
+        "Hash Icon": "fab fa-slack-hash",
+        "Code Parenthesis": "fas fa-code"
+      }
+    },
     breadcrumbs: {
       url: "breadcrumbs",
       section: "Breadcrumbs",
@@ -80,17 +98,17 @@ export default function() {
         tableDisplay: "ya-table"
       }
     },
-    grid: {
-      url: "grid",
-      section: "Grid",
-      tag: "p",
-      className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
-      }
-    },
+    // grid: {
+    //   url: "grid",
+    //   section: "Grid",
+    //   tag: "p",
+    //   className: {
+    //     smallTextClass: "ya-small-button",
+    //     mediumTextClass: "ya-medium-button",
+    //     largeTextClass: "ya-large-button",
+    //     xlargeTextClass: "ya-xlarge-button"
+    //   }
+    // },
     colors: {
       url: "colors",
       section: "Colors",
@@ -124,31 +142,31 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    articleSection: {
-      url: "article-section",
-      section: "Article Section",
-      tag: "p",
-      className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
-      }
-    },
-    guidesSection: {
-      url: "guides-section",
-      section: "Guides Section",
-      tag: "p",
-      className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
-      }
-    },
-    pageHeader: {
-      url: "page-header",
-      section: "Page Header",
+    // articleSection: {
+    //   url: "article-section",
+    //   section: "Article Section",
+    //   tag: "p",
+    //   className: {
+    //     smallTextClass: "ya-small-button",
+    //     mediumTextClass: "ya-medium-button",
+    //     largeTextClass: "ya-large-button",
+    //     xlargeTextClass: "ya-xlarge-button"
+    //   }
+    // },
+    // guidesSection: {
+    //   url: "guides-section",
+    //   section: "Guides Section",
+    //   tag: "p",
+    //   className: {
+    //     smallTextClass: "ya-small-button",
+    //     mediumTextClass: "ya-medium-button",
+    //     largeTextClass: "ya-large-button",
+    //     xlargeTextClass: "ya-xlarge-button"
+    //   }
+    // },
+    pageSample: {
+      url: "page-sample",
+      section: "Page Sample",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",
@@ -178,50 +196,50 @@ export default function() {
         largeTextClass: "ya-large-button",
         xlargeTextClass: "ya-xlarge-button"
       }
-    },
-    featuredSpotlight: {
-      url: "featured-spotlight",
-      section: "Featured Spotlight",
-      tag: "p",
-      className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
-      }
-    },
-    featuredList: {
-      url: "featured-list",
-      section: "Featured List",
-      tag: "p",
-      className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
-      }
-    },
-    featuredBlock: {
-      url: "featured-block",
-      section: "Featured Block",
-      tag: "p",
-      className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
-      }
-    },
-    articleNavigation: {
-      url: "article-navigation",
-      section: "Article Navigation",
-      tag: "p",
-      className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
-      }
     }
+    // featuredSpotlight: {
+    //   url: "featured-spotlight",
+    //   section: "Featured Spotlight",
+    //   tag: "p",
+    //   className: {
+    //     smallTextClass: "ya-small-button",
+    //     mediumTextClass: "ya-medium-button",
+    //     largeTextClass: "ya-large-button",
+    //     xlargeTextClass: "ya-xlarge-button"
+    //   }
+    // },
+    // featuredList: {
+    //   url: "featured-list",
+    //   section: "Featured List",
+    //   tag: "p",
+    //   className: {
+    //     smallTextClass: "ya-small-button",
+    //     mediumTextClass: "ya-medium-button",
+    //     largeTextClass: "ya-large-button",
+    //     xlargeTextClass: "ya-xlarge-button"
+    //   }
+    // },
+    // featuredBlock: {
+    //   url: "featured-block",
+    //   section: "Featured Block",
+    //   tag: "p",
+    //   className: {
+    //     smallTextClass: "ya-small-button",
+    //     mediumTextClass: "ya-medium-button",
+    //     largeTextClass: "ya-large-button",
+    //     xlargeTextClass: "ya-xlarge-button"
+    //   }
+    // },
+    // articleNavigation: {
+    //   url: "article-navigation",
+    //   section: "Article Navigation",
+    //   tag: "p",
+    //   className: {
+    //     smallTextClass: "ya-small-button",
+    //     mediumTextClass: "ya-medium-button",
+    //     largeTextClass: "ya-large-button",
+    //     xlargeTextClass: "ya-xlarge-button"
+    //   }
+    // }
   };
 }
