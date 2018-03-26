@@ -14,7 +14,7 @@ import Table from "./Table";
 import Grid from "./Grid";
 import Highlights from "./Highlights";
 import Colors from "./Colors";
-import EditorialHeader from "./EditorialHeader";
+import Headers from "./Headers";
 // import ArticleSection from "./ArticleSection";
 // import GuidesSection from "./GuidesSection";
 import PageHeader from "./PageHeader";
@@ -39,7 +39,7 @@ export default class Router extends Component {
             <Route path="/featured-icons" component={FeaturedIcons} />
             <Route path="/quote" component={Quote} />
             <Route path="/page-header" component={PageHeader} />
-            <Route path="/editorial-header" component={EditorialHeader} />
+            <Route path="/headers" component={Headers} />
             <Route path="/highlights" component={Highlights} />
             <Route path="/colors" component={Colors} />
             <Route path="/grid" component={Grid} />

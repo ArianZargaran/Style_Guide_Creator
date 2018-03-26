@@ -14,12 +14,19 @@ class Logo extends Component {
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <i className={this.props.list.logo.className[item]} />
+                <img
+                  src="href://www.maharashtraaviationacademy.com/img/startup.svg"
+                  alt={this.props.list.logo.className[item].alt}
+                  className={this.props.list.logo.className[item].name}
+                />
               </div>
               <div className="sgcreator-tag-box">
-                {`<${this.props.list.logo.tag} class="${
-                  this.props.list.logo.className[item]
-                }">${item}</${this.props.list.logo.tag}>`}
+                {`<${this.props.list.logo.tag} 
+                src="${this.props.list.logo.className[item].src}"
+                alt="${this.props.list.logo.className[item].alt}"
+                class="${this.props.list.logo.className[item].name}">${item}</${
+                  this.props.list.logo.tag
+                }>`}
               </div>
             </div>
           ))}

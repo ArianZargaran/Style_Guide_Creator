@@ -1,5 +1,18 @@
 export default function() {
   return {
+    headers: {
+      url: "headers",
+      section: "Headers",
+      tag: "h1",
+      className: {
+        H1: "ya-header ya-header_one",
+        H2: "ya-header ya-header_two",
+        H3: "ya-header ya-header_three",
+        H4: "ya-header ya-header_four",
+        H5: "ya-header ya-header_five",
+        H6: "ya-header ya-header_six"
+      }
+    },
     typography: {
       url: "typography",
       section: "Typography",
@@ -73,13 +86,23 @@ export default function() {
       section: "Logo",
       tag: "img",
       className: {
-        "Hyphen Icon": "fas fa-minus",
-        "Plus Icon": "fas fa-plus",
-        "Asterisk Icon": "fas fa-asterisk",
-        "Chevron Right Icon": "fas fa-chevron-right",
-        "Chevron Down Icon": "fas fa-chevron-down",
-        "Hash Icon": "fab fa-slack-hash",
-        "Code Parenthesis": "fas fa-code"
+        "Full color logo": {
+          name: "ya-logo ya-logo_full",
+          src: "../styles/images/logo.svg",
+          alt: "logo"
+        },
+        "Full color logo negative": {
+          name: "ya-logo ya-logo_negative",
+          src: "c",
+          alt: "d"
+        },
+        "Two colors logo": {
+          name: "ya-logo ya-logo_two-colors",
+          src: "e",
+          alt: "f"
+        },
+        "Grey scale logo": { name: "ya-logo ya-logo_grey", src: "h", alt: "i" },
+        "Black logo": { name: "ya-logo ya-logo_black", src: "j", alt: "k" }
       }
     },
     breadcrumbs: {
@@ -127,19 +150,8 @@ export default function() {
       section: "Highlights",
       tag: "div",
       className: {
-        "Highlight Module Right": "ya-higlight-module ya-higlight-right",
-        "Highlight Module Left": "ya-higlight-module ya-higlight-left"
-      }
-    },
-    editorialHeader: {
-      url: "editorial-header",
-      section: "Editorial Header",
-      tag: "p",
-      className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
+        "Highlight Module Right": "ya-highlight-module ya-highlight-right",
+        "Highlight Module Left": "ya-highlight-module ya-highlight-left"
       }
     },
     // articleSection: {

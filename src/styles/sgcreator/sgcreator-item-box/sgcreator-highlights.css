@@ -3,5 +3,11 @@
 }
 
 .sgcreator-item-box_highlights > .sgcreator-sample-box {
-  min-height: 250px;
+  box-sizing: border-box;
+  position: relative;
+  padding: 5px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

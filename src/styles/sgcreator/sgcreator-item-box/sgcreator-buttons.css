@@ -1,6 +1,15 @@
 /* APPLIED TO BUTTONS */
 .sgcreator-item-box_buttons .sgcreator-sample-box {
-  padding: 20px 0;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.sgcreator-item-box_buttons .sgcreator-sample-box > a {
+  float: none;
+  display: inline-block;
 }
 
 .sgcreator-item-box_buttons[itemID="2"] .sgcreator-sample-box {
