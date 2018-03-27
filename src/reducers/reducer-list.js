@@ -198,9 +198,9 @@ export default function() {
     //     xlargeTextClass: "ya-xlarge-button"
     //   }
     // },
-    pageSample: {
-      url: "page-sample",
-      section: "Page Sample",
+    quote: {
+      url: "quote",
+      section: "Quote",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",
@@ -209,9 +209,9 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     },
-    quote: {
-      url: "quote",
-      section: "Quote",
+    pageSample: {
+      url: "page-sample",
+      section: "Page Sample",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",
