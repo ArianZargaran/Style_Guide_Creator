@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import "../styles/sgcreator/sgcreator-item-box/sgcreator-logo.css";
+
+// import logo from "../styles/images/logo.svg";
+
 class Logo extends Component {
   render() {
     return (
@@ -14,11 +18,7 @@ class Logo extends Component {
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <img
-                  src="href://www.maharashtraaviationacademy.com/img/startup.svg"
-                  alt={this.props.list.logo.className[item].alt}
-                  className={this.props.list.logo.className[item].name}
-                />
+                <div className={this.props.list.logo.className[item].name} />
               </div>
               <div className="sgcreator-tag-box">
                 {`<${this.props.list.logo.tag} 

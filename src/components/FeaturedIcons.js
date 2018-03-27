@@ -15,16 +15,29 @@ class FeaturedIcons extends Component {
                 key={i}
               >
                 <div className="sgcreator-sample-box">
-                  <p className={this.props.list.featuredIcons.className[item]}>
-                    Lorem impsum dolor emet
-                  </p>
+                  <a href="/">
+                    <span className="fa-stack fa-2x">
+                      <i className="fas fa-circle fa-stack-2x" />
+                      <i
+                        className={
+                          this.props.list.featuredIcons.className[item]
+                        }
+                      />
+                    </span>
+                  </a>
                 </div>
-                <div className="sgcreator-tag-box">
-                  {`<${this.props.list.featuredIcons.tag} class="${
-                    this.props.list.featuredIcons.className[item]
-                  }">Lorem impsum dolor emet</${
+                <div className="sgcreator-tag-box sgcreator-align-left">
+                  {`<${
                     this.props.list.featuredIcons.tag
-                  }>`}
+                  } class="fa-stack fa-2x">`}
+                  {<br />}
+                  {`    <i class="fas fa-circle fa-stack-2x"></i>`}
+                  {<br />}
+                  {`    <i class="${
+                    this.props.list.featuredIcons.className[item]
+                  }"></i>`}
+                  {<br />}
+                  {`</${this.props.list.featuredIcons.tag}>`}
                 </div>
               </div>
             )

@@ -5,6 +5,23 @@
   flex-direction: column;
 }
 
+.sgcreator-categories_section > a {
+  text-align: center;
+}
+
+.sgcreator-categories_section > a > .ya-logo_full {
+  align-self: center;
+  background-size: 200px;
+  background-position-x: center;
+  background-position-y: -18px;
+  background-color: var(--color_background);
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  margin: 15px auto -20px;
+  border: 2px solid var(--color_background);
+}
+
 /* LIST SECTION TITLE */
 .sgcreator-category_header {
   font-family: var(--header_font-family);

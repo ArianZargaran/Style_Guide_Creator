@@ -10,6 +10,9 @@ class Categories extends Component {
     return (
       <section className="sgcreator-categories_section">
         <Link to="/">
+          <div
+            className={this.props.list.logo.className["Full color logo"].name}
+          />
           <h1 className="sgcreator-category_header">{children}</h1>
         </Link>
         <ol className="sgcreator-categories_list">{this.renderIndexList()}</ol>

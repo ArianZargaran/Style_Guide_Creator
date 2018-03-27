@@ -81,6 +81,20 @@ export default function() {
         "Exclamation Icon": "fas fa-exclamation"
       }
     },
+    featuredIcons: {
+      url: "featured-icons",
+      section: "Featured Icons",
+      tag: "span",
+      className: {
+        "Flag Icon": "fas fa-flag fa-stack-1x fa-inverse ya-icon_featured",
+        "Twitter Icon":
+          "fab fa-twitter fa-stack-1x fa-inverse ya-icon_featured",
+        "Terminal Icon":
+          "fas fa-terminal fa-stack-1x fa-inverse ya-icon_featured",
+        "Scale Icon":
+          "fas fa-balance-scale fa-stack-1x fa-inverse ya-icon_featured"
+      }
+    },
     logo: {
       url: "logo",
       section: "Logo",
@@ -88,21 +102,29 @@ export default function() {
       className: {
         "Full color logo": {
           name: "ya-logo ya-logo_full",
-          src: "../styles/images/logo.svg",
+          src: "../assets/images/logo.svg",
           alt: "logo"
         },
         "Full color logo negative": {
           name: "ya-logo ya-logo_negative",
-          src: "c",
+          src: "../assets/images/logo_negative.svg",
           alt: "d"
         },
         "Two colors logo": {
           name: "ya-logo ya-logo_two-colors",
-          src: "e",
+          src: "../assets/images/logo_two-colors.svg",
           alt: "f"
         },
-        "Grey scale logo": { name: "ya-logo ya-logo_grey", src: "h", alt: "i" },
-        "Black logo": { name: "ya-logo ya-logo_black", src: "j", alt: "k" }
+        "Grey scale logo": {
+          name: "ya-logo ya-logo_grey",
+          src: "../assets/images/logo_grey-scale.svg",
+          alt: "i"
+        },
+        "Black logo": {
+          name: "ya-logo ya-logo_black",
+          src: "../assets/images/logo_black.svg",
+          alt: "k"
+        }
       }
     },
     breadcrumbs: {
@@ -190,17 +212,6 @@ export default function() {
     quote: {
       url: "quote",
       section: "Quote",
-      tag: "p",
-      className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
-      }
-    },
-    featuredIcons: {
-      url: "featured-icons",
-      section: "Featured Icons",
       tag: "p",
       className: {
         smallTextClass: "ya-small-button",
