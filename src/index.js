@@ -8,7 +8,7 @@ import Router from "./components/Router";
 import "./styles/sgcreator/sgcreator-hook.css";
 import "./styles/sgcreator/sgcreator-list.css";
 import "./styles/sgcreator/sgcreator-section.css";
-import "./styles/StyleGuide.css";
+import "./styles/style-guide.css";
 
 ReactDOM.render(
   <Provider store={store}>

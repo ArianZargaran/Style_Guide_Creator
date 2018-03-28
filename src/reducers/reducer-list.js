@@ -143,17 +143,6 @@ export default function() {
         tableDisplay: "ya-table"
       }
     },
-    // grid: {
-    //   url: "grid",
-    //   section: "Grid",
-    //   tag: "p",
-    //   className: {
-    //     smallTextClass: "ya-small-button",
-    //     mediumTextClass: "ya-medium-button",
-    //     largeTextClass: "ya-large-button",
-    //     xlargeTextClass: "ya-xlarge-button"
-    //   }
-    // },
     colors: {
       url: "colors",
       section: "Colors",
@@ -176,28 +165,6 @@ export default function() {
         "Highlight Module Left": "ya-highlight-module ya-highlight-left"
       }
     },
-    // articleSection: {
-    //   url: "article-section",
-    //   section: "Article Section",
-    //   tag: "p",
-    //   className: {
-    //     smallTextClass: "ya-small-button",
-    //     mediumTextClass: "ya-medium-button",
-    //     largeTextClass: "ya-large-button",
-    //     xlargeTextClass: "ya-xlarge-button"
-    //   }
-    // },
-    // guidesSection: {
-    //   url: "guides-section",
-    //   section: "Guides Section",
-    //   tag: "p",
-    //   className: {
-    //     smallTextClass: "ya-small-button",
-    //     mediumTextClass: "ya-medium-button",
-    //     largeTextClass: "ya-large-button",
-    //     xlargeTextClass: "ya-xlarge-button"
-    //   }
-    // },
     quote: {
       url: "quote",
       section: "Quote",
@@ -220,49 +187,5 @@ export default function() {
         xlargeTextClass: "ya-xlarge-button"
       }
     }
-    // featuredSpotlight: {
-    //   url: "featured-spotlight",
-    //   section: "Featured Spotlight",
-    //   tag: "p",
-    //   className: {
-    //     smallTextClass: "ya-small-button",
-    //     mediumTextClass: "ya-medium-button",
-    //     largeTextClass: "ya-large-button",
-    //     xlargeTextClass: "ya-xlarge-button"
-    //   }
-    // },
-    // featuredList: {
-    //   url: "featured-list",
-    //   section: "Featured List",
-    //   tag: "p",
-    //   className: {
-    //     smallTextClass: "ya-small-button",
-    //     mediumTextClass: "ya-medium-button",
-    //     largeTextClass: "ya-large-button",
-    //     xlargeTextClass: "ya-xlarge-button"
-    //   }
-    // },
-    // featuredBlock: {
-    //   url: "featured-block",
-    //   section: "Featured Block",
-    //   tag: "p",
-    //   className: {
-    //     smallTextClass: "ya-small-button",
-    //     mediumTextClass: "ya-medium-button",
-    //     largeTextClass: "ya-large-button",
-    //     xlargeTextClass: "ya-xlarge-button"
-    //   }
-    // },
-    // articleNavigation: {
-    //   url: "article-navigation",
-    //   section: "Article Navigation",
-    //   tag: "p",
-    //   className: {
-    //     smallTextClass: "ya-small-button",
-    //     mediumTextClass: "ya-medium-button",
-    //     largeTextClass: "ya-large-button",
-    //     xlargeTextClass: "ya-xlarge-button"
-    //   }
-    // }
   };
 }
