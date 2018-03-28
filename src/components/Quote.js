@@ -14,9 +14,9 @@ class Quote extends Component {
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <p className={this.props.list.quote.className[item]}>
-                  Lorem impsum dolor emet
-                </p>
+                <div className={this.props.list.quote.className[item]}>
+                  <p>Lorem impsum dolor emet</p>
+                </div>
               </div>
               <div className="sgcreator-tag-box">
                 {`<${this.props.list.quote.tag} class="${

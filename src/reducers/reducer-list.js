@@ -170,10 +170,7 @@ export default function() {
       section: "Quote",
       tag: "p",
       className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
+        Quote: "ya-quote"
       }
     },
     pageSample: {
@@ -181,10 +178,7 @@ export default function() {
       section: "Page Sample",
       tag: "p",
       className: {
-        smallTextClass: "ya-small-button",
-        mediumTextClass: "ya-medium-button",
-        largeTextClass: "ya-large-button",
-        xlargeTextClass: "ya-xlarge-button"
+        "Whole page": "ya-page"
       }
     }
   };
