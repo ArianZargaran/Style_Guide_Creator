@@ -5,6 +5,14 @@ body {
 
 /* HOOK */
 .sgcreator-hook {
+  grid-template-areas: "categories representation representation representation representation representation";
+  grid-template-columns: 1fr 5fr;
   font-family: var(--text_font-family);
-  display: flex;
+  display: grid;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
 }

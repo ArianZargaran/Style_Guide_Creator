@@ -16,7 +16,7 @@ class Buttons extends Component {
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <a className={this.props.list.buttons.className[item]}>
+                <a href="#" className={this.props.list.buttons.className[item]}>
                   Learn more
                 </a>
               </div>

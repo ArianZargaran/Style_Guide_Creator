@@ -1,17 +1,14 @@
 /* VISUAL REPRESENTATION SECTION */
 .sgcreator-representation_section {
-  display: flex;
-  justify-content: center;
+  grid-area: representation;
   text-align: center;
-  margin: 0 auto;
-  flex-direction: column;
+  margin: 10px auto;
 }
 
 /* VISUAL REPRESENTATION SECTION BOXES */
 /* SAMPLE BOX */
 .sgcreator-item-box {
   padding: 5px 0;
-  /* background: mediumseagreen; */
 }
 
 /* TAG BOX */
@@ -20,10 +17,6 @@
   margin: 5px 0;
   background: rgba(0, 0, 0, 0.1);
 }
-
-/* .sgcreator-sample-box {
-  background: TOMATO;
-} */
 
 .sgcreator-sample-box p {
   margin-bottom: 0;

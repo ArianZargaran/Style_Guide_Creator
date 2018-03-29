@@ -1,8 +1,10 @@
 /* LIST SECTION */
 .sgcreator-categories_section {
+  grid-area: categories;
   background: var(--color_main);
   display: flex;
   flex-direction: column;
+  align-items: stretch;
 }
 
 .sgcreator-categories_section > a {

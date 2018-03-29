@@ -15,7 +15,7 @@ class FeaturedIcons extends Component {
                 key={i}
               >
                 <div className="sgcreator-sample-box">
-                  <a href="/">
+                  <a href="#">
                     <span className="fa-stack fa-2x">
                       <i className="fas fa-circle fa-stack-2x" />
                       <i

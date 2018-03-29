@@ -16,7 +16,6 @@ class Lists extends Component {
                   <div
                     className="sgcreator-item-box sgcreator-item-box_lists"
                     itemID={i}
-                    key={i}
                   >
                     <div className="sgcreator-sample-box">
                       <ul className={this.props.list.lists.className[item][0]}>
@@ -42,7 +41,6 @@ class Lists extends Component {
                   <div
                     className="sgcreator-item-box sgcreator-item-box_lists sgcreator-item-box_ol-lists"
                     itemID={i}
-                    key={i}
                   >
                     <div className="sgcreator-sample-box">
                       <ol className={this.props.list.lists.className[item][1]}>

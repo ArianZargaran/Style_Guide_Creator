@@ -6,7 +6,7 @@ import store from "./store";
 import Router from "./components/Router";
 
 import "./styles/sgcreator/sgcreator-hook.css";
-import "./styles/sgcreator/sgcreator-list.css";
+import "./styles/sgcreator/sgcreator-categories.css";
 import "./styles/sgcreator/sgcreator-section.css";
 import "./styles/style-guide.css";
 

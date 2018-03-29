@@ -13,21 +13,21 @@ class Breadcrumbs extends Component {
                 <nav>
                   <p>
                     <a
-                      href=""
+                      href="#"
                       className={this.props.list.breadcrumbs.className[item]}
                     >
                       Link 1
                     </a>
                     {" / "}
                     <a
-                      href=""
+                      href="#"
                       className={this.props.list.breadcrumbs.className[item]}
                     >
                       Link 2
                     </a>
                     {" / "}
                     <a
-                      href=""
+                      href="#"
                       className={this.props.list.breadcrumbs.className[item]}
                     >
                       Link 3
@@ -40,25 +40,25 @@ class Breadcrumbs extends Component {
                 {<br />}
                 {`    <p>`}
                 {<br />}
-                {`        <${this.props.list.breadcrumbs.tag} className=${
+                {`        <${this.props.list.breadcrumbs.tag} className="${
                   this.props.list.breadcrumbs.className[item]
-                }>`}
+                }">`}
                 {<br />}
                 {`            Link 1`}
                 {<br />}
                 {`        </${this.props.list.breadcrumbs.tag}> / `}
                 {<br />}
-                {`        <${this.props.list.breadcrumbs.tag} className=${
+                {`        <${this.props.list.breadcrumbs.tag} className="${
                   this.props.list.breadcrumbs.className[item]
-                }>`}
+                }">`}
                 {<br />}
                 {`            Link 2`}
                 {<br />}
                 {`        </${this.props.list.breadcrumbs.tag}> / `}
                 {<br />}
-                {`        <${this.props.list.breadcrumbs.tag} className=${
+                {`        <${this.props.list.breadcrumbs.tag} className="${
                   this.props.list.breadcrumbs.className[item]
-                }>`}
+                }">`}
                 {<br />}
                 {`            Link 3`}
                 {<br />}

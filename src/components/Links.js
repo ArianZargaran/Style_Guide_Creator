@@ -14,7 +14,7 @@ class Links extends Component {
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <a href="" className={this.props.list.links.className[item]}>
+                <a href="#" className={this.props.list.links.className[item]}>
                   Lorem impsum dolor emet
                 </a>
               </div>
