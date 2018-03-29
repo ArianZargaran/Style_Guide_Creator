@@ -32,7 +32,7 @@ class Typography extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.typography };
 }
 
 export default connect(mapStateToProps)(Typography);

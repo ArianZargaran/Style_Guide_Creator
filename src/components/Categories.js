@@ -11,7 +11,7 @@ class Categories extends Component {
       <section className="sgcreator-categories_section">
         <Link to="/">
           <div
-            className={this.props.list.logo.className["Full color logo"].name}
+            className={this.props.logo.logo.className["Full color logo"].name}
           />
           <h1 className="sgcreator-category_header">{children}</h1>
         </Link>
@@ -32,7 +32,10 @@ class Categories extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return {
+    list: state.list,
+    logo: state.logo
+  };
 }
 
 export default connect(mapStateToProps)(Categories);

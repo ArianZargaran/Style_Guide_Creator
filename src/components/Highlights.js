@@ -38,7 +38,7 @@ class Highlights extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.highlights };
 }
 
 export default connect(mapStateToProps)(Highlights);

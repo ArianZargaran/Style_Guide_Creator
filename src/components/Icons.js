@@ -30,7 +30,7 @@ class Icons extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.icons };
 }
 
 export default connect(mapStateToProps)(Icons);

@@ -78,7 +78,7 @@ class Table extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.table };
 }
 
 export default connect(mapStateToProps)(Table);

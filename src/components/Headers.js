@@ -32,7 +32,7 @@ class Headers extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.headers };
 }
 
 export default connect(mapStateToProps)(Headers);

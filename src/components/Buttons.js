@@ -16,9 +16,12 @@ class Buttons extends Component {
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <a href="#" className={this.props.list.buttons.className[item]}>
+                <button
+                  href="#"
+                  className={this.props.list.buttons.className[item]}
+                >
                   Learn more
-                </a>
+                </button>
               </div>
               <div className="sgcreator-tag-box">
                 {`<${this.props.list.buttons.tag} href="/" class="${
@@ -34,7 +37,7 @@ class Buttons extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.buttons };
 }
 
 export default connect(mapStateToProps)(Buttons);

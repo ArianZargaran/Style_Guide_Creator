@@ -32,7 +32,7 @@ class Quote extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.quote };
 }
 
 export default connect(mapStateToProps)(Quote);

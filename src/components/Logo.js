@@ -37,7 +37,7 @@ class Logo extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.logo };
 }
 
 export default connect(mapStateToProps)(Logo);

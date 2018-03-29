@@ -32,7 +32,7 @@ class Links extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.links };
 }
 
 export default connect(mapStateToProps)(Links);

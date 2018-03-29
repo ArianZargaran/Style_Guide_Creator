@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+/* CORRECT PAGE_SAMPLE SAMPLE_PAGE*/
+
 import "../styles/sgcreator/sgcreator-item-box/sgcreator-sample-page.css";
 
 class PageHeader extends Component {
   render() {
     return (
       <section className="sgcreator-representation_section">
-        <h1>{this.props.list.pageSample.section}</h1>
+        <h1>{this.props.list.sample_page.section}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(this.props.list.pageSample.className).map((item, i) => (
+          {Object.keys(this.props.list.sample_page.className).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_sample-page sgcreator-align-left"
               itemID={i}
@@ -33,9 +35,9 @@ class PageHeader extends Component {
                 </nav>
                 <h1 class="ya-header ya-header_one">This is a Header</h1>
                 <div className="ya-logo ya-logo_full" />
-                <a href="" class="ya-button ya-button_primary">
+                <button href="" class="ya-button ya-button_primary">
                   Learn more
-                </a>
+                </button>
                 <p class="ya-base-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -67,7 +69,7 @@ class PageHeader extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.sample_page };
 }
 
 export default connect(mapStateToProps)(PageHeader);

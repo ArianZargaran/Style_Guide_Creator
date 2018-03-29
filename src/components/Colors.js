@@ -32,7 +32,7 @@ class Colors extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.colors };
 }
 
 export default connect(mapStateToProps)(Colors);

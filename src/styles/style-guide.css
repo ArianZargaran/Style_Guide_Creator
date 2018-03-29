@@ -102,35 +102,44 @@ h6,
 }
 
 /* BUTTONS */
+/* background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    display: inline-block;
+    font-size: 16px; */
 .ya-button {
   text-decoration: none;
+  text-align: center;
+  outline: var(--color_complementary);
+  font-size: var(--base_font-size);
   margin: 15px 0;
-  padding: 12px 10px;
-  border: 0.5px solid transparent;
+  padding: 13px 10px;
   border-radius: 2px;
-  max-width: 100px;
+  min-width: 120px;
   display: inline-block;
 }
-.ya-button:active {
-  color: white;
-}
+
 .ya-button:hover {
+  border: 2px solid var(--color_desaturated);
   background: var(--color_desaturated);
   color: var(--color_background);
   cursor: pointer;
 }
 
 .ya-button_primary {
+  border: 2px solid var(--color_main);
   color: var(--color_background);
   background: var(--color_main);
 }
 .ya-button_secondary {
+  border: 2px solid var(--color_main);
   color: var(--color_main);
   background: var(--color_background);
-  border-color: var(--color_desaturated);
 }
 .ya-button_inverted-block {
-  color: var(--color_main);
+  border: 2px solid var(--color_tertiary);
+  color: var(--color_tertiary);
   background: var(--color_background);
 }
 

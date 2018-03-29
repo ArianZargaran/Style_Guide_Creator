@@ -143,7 +143,7 @@ class Lists extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.lists };
 }
 
 export default connect(mapStateToProps)(Lists);

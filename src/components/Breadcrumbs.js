@@ -77,7 +77,7 @@ class Breadcrumbs extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.list };
+  return { list: state.breadcrumbs };
 }
 
 export default connect(mapStateToProps)(Breadcrumbs);
