@@ -1,32 +1,32 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import "../styles/sgcreator/sgcreator-item-box/sgcreator-buttons.css";
+import "../style/sgcreator/sgcreator-item-box/sgcreator-buttons.css";
+import "../style/Buttons.css";
 
 class Buttons extends Component {
   render() {
+    const buttons = this.props.category.Buttons;
+
     return (
       <section className="sgcreator-representation_section">
-        <h1>{this.props.list.buttons.section}</h1>
+        <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(this.props.list.buttons.className).map((item, i) => (
+          {Object.keys(buttons.className).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_buttons"
               itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <button
-                  href="#"
-                  className={this.props.list.buttons.className[item]}
-                >
+                <button href="#" className={buttons.className[item]}>
                   Learn more
                 </button>
               </div>
               <div className="sgcreator-tag-box">
-                {`<${this.props.list.buttons.tag} href="/" class="${
-                  this.props.list.buttons.className[item]
-                }">Learn more</${this.props.list.buttons.tag}>`}
+                {`<${buttons.tag} href="/" class="${
+                  buttons.className[item]
+                }">Learn more</${buttons.tag}>`}
               </div>
             </div>
           ))}
@@ -37,7 +37,7 @@ class Buttons extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.buttons };
+  return { category: state.buttons };
 }
 
 export default connect(mapStateToProps)(Buttons);

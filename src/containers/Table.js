@@ -1,20 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import "../style/Table.css";
+
 class Table extends Component {
   render() {
+    const table = this.props.category.Table;
     return (
       <section className="sgcreator-representation_section">
-        <h1>{this.props.list.table.section}</h1>
+        <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(this.props.list.table.className).map((item, i) => (
+          {Object.keys(table.className).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_table"
               itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <table className={this.props.list.table.className[item]}>
+                <table className={table.className[item]}>
                   <tr>
                     <th>1</th>
                     <th>2</th>
@@ -33,9 +36,7 @@ class Table extends Component {
                 </table>
               </div>
               <div className="sgcreator-tag-box sgcreator-align-left">
-                {`<${this.props.list.table.tag} class="${
-                  this.props.list.table.className[item]
-                }">`}
+                {`<${table.tag} class="${table.className[item]}">`}
                 {<br />}
                 {`    <tr>`}
                 {<br />}
@@ -67,7 +68,7 @@ class Table extends Component {
                 {<br />}
                 {`    </tr>`}
                 {<br />}
-                {`</${this.props.list.table.tag}>`}
+                {`</${table.tag}>`}
               </div>
             </div>
           ))}
@@ -78,7 +79,7 @@ class Table extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.table };
+  return { category: state.table };
 }
 
 export default connect(mapStateToProps)(Table);

@@ -1,8 +1,6 @@
 export default function() {
   return {
-    breadcrumbs: {
-      url: "breadcrumbs",
-      section: "Breadcrumbs",
+    Breadcrumbs: {
       tag: "a",
       className: {
         "breadcrumbs bar": "ya-breadcrumbs"

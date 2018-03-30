@@ -1,8 +1,6 @@
 export default function() {
   return {
-    headers: {
-      url: "headers",
-      section: "Headers",
+    Headers: {
       tag: "h1",
       className: {
         H1: "ya-header ya-header_one",

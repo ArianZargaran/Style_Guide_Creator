@@ -1,27 +1,30 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import "../styles/sgcreator/sgcreator-item-box/sgcreator-colors.css";
+import "../style/sgcreator/sgcreator-item-box/sgcreator-colors.css";
+import "../style/Colors.css";
 
 class Colors extends Component {
   render() {
+    const colors = this.props.category.Colors;
+
     return (
       <section className="sgcreator-representation_section">
-        <h1>{this.props.list.colors.section}</h1>
+        <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(this.props.list.colors.className).map((item, i) => (
+          {Object.keys(colors.className).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_colors"
               itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <p className={this.props.list.colors.className[item]}>{item}</p>
+                <p className={colors.className[item]}>{item}</p>
               </div>
               <div className="sgcreator-tag-box">
-                {`<${this.props.list.colors.tag} class="${
-                  this.props.list.colors.className[item]
-                }"></${this.props.list.colors.tag}>`}
+                {`<${colors.tag} class="${colors.className[item]}"></${
+                  colors.tag
+                }>`}
               </div>
             </div>
           ))}
@@ -32,7 +35,7 @@ class Colors extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.colors };
+  return { category: state.colors };
 }
 
 export default connect(mapStateToProps)(Colors);

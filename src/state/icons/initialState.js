@@ -1,8 +1,6 @@
 export default function() {
   return {
-    icons: {
-      url: "icons",
-      section: "Icons",
+    Icons: {
       tag: "i",
       className: {
         "Hyphen Icon": "fas fa-minus",

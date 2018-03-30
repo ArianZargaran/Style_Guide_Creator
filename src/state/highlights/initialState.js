@@ -1,8 +1,6 @@
 export default function() {
   return {
-    highlights: {
-      url: "highlights",
-      section: "Highlights",
+    Highlights: {
       tag: "div",
       className: {
         "Highlight Module Right": "ya-highlight-module ya-highlight-right",

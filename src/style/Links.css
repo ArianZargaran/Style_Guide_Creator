@@ -1,0 +1,13 @@
+.ya-link {
+  text-decoration: none;
+  color: var(--color_main);
+}
+
+.ya-link:hover {
+  color: var(--color_desaturated);
+}
+
+.ya-primary-link::before {
+  content: "⇁";
+  padding-right: 8px;
+}

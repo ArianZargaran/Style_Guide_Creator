@@ -1,8 +1,6 @@
 export default function() {
   return {
-    logo: {
-      url: "logo",
-      section: "Logo",
+    Logo: {
       tag: "img",
       className: {
         "Full color logo": {

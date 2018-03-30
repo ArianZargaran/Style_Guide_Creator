@@ -1,35 +1,30 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import "../style/Breadcrumbs.css";
+
 class Breadcrumbs extends Component {
   render() {
+    const breadcrumbs = this.props.category.Breadcrumbs;
+
     return (
       <section className="sgcreator-representation_section">
-        <h1>{this.props.list.breadcrumbs.section}</h1>
+        <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(this.props.list.breadcrumbs.className).map((item, i) => (
+          {Object.keys(breadcrumbs.className).map((item, i) => (
             <div className="sgcreator-item-box" itemID={i} key={i}>
               <div className="sgcreator-sample-box">
                 <nav>
                   <p>
-                    <a
-                      href="#"
-                      className={this.props.list.breadcrumbs.className[item]}
-                    >
+                    <a href="#" className={breadcrumbs.className[item]}>
                       Link 1
                     </a>
-                    {" / "}
-                    <a
-                      href="#"
-                      className={this.props.list.breadcrumbs.className[item]}
-                    >
+                    <span>{" / "}</span>
+                    <a href="#" className={breadcrumbs.className[item]}>
                       Link 2
                     </a>
-                    {" / "}
-                    <a
-                      href="#"
-                      className={this.props.list.breadcrumbs.className[item]}
-                    >
+                    <span>{" / "}</span>
+                    <a href="#" className={breadcrumbs.className[item]}>
                       Link 3
                     </a>
                   </p>
@@ -40,29 +35,29 @@ class Breadcrumbs extends Component {
                 {<br />}
                 {`    <p>`}
                 {<br />}
-                {`        <${this.props.list.breadcrumbs.tag} className="${
-                  this.props.list.breadcrumbs.className[item]
+                {`        <${breadcrumbs.tag} className="${
+                  breadcrumbs.className[item]
                 }">`}
                 {<br />}
                 {`            Link 1`}
                 {<br />}
-                {`        </${this.props.list.breadcrumbs.tag}> / `}
+                {`        </${breadcrumbs.tag}> / `}
                 {<br />}
-                {`        <${this.props.list.breadcrumbs.tag} className="${
-                  this.props.list.breadcrumbs.className[item]
+                {`        <${breadcrumbs.tag} className="${
+                  breadcrumbs.className[item]
                 }">`}
                 {<br />}
                 {`            Link 2`}
                 {<br />}
-                {`        </${this.props.list.breadcrumbs.tag}> / `}
+                {`        </${breadcrumbs.tag}> / `}
                 {<br />}
-                {`        <${this.props.list.breadcrumbs.tag} className="${
-                  this.props.list.breadcrumbs.className[item]
+                {`        <${breadcrumbs.tag} className="${
+                  breadcrumbs.className[item]
                 }">`}
                 {<br />}
                 {`            Link 3`}
                 {<br />}
-                {`        </${this.props.list.breadcrumbs.tag}>`}
+                {`        </${breadcrumbs.tag}>`}
                 {<br />}
                 {`    </p>`}
                 {<br />}
@@ -77,7 +72,7 @@ class Breadcrumbs extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.breadcrumbs };
+  return { category: state.breadcrumbs };
 }
 
 export default connect(mapStateToProps)(Breadcrumbs);

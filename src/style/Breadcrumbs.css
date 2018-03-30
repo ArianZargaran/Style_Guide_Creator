@@ -1,0 +1,14 @@
+.ya-breadcrumbs {
+  text-decoration: none;
+  color: var(--color_complementary);
+  font-size: calc(var(--base_font-size) - 4px);
+}
+
+.ya-breadcrumbs:hover {
+  color: var(--color_desaturated);
+}
+
+.ya-breadcrumbs + span {
+  color: var(--color_desaturated);
+  font-size: calc(var(--base_font-size) - 4px);
+}

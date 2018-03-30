@@ -1,8 +1,6 @@
 export default function() {
   return {
-    typography: {
-      url: "typography",
-      section: "Typography",
+    Typography: {
       tag: "p",
       className: {
         smallText: "ya-small-text",

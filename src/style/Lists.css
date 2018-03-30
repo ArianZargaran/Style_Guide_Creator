@@ -1,0 +1,46 @@
+.ya-list > li {
+  padding-left: 40px;
+}
+
+.ya-list > li > a:hover {
+  cursor: pointer;
+  color: var(--color_desaturated);
+}
+
+.ya-ul-list {
+  list-style-type: inherit;
+}
+
+.ya-ol-list {
+  list-style-type: decimal-leading-zero;
+}
+
+.ya-ol-list-anchor > li {
+  list-style-type: lower-alpha;
+}
+
+.ya-ul-list_linked li,
+.ya-ul-list-anchor li {
+  list-style: none;
+}
+
+.ya-ul-list_linked,
+.ya-ul-list-anchor,
+.ya-ol-list_linked,
+.ya-ol-list-anchor {
+  color: var(--color_main);
+}
+
+.ya-ul-list-anchor > li::before {
+  content: "⇁";
+  padding-right: 8px;
+}
+
+.ya-ul-list_linked > li::before {
+  content: "•";
+  padding-right: 8px;
+}
+
+.ya-list-small {
+  font-size: calc(var(--base_font-size) - 4px);
+}

@@ -1,8 +1,6 @@
 export default function() {
   return {
-    buttons: {
-      url: "buttons",
-      section: "Buttons",
+    Buttons: {
       tag: "button",
       className: {
         buttonPrimary: "ya-button ya-button_primary",

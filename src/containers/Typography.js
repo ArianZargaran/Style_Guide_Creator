@@ -1,27 +1,31 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import "../style/Typography.css";
+
 class Typography extends Component {
   render() {
+    const typography = this.props.category.Typography;
+
     return (
       <section className="sgcreator-representation_section">
-        <h1>{this.props.list.typography.section}</h1>
+        <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(this.props.list.typography.className).map((item, i) => (
+          {Object.keys(typography.className).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_typography"
               itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <p className={this.props.list.typography.className[item]}>
+                <p className={typography.className[item]}>
                   Lorem impsum dolor emet
                 </p>
               </div>
               <div className="sgcreator-tag-box">
-                {`<${this.props.list.typography.tag} class="${
-                  this.props.list.typography.className[item]
-                }">Lorem impsum dolor emet</${this.props.list.typography.tag}>`}
+                {`<${typography.tag} class="${
+                  typography.className[item]
+                }">Lorem impsum dolor emet</${typography.tag}>`}
               </div>
             </div>
           ))}
@@ -32,7 +36,7 @@ class Typography extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.typography };
+  return { category: state.typography };
 }
 
 export default connect(mapStateToProps)(Typography);

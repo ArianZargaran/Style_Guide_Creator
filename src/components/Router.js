@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Categories from "./Categories";
+import Categories from "../containers/Categories";
 import Home from "./Home";
-import Typography from "./Typography";
-import Buttons from "./Buttons";
-import Links from "./Links";
-import Lists from "./Lists";
-import Icons from "./Icons";
-import Logo from "./Logo";
-import Breadcrumbs from "./Breadcrumbs";
-import Table from "./Table";
-import Colors from "./Colors";
-import Headers from "./Headers";
-import Quote from "./Quote";
-import Highlights from "./Highlights";
-import FeaturedIcons from "./FeaturedIcons";
-import PageSample from "./PageSample";
+import Typography from "../containers/Typography";
+import Buttons from "../containers/Buttons";
+import Links from "../containers/Links";
+import Lists from "../containers/Lists";
+import Icons from "../containers/Icons";
+import Logo from "../containers/Logo";
+import Breadcrumbs from "../containers/Breadcrumbs";
+import Table from "../containers/Table";
+import Colors from "../containers/Colors";
+import Headers from "../containers/Headers";
+import Quote from "../containers/Quote";
+import Highlights from "../containers/Highlights";
+import FeaturedIcons from "../containers/FeaturedIcons";
+import SamplePage from "../containers/SamplePage";
 
 export default class Router extends Component {
   render() {
@@ -38,7 +38,7 @@ export default class Router extends Component {
             <Route path="/links" component={Links} />
             <Route path="/buttons" component={Buttons} />
             <Route path="/typography" component={Typography} />
-            <Route path="/page-sample" component={PageSample} />
+            <Route path="/sample-page" component={SamplePage} />
             <Route path="/" component={Home} />
           </Switch>
         </div>

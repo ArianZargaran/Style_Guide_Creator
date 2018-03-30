@@ -20,7 +20,7 @@
   --h6_font-size: 0.67em;
 }
 
-/* HEADERS */
+/* 
 .ya-header,
 h1,
 h2,
@@ -76,10 +76,10 @@ h6,
   font-size: var(--h6_font-size);
   margin-top: 2.33em;
   margin-bottom: 2.33em;
-}
+} */
 
 /* TYPOGRAPHY */
-.ya-small-text {
+/* .ya-small-text {
   font-size: calc(var(--base_font-size) - 4px);
 }
 .ya-base-text {
@@ -99,16 +99,10 @@ h6,
 }
 .ya-huge-text {
   font-size: calc(var(--base_font-size) * 2);
-}
+} */
 
 /* BUTTONS */
-/* background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    display: inline-block;
-    font-size: 16px; */
-.ya-button {
+/* .ya-button {
   text-decoration: none;
   text-align: center;
   outline: var(--color_complementary);
@@ -141,10 +135,10 @@ h6,
   border: 2px solid var(--color_tertiary);
   color: var(--color_tertiary);
   background: var(--color_background);
-}
+} */
 
 /* LISTS */
-.ya-list > li {
+/* .ya-list > li {
   padding-left: 40px;
 }
 
@@ -178,21 +172,21 @@ h6,
 }
 
 .ya-ul-list-anchor > li::before {
-  content: "⇁"; /* Insert content that looks like bullets */
+  content: "⇁";
   padding-right: 8px;
 }
 
 .ya-ul-list_linked > li::before {
-  content: "•"; /* Insert content that looks like bullets */
+  content: "•";
   padding-right: 8px;
 }
 
 .ya-list-small {
   font-size: calc(var(--base_font-size) - 4px);
-}
+} */
 
 /* LINKS */
-.ya-link {
+/* .ya-link {
   text-decoration: none;
   color: var(--color_main);
 }
@@ -202,14 +196,14 @@ h6,
 }
 
 .ya-primary-link::before {
-  content: "⇁"; /* Insert content that looks like bullets */
+  content: "⇁";
   padding-right: 8px;
-}
+} */
 
 /* ICONS */
 /* FONT AWESOME IMPORTED */
 /* FEATURED ICONS */
-.ya-icon_featured {
+/* .ya-icon_featured {
   cursor: pointer;
   background-color: var(--color_main);
   border-radius: 100%;
@@ -217,10 +211,10 @@ h6,
 }
 .ya-icon_featured:hover {
   background-color: var(--color_complementary);
-}
+} */
 
 /* BREADCRUMBS */
-.ya-breadcrumbs {
+/* .ya-breadcrumbs {
   text-decoration: none;
   color: var(--color_complementary);
   font-size: calc(var(--base_font-size) - 4px);
@@ -228,10 +222,10 @@ h6,
 
 .ya-breadcrumbs:hover {
   color: var(--color_desaturated);
-}
+} */
 
 /* TABLE */
-.ya-table {
+/* .ya-table {
   border-collapse: collapse;
   width: 100%;
   border: 1px solid var(--color_background);
@@ -256,10 +250,10 @@ h6,
 
 .ya-table td {
   color: var(--color_tertiary);
-}
+} */
 
 /* COLORS */
-.ya-main-color_background {
+/* .ya-main-color_background {
   background: var(--color_main);
 }
 
@@ -283,10 +277,10 @@ h6,
 
 .ya-background-color_background {
   background: var(--color_background);
-}
+} */
 
 /* HIGHLIGHTS */
-.ya-highlight-module {
+/* .ya-highlight-module {
   padding: 15px;
   width: 70%;
 }
@@ -302,10 +296,10 @@ h6,
   background: var(--color_complementary);
   text-align: right;
   align-self: flex-start;
-}
+} */
 
 /* LOGO */
-.ya-logo {
+/* .ya-logo {
   display: block;
   background-repeat: no-repeat;
   background-position: center;
@@ -331,10 +325,10 @@ h6,
 }
 .ya-logo_black {
   background-image: url(https://docs.joomla.org/images/e/ea/Joomla-Mono-Vertical-logo-light-background-en.png);
-}
+} */
 
 /* QUOTES */
-.ya-quote {
+/* .ya-quote {
   background: var(--color_secondary);
   font-size: calc(var(--h1_font-size));
   padding: 1px 20px 20px 20px;
@@ -362,4 +356,4 @@ h6,
   bottom: -110px;
   right: 0;
   opacity: 0.5;
-}
+} */

@@ -9,7 +9,7 @@ import icons from "./state/icons/initialState";
 import links from "./state/links/initialState";
 import lists from "./state/lists/initialState";
 import logo from "./state/logo/initialState";
-import page_sample from "./state/page_sample/initialState";
+import sample_page from "./state/sample_page/initialState";
 import quote from "./state/quote/initialState";
 import table from "./state/table/initialState";
 import typography from "./state/typography/initialState";
@@ -27,7 +27,7 @@ const initialState = {
   links,
   lists,
   logo,
-  page_sample,
+  sample_page,
   quote,
   table,
   typography

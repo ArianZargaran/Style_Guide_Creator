@@ -1,8 +1,6 @@
 export default function() {
   return {
-    featured_icons: {
-      url: "featured-icons",
-      section: "Featured Icons",
+    "Featured Icons": {
       tag: "span",
       className: {
         "Flag Icon": "fas fa-flag fa-stack-1x fa-inverse ya-icon_featured",

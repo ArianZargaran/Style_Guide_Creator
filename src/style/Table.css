@@ -1,0 +1,26 @@
+.ya-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid var(--color_background);
+  background: var(--color_secondary);
+}
+
+.ya-table,
+.ya-table th,
+.ya-table td {
+  border: 1px solid var(--color_background);
+}
+
+.ya-table th,
+.ya-table td {
+  padding: 7px;
+}
+
+.ya-table th {
+  background: var(--color_tertiary);
+  color: var(--color_secondary);
+}
+
+.ya-table td {
+  color: var(--color_tertiary);
+}

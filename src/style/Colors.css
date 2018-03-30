@@ -1,0 +1,25 @@
+.ya-main-color_background {
+  background: var(--color_main);
+}
+
+.ya-secondary-color_background {
+  background: var(--color_secondary);
+}
+
+.ya-tertiary-color_background {
+  background: var(--color_tertiary);
+  color: var(--color_background);
+}
+
+.ya-complementary-color_background {
+  background: var(--color_complementary);
+}
+
+.ya-desaturated-color_background {
+  background: var(--color_desaturated);
+  color: var(--color_background);
+}
+
+.ya-background-color_background {
+  background: var(--color_background);
+}

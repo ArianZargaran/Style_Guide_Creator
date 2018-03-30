@@ -1,8 +1,6 @@
 export default function() {
   return {
-    colors: {
-      url: "colors",
-      section: "Colors",
+    Colors: {
       tag: "div",
       className: {
         "Main Color": "ya-main-color_background",

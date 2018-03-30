@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-/* CORRECT PAGE_SAMPLE SAMPLE_PAGE*/
-
-import "../styles/sgcreator/sgcreator-item-box/sgcreator-sample-page.css";
+import "../style/sgcreator/sgcreator-item-box/sgcreator-sample-page.css";
 
 class PageHeader extends Component {
   render() {
+    const page = this.props.category["Sample Page"];
+
     return (
       <section className="sgcreator-representation_section">
-        <h1>{this.props.list.sample_page.section}</h1>
+        <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(this.props.list.sample_page.className).map((item, i) => (
+          {Object.keys(page.className).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_sample-page sgcreator-align-left"
               itemID={i}
@@ -20,17 +20,11 @@ class PageHeader extends Component {
               <div className="sgcreator-sample-box">
                 <nav>
                   <p>
-                    <a href="#" className="ya-breadcrumbs">
-                      Link 1 /
-                    </a>
-                    <a href="#" className="ya-breadcrumbs">
-                      {" "}
-                      Link 2 /
-                    </a>
-                    <a href="#" className="ya-breadcrumbs">
-                      {" "}
-                      Link 3
-                    </a>
+                    <a className="ya-breadcrumbs">Link 1</a>
+                    <span> / </span>
+                    <a className="ya-breadcrumbs">Link 2</a>
+                    <span> / </span>
+                    <a className="ya-breadcrumbs">Link 3</a>
                   </p>
                 </nav>
                 <h1 class="ya-header ya-header_one">This is a Header</h1>
@@ -69,7 +63,7 @@ class PageHeader extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.sample_page };
+  return { category: state.sample_page };
 }
 
 export default connect(mapStateToProps)(PageHeader);

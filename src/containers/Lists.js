@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import "../styles/sgcreator/sgcreator-item-box/sgcreator-lists.css";
+import "../style/sgcreator/sgcreator-item-box/sgcreator-lists.css";
+import "../style/Lists.css";
 
 class Lists extends Component {
   render() {
+    const lists = this.props.category.Lists;
     return (
       <section className="sgcreator-representation_section">
-        <h1>{this.props.list.lists.section}</h1>
+        <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(this.props.list.lists.className).map((item, i) => {
+          {Object.keys(lists.className).map((item, i) => {
             if (i === 0) {
               return (
                 <div>
@@ -18,15 +20,15 @@ class Lists extends Component {
                     itemID={i}
                   >
                     <div className="sgcreator-sample-box">
-                      <ul className={this.props.list.lists.className[item][0]}>
+                      <ul className={lists.className[item][0]}>
                         <li>Lorem ipsum dolor sit amet.</li>
                         <li>Dicta optio cumque dolore hic ea facilis</li>
                         <li>Minus, possimus, veniam, incidunt eligendi</li>
                       </ul>
                     </div>
                     <div className="sgcreator-tag-box">
-                      {`<${this.props.list.lists.tag[i][0]} class="${
-                        this.props.list.lists.className[item][0]
+                      {`<${lists.tag[i][0]} class="${
+                        lists.className[item][0]
                       }">`}
                       {<br />}
                       {`    <li>Lorem ipsum dolor sit amet.</li>`}
@@ -35,7 +37,7 @@ class Lists extends Component {
                       {<br />}
                       {`    <li>Minus, possimus, veniam, incidunt eligendi</li>`}
                       {<br />}
-                      {`</${this.props.list.lists.tag[i][0]}>`}
+                      {`</${lists.tag[i][0]}>`}
                     </div>
                   </div>
                   <div
@@ -43,15 +45,15 @@ class Lists extends Component {
                     itemID={i}
                   >
                     <div className="sgcreator-sample-box">
-                      <ol className={this.props.list.lists.className[item][1]}>
+                      <ol className={lists.className[item][1]}>
                         <li>Lorem ipsum dolor sit amet.</li>
                         <li>Dicta optio cumque dolore hic ea facilis</li>
                         <li>Minus, possimus, veniam, incidunt eligendi</li>
                       </ol>
                     </div>
                     <div className="sgcreator-tag-box">
-                      {`<${this.props.list.lists.tag[i][1]} class="${
-                        this.props.list.lists.className[item][1]
+                      {`<${lists.tag[i][1]} class="${
+                        lists.className[item][1]
                       }">`}
                       {<br />}
                       {`    <li>Lorem ipsum dolor sit amet.</li>`}
@@ -60,7 +62,7 @@ class Lists extends Component {
                       {<br />}
                       {`    <li>Minus, possimus, veniam, incidunt eligendi</li>`}
                       {<br />}
-                      {`</${this.props.list.lists.tag[i][1]}>`}
+                      {`</${lists.tag[i][1]}>`}
                     </div>
                   </div>
                 </div>
@@ -75,7 +77,7 @@ class Lists extends Component {
                   key={i}
                 >
                   <div className="sgcreator-sample-box">
-                    <ul className={this.props.list.lists.className[item][0]}>
+                    <ul className={lists.className[item][0]}>
                       <li>
                         <a>Lorem ipsum dolor sit amet.</a>
                       </li>
@@ -88,9 +90,7 @@ class Lists extends Component {
                     </ul>
                   </div>
                   <div className="sgcreator-tag-box">
-                    {`<${this.props.list.lists.tag[i][0]} class="${
-                      this.props.list.lists.className[item][0]
-                    }">`}
+                    {`<${lists.tag[i][0]} class="${lists.className[item][0]}">`}
                     {<br />}
                     {`    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>`}
                     {<br />}
@@ -98,7 +98,7 @@ class Lists extends Component {
                     {<br />}
                     {`    <li><a href="/">Minus, possimus, veniam, incidunt eligendi</a></li>`}
                     {<br />}
-                    {`</${this.props.list.lists.tag[i][0]}>`}
+                    {`</${lists.tag[i][0]}>`}
                   </div>
                 </div>
                 <div
@@ -107,7 +107,7 @@ class Lists extends Component {
                   key={i}
                 >
                   <div className="sgcreator-sample-box">
-                    <ol className={this.props.list.lists.className[item][1]}>
+                    <ol className={lists.className[item][1]}>
                       <li>
                         <a>Lorem ipsum dolor sit amet.</a>
                       </li>
@@ -120,9 +120,7 @@ class Lists extends Component {
                     </ol>
                   </div>
                   <div className="sgcreator-tag-box">
-                    {`<${this.props.list.lists.tag[i][1]} class="${
-                      this.props.list.lists.className[item][1]
-                    }">`}
+                    {`<${lists.tag[i][1]} class="${lists.className[item][1]}">`}
                     {<br />}
                     {`    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>`}
                     {<br />}
@@ -130,7 +128,7 @@ class Lists extends Component {
                     {<br />}
                     {`    <li><a href="/">Minus, possimus, veniam, incidunt eligendi</a></li>`}
                     {<br />}
-                    {`</${this.props.list.lists.tag[i][1]}>`}
+                    {`</${lists.tag[i][1]}>`}
                   </div>
                 </div>
               </div>
@@ -143,7 +141,7 @@ class Lists extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.lists };
+  return { category: state.lists };
 }
 
 export default connect(mapStateToProps)(Lists);

@@ -1,27 +1,31 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import "../style/Links.css";
+
 class Links extends Component {
   render() {
+    const links = this.props.category.Links;
+
     return (
       <section className="sgcreator-representation_section">
-        <h1>{this.props.list.links.section}</h1>
+        <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(this.props.list.links.className).map((item, i) => (
+          {Object.keys(links.className).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_links"
               itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <a href="#" className={this.props.list.links.className[item]}>
+                <a href="#" className={links.className[item]}>
                   Lorem impsum dolor emet
                 </a>
               </div>
               <div className="sgcreator-tag-box">
-                {`<${this.props.list.links.tag} href="/" class="${
-                  this.props.list.links.className[item]
-                }">Lorem impsum dolor emet</${this.props.list.links.tag}>`}
+                {`<${links.tag} href="/" class="${
+                  links.className[item]
+                }">Lorem impsum dolor emet</${links.tag}>`}
               </div>
             </div>
           ))}
@@ -32,7 +36,7 @@ class Links extends Component {
 }
 
 function mapStateToProps(state) {
-  return { list: state.links };
+  return { category: state.links };
 }
 
 export default connect(mapStateToProps)(Links);

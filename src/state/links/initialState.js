@@ -1,8 +1,6 @@
 export default function() {
   return {
-    links: {
-      url: "links",
-      section: "Links",
+    Links: {
       tag: "a",
       className: {
         linkPrimary: "ya-link ya-primary-link",

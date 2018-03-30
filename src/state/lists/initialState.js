@@ -1,8 +1,6 @@
 export default function() {
   return {
-    lists: {
-      url: "lists",
-      section: "Lists",
+    Lists: {
       tag: [["ul", "ol"], ["ul", "ol"], ["ul", "ol"], ["ul", "ol"]],
       className: {
         listItem: ["ya-list ya-ul-list", "ya-list ya-ol-list"],

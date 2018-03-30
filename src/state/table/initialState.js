@@ -1,8 +1,6 @@
 export default function() {
   return {
-    table: {
-      url: "table",
-      section: "Table",
+    Table: {
       tag: "table",
       className: {
         tableDisplay: "ya-table"

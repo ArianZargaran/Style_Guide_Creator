@@ -4,36 +4,59 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 class Categories extends Component {
+  state = {
+    categories: [
+      "Headers",
+      "Typography",
+      "Buttons",
+      "Lists",
+      "Links",
+      "Icons",
+      "Featured Icons",
+      "Logo",
+      "Breadcrumbs",
+      "Table",
+      "Colors",
+      "Highlights",
+      "Quote",
+      "Sample Page"
+    ]
+  };
+
   render() {
     const { children = "YourApp Name" } = this.props;
+    const logo = this.props.logo.Logo;
 
     return (
       <section className="sgcreator-categories_section">
         <Link to="/">
-          <div
-            className={this.props.logo.logo.className["Full color logo"].name}
-          />
+          <div className={logo.className["Full color logo"].name} />
           <h1 className="sgcreator-category_header">{children}</h1>
         </Link>
         <ol className="sgcreator-categories_list">{this.renderIndexList()}</ol>
       </section>
     );
   }
-
   renderIndexList() {
-    return _.map(this.props.list).map((elem, idx) => {
+    return _.map(this.state.categories).map((category, idx) => {
       return (
-        <Link to={elem.url} key={elem.section}>
-          <li className="sgcreator-categories_list_item">{elem.section}</li>
+        <Link to={this.formatUrl(category)} key={category}>
+          <li className="sgcreator-categories_list_item">{category}</li>
         </Link>
       );
     });
+  }
+
+  formatUrl(category) {
+    const result = String(category)
+      .toLowerCase()
+      .replace(" ", "-");
+    return result;
   }
 }
 
 function mapStateToProps(state) {
   return {
-    list: state.list,
     logo: state.logo
   };
 }
