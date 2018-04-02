@@ -5,11 +5,11 @@ import store from "./store";
 
 import Router from "./components/Router";
 
+// import "./style/style-guide.css";
 import "./style/sgcreator/sgcreator-hook.css";
 import "./style/sgcreator/sgcreator-categories.css";
 import "./style/sgcreator/sgcreator-section.css";
 import "./style/Root.css";
-// import "./style/style-guide.css";
 
 ReactDOM.render(
   <Provider store={store}>
