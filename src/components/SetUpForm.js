@@ -69,6 +69,6 @@ function mapStateToProps(state) {
 SetUpForm = connect(mapStateToProps)(SetUpForm);
 
 export default reduxForm({
-  validate,
-  form: "SetUpForm"
+  form: "SetUpForm",
+  validate
 })(SetUpForm);
