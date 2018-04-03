@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import { reducer as formReducer } from "redux-form";
 
 import breadcrumbs from "../state/breadcrumbs/initialState";
 import buttons from "../state/buttons/initialState";
@@ -9,6 +10,7 @@ import highlights from "../state/highlights/initialState";
 import icons from "../state/icons/initialState";
 import links from "../state/links/initialState";
 import lists from "../state/lists/initialState";
+import formComponent from "../state/form/initialState";
 import logo from "../state/logo/initialState";
 import sample_page from "../state/sample_page/initialState";
 import quote from "../state/quote/initialState";
@@ -29,7 +31,9 @@ const reducers = combineReducers({
   sample_page,
   quote,
   table,
-  typography
+  typography,
+  formComponent,
+  form: formReducer
 });
 
 export default reducers;

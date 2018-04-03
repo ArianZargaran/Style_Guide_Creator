@@ -12,7 +12,7 @@ class Breadcrumbs extends Component {
         <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
           {Object.keys(breadcrumbs.className).map((item, i) => (
-            <div className="sgcreator-item-box" itemID={i} key={i}>
+            <div className="sgcreator-item-box" key={i}>
               <div className="sgcreator-sample-box">
                 <nav>
                   <p>

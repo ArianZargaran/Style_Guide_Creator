@@ -1,4 +1,5 @@
-.ya-button {
+.ya-button,
+button {
   text-decoration: none;
   text-align: center;
   outline: var(--color_complementary);
@@ -10,14 +11,16 @@
   display: inline-block;
 }
 
-.ya-button:hover {
+.ya-button:hover,
+button:hover {
   border: 2px solid var(--color_desaturated);
   background: var(--color_desaturated);
   color: var(--color_background);
   cursor: pointer;
 }
 
-.ya-button_primary {
+.ya-button_primary,
+button {
   border: 2px solid var(--color_main);
   color: var(--color_background);
   background: var(--color_main);

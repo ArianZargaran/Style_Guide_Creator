@@ -9,6 +9,7 @@ import Links from "../containers/Links";
 import Lists from "../containers/Lists";
 import Icons from "../containers/Icons";
 import Logo from "../containers/Logo";
+import Form from "../containers/Form";
 import Breadcrumbs from "../containers/Breadcrumbs";
 import Table from "../containers/Table";
 import Colors from "../containers/Colors";
@@ -38,6 +39,7 @@ export default class Router extends Component {
             <Route path="/links" component={Links} />
             <Route path="/buttons" component={Buttons} />
             <Route path="/typography" component={Typography} />
+            <Route path="/form" component={Form} />
             <Route path="/sample-page" component={SamplePage} />
             <Route path="/" component={Home} />
           </Switch>

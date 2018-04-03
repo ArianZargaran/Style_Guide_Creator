@@ -14,6 +14,7 @@ class Categories extends Component {
       "Icons",
       "Featured Icons",
       "Logo",
+      "Form",
       "Breadcrumbs",
       "Table",
       "Colors",
