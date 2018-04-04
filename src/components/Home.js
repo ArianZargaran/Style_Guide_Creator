@@ -1,5 +1,5 @@
 import React from "react";
-import SetUpForm from "./SetUpForm";
+import SetUpForm from "../containers/SetUpForm";
 
 const Home = () => {
   return (

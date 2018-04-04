@@ -1,10 +1,10 @@
-export default function() {
-  return {
-    Breadcrumbs: {
-      tag: "a",
-      className: {
-        "breadcrumbs bar": "ya-breadcrumbs"
-      }
+const breadcrumbs = {
+  Breadcrumbs: {
+    tag: "a",
+    className: {
+      "breadcrumbs bar": "ya-breadcrumbs"
     }
-  };
-}
+  }
+};
+
+export default breadcrumbs;

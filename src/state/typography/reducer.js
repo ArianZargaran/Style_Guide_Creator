@@ -1,8 +1,10 @@
 import initialState from "./initialState";
 
-export default (state = initialState, action) => {
+const typographyReducer = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
+
+export default typographyReducer;

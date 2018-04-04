@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import fetchAppName from "../state/set_up/action-creators";
 
 class SetUpForm extends Component {
   render() {
@@ -9,8 +11,8 @@ class SetUpForm extends Component {
 
     return (
       <form
-        onSubmit={handleSubmit(this.onSubmit.bind(this))}
         className={formComponent.className["form-tag"]}
+        onSubmit={handleSubmit(this.onSubmit.bind(this))}
       >
         <h2>Set Up YourApp</h2>
         <Field label="App Name" name="name" component={this.renderFirstField} />
@@ -45,7 +47,7 @@ class SetUpForm extends Component {
   }
 
   onSubmit(values) {
-    console.log(values);
+    this.props.fetchAppName(values);
   }
 }
 
@@ -66,7 +68,11 @@ function mapStateToProps(state) {
   };
 }
 
-SetUpForm = connect(mapStateToProps)(SetUpForm);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchAppName }, dispatch);
+}
+
+SetUpForm = connect(mapStateToProps, mapDispatchToProps)(SetUpForm);
 
 export default reduxForm({
   form: "SetUpForm",

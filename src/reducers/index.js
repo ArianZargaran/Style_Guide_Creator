@@ -1,21 +1,22 @@
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
 
-import breadcrumbs from "../state/breadcrumbs/initialState";
-import buttons from "../state/buttons/initialState";
-import colors from "../state/colors/initialState";
-import featured_icons from "../state/featured_icons/initialState";
-import headers from "../state/headers/initialState";
-import highlights from "../state/highlights/initialState";
-import icons from "../state/icons/initialState";
-import links from "../state/links/initialState";
-import lists from "../state/lists/initialState";
-import formComponent from "../state/form/initialState";
-import logo from "../state/logo/initialState";
-import sample_page from "../state/sample_page/initialState";
-import quote from "../state/quote/initialState";
-import table from "../state/table/initialState";
-import typography from "../state/typography/initialState";
+import breadcrumbs from "../state/breadcrumbs/reducer";
+import buttons from "../state/buttons/reducer";
+import colors from "../state/colors/reducer";
+import featured_icons from "../state/featured_icons/reducer";
+import headers from "../state/headers/reducer";
+import highlights from "../state/highlights/reducer";
+import icons from "../state/icons/reducer";
+import links from "../state/links/reducer";
+import lists from "../state/lists/reducer";
+import formComponent from "../state/form/reducer";
+import logo from "../state/logo/reducer";
+import sample_page from "../state/sample_page/reducer";
+import quote from "../state/quote/reducer";
+import table from "../state/table/reducer";
+import typography from "../state/typography/reducer";
+import setUpForm from "../state/set_up/reducer";
 
 const reducers = combineReducers({
   breadcrumbs,
@@ -33,6 +34,7 @@ const reducers = combineReducers({
   table,
   typography,
   formComponent,
+  setUpForm,
   form: formReducer
 });
 
