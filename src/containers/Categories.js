@@ -31,7 +31,7 @@ class Categories extends Component {
       <section className="sgcreator-categories_section">
         <Link to="/">
           <div className={logo.className["Full color logo"].name} />
-          <h1 className="sgcreator-category_header">{this.props.setUp.name}</h1>
+          <h1 className="sgcreator-category_header">{this.props.appId.name}</h1>
         </Link>
         <ol className="sgcreator-categories_list">{this.renderIndexList()}</ol>
       </section>
@@ -58,7 +58,7 @@ class Categories extends Component {
 function mapStateToProps(state) {
   return {
     logo: state.logo,
-    setUp: state.setUpForm
+    appId: state.appId
   };
 }
 

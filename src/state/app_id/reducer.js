@@ -1,9 +1,9 @@
 import initialState from "./initialState";
-import { FETCH_APP_NAME } from "./action-creators";
+import { FETCH_APP_ID } from "./action-creators";
 
-const setUpReducer = (state = initialState, action) => {
+const appId = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_APP_NAME: {
+    case FETCH_APP_ID: {
       state = action.payload;
       break;
     }
@@ -13,4 +13,4 @@ const setUpReducer = (state = initialState, action) => {
   return state;
 };
 
-export default setUpReducer;
+export default appId;

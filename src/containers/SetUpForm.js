@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import fetchAppName from "../state/set_up/action-creators";
+import fetchAppId from "../state/app_id/action-creators";
 
 class SetUpForm extends Component {
   render() {
@@ -47,7 +47,7 @@ class SetUpForm extends Component {
   }
 
   onSubmit(values) {
-    this.props.fetchAppName(values);
+    this.props.fetchAppId(values);
   }
 }
 
@@ -69,7 +69,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchAppName }, dispatch);
+  return bindActionCreators({ fetchAppId }, dispatch);
 }
 
 SetUpForm = connect(mapStateToProps, mapDispatchToProps)(SetUpForm);

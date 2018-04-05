@@ -16,7 +16,7 @@ import sample_page from "../state/sample_page/reducer";
 import quote from "../state/quote/reducer";
 import table from "../state/table/reducer";
 import typography from "../state/typography/reducer";
-import setUpForm from "../state/set_up/reducer";
+import appId from "../state/app_id/reducer";
 
 const reducers = combineReducers({
   breadcrumbs,
@@ -34,7 +34,7 @@ const reducers = combineReducers({
   table,
   typography,
   formComponent,
-  setUpForm,
+  appId,
   form: formReducer
 });
 

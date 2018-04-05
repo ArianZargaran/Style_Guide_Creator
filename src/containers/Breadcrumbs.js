@@ -6,7 +6,7 @@ import "../style/Breadcrumbs.css";
 class Breadcrumbs extends Component {
   render() {
     const breadcrumbs = this.props.category.Breadcrumbs;
-
+    const prefix = this.props.appId.prefix;
     return (
       <section className="sgcreator-representation_section">
         <h1>{Object.keys(this.props.category)[0]}</h1>
@@ -35,7 +35,7 @@ class Breadcrumbs extends Component {
                 {<br />}
                 {`    <p>`}
                 {<br />}
-                {`        <${breadcrumbs.tag} className="${
+                {`        <${breadcrumbs.tag} className="${prefix}${
                   breadcrumbs.className[item]
                 }">`}
                 {<br />}
@@ -43,7 +43,7 @@ class Breadcrumbs extends Component {
                 {<br />}
                 {`        </${breadcrumbs.tag}> / `}
                 {<br />}
-                {`        <${breadcrumbs.tag} className="${
+                {`        <${breadcrumbs.tag} className="${prefix}${
                   breadcrumbs.className[item]
                 }">`}
                 {<br />}
@@ -51,7 +51,7 @@ class Breadcrumbs extends Component {
                 {<br />}
                 {`        </${breadcrumbs.tag}> / `}
                 {<br />}
-                {`        <${breadcrumbs.tag} className="${
+                {`        <${breadcrumbs.tag} className="${prefix}${
                   breadcrumbs.className[item]
                 }">`}
                 {<br />}
@@ -72,7 +72,10 @@ class Breadcrumbs extends Component {
 }
 
 function mapStateToProps(state) {
-  return { category: state.breadcrumbs };
+  return {
+    category: state.breadcrumbs,
+    appId: state.appId
+  };
 }
 
 export default connect(mapStateToProps)(Breadcrumbs);
