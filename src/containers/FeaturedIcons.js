@@ -26,7 +26,7 @@ class FeaturedIcons extends Component {
                   </span>
                 </a>
               </div>
-              <div className="sgcreator-tag-box sgcreator-align-left">
+              <div className="sgcreator-tag-box">
                 {`<span class="fa-stack fa-2x">`}
                 {<br />}
                 {`    <i class="fas fa-circle fa-stack-2x"></i>`}

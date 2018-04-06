@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import fetchAppId from "../state/app_id/action-creators";
+import { fetchAppId } from "../state/app_id/action-creators";
 
 class AppIdForm extends Component {
   render() {

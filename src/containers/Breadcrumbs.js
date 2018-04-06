@@ -9,7 +9,7 @@ class Breadcrumbs extends Component {
     const prefix = this.props.appId.prefix;
     return (
       <section className="sgcreator-representation_section">
-        <h1>{Object.keys(this.props.category)[0]}</h1>
+        <h1>Breadcrumbs</h1>
         <div className="sgcreator-representation_wrapper">
           {Object.keys(breadcrumbs).map((item, i) => (
             <div className="sgcreator-item-box" key={i}>
@@ -30,7 +30,7 @@ class Breadcrumbs extends Component {
                   </p>
                 </nav>
               </div>
-              <div className="sgcreator-tag-box sgcreator-align-left">
+              <div className="sgcreator-tag-box">
                 {`<nav>`}
                 {<br />}
                 {`    <p>`}

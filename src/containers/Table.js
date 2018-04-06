@@ -37,7 +37,7 @@ class Table extends Component {
                   </tr>
                 </table>
               </div>
-              <div className="sgcreator-tag-box sgcreator-align-left">
+              <div className="sgcreator-tag-box">
                 {`<table class="${prefix}${table[item]}">`}
                 {<br />}
                 {`    <tr>`}

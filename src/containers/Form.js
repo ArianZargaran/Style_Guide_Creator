@@ -35,7 +35,7 @@ class Form extends Component {
                   <input type="submit" value="Submit" />
                 </form>
               </div>
-              <div className="sgcreator-tag-box sgcreator-align-left">
+              <div className="sgcreator-tag-box">
                 {`<form class="${prefix}${form[item]}">`}
                 {<br />}
                 {`    <label for="full name">Full Name</label>`}
