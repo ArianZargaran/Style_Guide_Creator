@@ -1,14 +1,11 @@
 const colors = {
   Colors: {
-    tag: "div",
-    className: {
-      "Main Color": "ya-main-color_background",
-      "Secondary Color": "ya-secondary-color_background",
-      "Tertiary Color": "ya-tertiary-color_background",
-      "Complementary Color": "ya-complementary-color_background",
-      "Desaturated Color": "ya-desaturated-color_background",
-      "Background Color": "ya-background-color_background"
-    }
+    "Main Color": "main-color_background",
+    "Secondary Color": "secondary-color_background",
+    "Tertiary Color": "tertiary-color_background",
+    "Complementary Color": "complementary-color_background",
+    "Desaturated Color": "desaturated-color_background",
+    "Background Color": "background-color_background"
   }
 };
 

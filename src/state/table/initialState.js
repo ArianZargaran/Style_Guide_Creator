@@ -1,9 +1,6 @@
 const table = {
   Table: {
-    tag: "table",
-    className: {
-      tableDisplay: "ya-table"
-    }
+    tableDisplay: "table"
   }
 };
 

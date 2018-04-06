@@ -7,24 +7,23 @@ import "../style/Colors.css";
 class Colors extends Component {
   render() {
     const colors = this.props.category.Colors;
+    const prefix = this.props.appId.prefix;
 
     return (
       <section className="sgcreator-representation_section">
         <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(colors.className).map((item, i) => (
+          {Object.keys(colors).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_colors"
               itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <p className={colors.className[item]}>{item}</p>
+                <p className={colors[item]}>{item}</p>
               </div>
               <div className="sgcreator-tag-box">
-                {`<${colors.tag} class="${colors.className[item]}"></${
-                  colors.tag
-                }>`}
+                {`<div class="${prefix}${colors[item]}"></div>`}
               </div>
             </div>
           ))}
@@ -35,7 +34,10 @@ class Colors extends Component {
 }
 
 function mapStateToProps(state) {
-  return { category: state.colors };
+  return {
+    category: state.colors,
+    appId: state.appId
+  };
 }
 
 export default connect(mapStateToProps)(Colors);

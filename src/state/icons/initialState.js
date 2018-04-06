@@ -1,16 +1,13 @@
 const icons = {
   Icons: {
-    tag: "i",
-    className: {
-      "Hyphen Icon": "fas fa-minus",
-      "Plus Icon": "fas fa-plus",
-      "Asterisk Icon": "fas fa-asterisk",
-      "Chevron Right Icon": "fas fa-chevron-right",
-      "Chevron Down Icon": "fas fa-chevron-down",
-      "Hash Icon": "fab fa-slack-hash",
-      "Code Parenthesis": "fas fa-code",
-      "Exclamation Icon": "fas fa-exclamation"
-    }
+    "Hyphen Icon": "icon fas fa-minus",
+    "Plus Icon": "icon fas fa-plus",
+    "Asterisk Icon": "icon fas fa-asterisk",
+    "Chevron Right Icon": "icon fas fa-chevron-right",
+    "Chevron Down Icon": "icon fas fa-chevron-down",
+    "Hash Icon": "icon fab fa-slack-hash",
+    "Code Parenthesis": "icon fas fa-code",
+    "Exclamation Icon": "icon fas fa-exclamation"
   }
 };
 

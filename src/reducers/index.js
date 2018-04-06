@@ -12,7 +12,7 @@ import links from "../state/links/reducer";
 import lists from "../state/lists/reducer";
 import formComponent from "../state/form/reducer";
 import logo from "../state/logo/reducer";
-import sample_page from "../state/sample_page/reducer";
+import form_elements from "../state/form_elements/reducer";
 import quote from "../state/quote/reducer";
 import table from "../state/table/reducer";
 import typography from "../state/typography/reducer";
@@ -29,7 +29,7 @@ const reducers = combineReducers({
   links,
   lists,
   logo,
-  sample_page,
+  form_elements,
   quote,
   table,
   typography,

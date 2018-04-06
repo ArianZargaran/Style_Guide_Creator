@@ -6,6 +6,7 @@ import "../style/Featured_icons.css";
 class FeaturedIcons extends Component {
   render() {
     const ficons = this.props.category["Featured Icons"];
+    const prefix = this.props.appId.prefix;
 
     return (
       <section className="sgcreator-representation_section">
@@ -26,13 +27,13 @@ class FeaturedIcons extends Component {
                 </a>
               </div>
               <div className="sgcreator-tag-box sgcreator-align-left">
-                {`<${ficons.tag} class="fa-stack fa-2x">`}
+                {`<span class="fa-stack fa-2x">`}
                 {<br />}
                 {`    <i class="fas fa-circle fa-stack-2x"></i>`}
                 {<br />}
-                {`    <i class="${ficons.className[item]}"></i>`}
+                {`    <i class="${prefix}${ficons.className[item]}"></i>`}
                 {<br />}
-                {`</${ficons.tag}>`}
+                {`</span>`}
               </div>
             </div>
           ))}
@@ -43,7 +44,10 @@ class FeaturedIcons extends Component {
 }
 
 function mapStateToProps(state) {
-  return { category: state.featured_icons };
+  return {
+    category: state.featured_icons,
+    appId: state.appId
+  };
 }
 
 export default connect(mapStateToProps)(FeaturedIcons);

@@ -1,22 +1,22 @@
 /* TYPOGRAPHY */
-.ya-small-text {
+.small-text {
   font-size: calc(var(--base_font-size) - 4px);
 }
-.ya-base-text {
+.base-text {
   font-size: var(--base_font-size);
 }
-.ya-medium-text {
+.medium-text {
   font-size: calc(var(--base_font-size) + 2px);
 }
-.ya-large-text {
+.large-text {
   font-size: calc(var(--base_font-size) + 4px);
 }
-.ya-xlarge-text {
+.xlarge-text {
   font-size: calc(var(--base_font-size) + 6px);
 }
-.ya-xxlarge-text {
+.xxlarge-text {
   font-size: calc(var(--base_font-size) + 8px);
 }
-.ya-huge-text {
+.huge-text {
   font-size: calc(var(--base_font-size) * 2);
 }

@@ -6,26 +6,27 @@ import "../style/Links.css";
 class Links extends Component {
   render() {
     const links = this.props.category.Links;
+    const prefix = this.props.appId.prefix;
 
     return (
       <section className="sgcreator-representation_section">
         <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(links.className).map((item, i) => (
+          {Object.keys(links).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_links"
               itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <a href="#" className={links.className[item]}>
+                <a href="" className={links[item]}>
                   Lorem impsum dolor emet
                 </a>
               </div>
               <div className="sgcreator-tag-box">
-                {`<${links.tag} href="/" class="${
-                  links.className[item]
-                }">Lorem impsum dolor emet</${links.tag}>`}
+                {`<a href="" class="${prefix}${
+                  links[item]
+                }">Lorem impsum dolor emet</a>`}
               </div>
             </div>
           ))}
@@ -36,7 +37,10 @@ class Links extends Component {
 }
 
 function mapStateToProps(state) {
-  return { category: state.links };
+  return {
+    category: state.links,
+    appId: state.appId
+  };
 }
 
 export default connect(mapStateToProps)(Links);

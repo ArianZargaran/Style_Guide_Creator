@@ -17,7 +17,7 @@ import Headers from "../containers/Headers";
 import Quote from "../containers/Quote";
 import Highlights from "../containers/Highlights";
 import FeaturedIcons from "../containers/FeaturedIcons";
-import SamplePage from "../containers/SamplePage";
+import FormElements from "../containers/FormElements";
 
 export default class Router extends Component {
   render() {
@@ -40,7 +40,7 @@ export default class Router extends Component {
             <Route path="/buttons" component={Buttons} />
             <Route path="/typography" component={Typography} />
             <Route path="/form" component={Form} />
-            <Route path="/sample-page" component={SamplePage} />
+            <Route path="/form-elements" component={FormElements} />
             <Route path="/" component={Home} />
           </Switch>
         </div>

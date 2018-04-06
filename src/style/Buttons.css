@@ -1,4 +1,4 @@
-.ya-button,
+.button,
 button {
   text-decoration: none;
   text-align: center;
@@ -11,7 +11,7 @@ button {
   display: inline-block;
 }
 
-.ya-button:hover,
+.button:hover,
 button:hover {
   border: 2px solid var(--color_desaturated);
   background: var(--color_desaturated);
@@ -19,18 +19,18 @@ button:hover {
   cursor: pointer;
 }
 
-.ya-button_primary,
+.button_primary,
 button {
   border: 2px solid var(--color_main);
   color: var(--color_background);
   background: var(--color_main);
 }
-.ya-button_secondary {
+.button_secondary {
   border: 2px solid var(--color_main);
   color: var(--color_main);
   background: var(--color_background);
 }
-.ya-button_inverted-block {
+.button_inverted-block {
   border: 2px solid var(--color_tertiary);
   color: var(--color_tertiary);
   background: var(--color_background);

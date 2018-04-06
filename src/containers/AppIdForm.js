@@ -4,21 +4,29 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import fetchAppId from "../state/app_id/action-creators";
 
-class SetUpForm extends Component {
+class AppIdForm extends Component {
   render() {
     const formComponent = this.props.formComponent.Form;
+    const prefix = this.props.appId.prefix;
+    const name = this.props.appId.name;
     const { handleSubmit } = this.props;
 
     return (
       <form
-        className={formComponent.className["form-tag"]}
+        className={formComponent["form-tag"]}
         onSubmit={handleSubmit(this.onSubmit.bind(this))}
       >
         <h2>Set Up YourApp</h2>
-        <Field label="App Name" name="name" component={this.renderFirstField} />
+        <Field
+          label="App Name"
+          name="name"
+          placeholder={name}
+          component={this.renderFirstField}
+        />
         <Field
           label="CSS classes prefix"
           name="prefix"
+          placeholder={prefix}
           component={this.renderField}
         />
         <button type="submit">Submit</button>
@@ -28,9 +36,15 @@ class SetUpForm extends Component {
 
   renderFirstField(field) {
     return (
-      <div className="ya-row">
-        <label className="ya-label">{field.label}</label>
-        <input className="ya-input" type="text" {...field.input} autoFocus />
+      <div className="row">
+        <label className="label">{field.label}</label>
+        <input
+          placeholder={field.placeholder}
+          className="input"
+          type="text"
+          {...field.input}
+          autoFocus
+        />
         <p>{field.meta.touched ? field.meta.error : ""}</p>
       </div>
     );
@@ -38,9 +52,14 @@ class SetUpForm extends Component {
 
   renderField(field) {
     return (
-      <div className="ya-row">
-        <label className="ya-label">{field.label}</label>
-        <input className="ya-input" type="text" {...field.input} />
+      <div className="row">
+        <label className="label">{field.label}</label>
+        <input
+          placeholder={field.placeholder}
+          className="input"
+          type="text"
+          {...field.input}
+        />
         <p>{field.meta.touched ? field.meta.error : ""}</p>
       </div>
     );
@@ -64,7 +83,8 @@ function validate(values) {
 
 function mapStateToProps(state) {
   return {
-    formComponent: state.formComponent
+    formComponent: state.formComponent,
+    appId: state.appId
   };
 }
 
@@ -72,9 +92,9 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchAppId }, dispatch);
 }
 
-SetUpForm = connect(mapStateToProps, mapDispatchToProps)(SetUpForm);
+AppIdForm = connect(mapStateToProps, mapDispatchToProps)(AppIdForm);
 
 export default reduxForm({
-  form: "SetUpForm",
+  form: "AppIdForm",
   validate
-})(SetUpForm);
+})(AppIdForm);

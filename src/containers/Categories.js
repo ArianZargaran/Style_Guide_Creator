@@ -15,23 +15,24 @@ class Categories extends Component {
       "Featured Icons",
       "Logo",
       "Form",
+      "Form Elements",
       "Breadcrumbs",
       "Table",
       "Colors",
       "Highlights",
-      "Quote",
-      "Sample Page"
+      "Quote"
     ]
   };
 
   render() {
     const logo = this.props.logo.Logo;
+    const name = this.props.appId.name;
 
     return (
       <section className="sgcreator-categories_section">
         <Link to="/">
-          <div className={logo.className["Full color logo"].name} />
-          <h1 className="sgcreator-category_header">{this.props.appId.name}</h1>
+          <div className={logo["Full color logo"].name} />
+          <h1 className="sgcreator-category_header">{name}</h1>
         </Link>
         <ol className="sgcreator-categories_list">{this.renderIndexList()}</ol>
       </section>
@@ -63,5 +64,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(Categories);
-
-// className = { logo.className["Full color logo"].name }

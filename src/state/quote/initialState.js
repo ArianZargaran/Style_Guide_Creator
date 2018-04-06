@@ -1,10 +1,5 @@
 const quote = {
-  Quote: {
-    tag: "p",
-    className: {
-      Quote: "ya-quote"
-    }
-  }
+  Quote: { quote: "quote" }
 };
 
 export default quote;

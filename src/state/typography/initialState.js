@@ -1,15 +1,12 @@
 const typography = {
   Typography: {
-    tag: "p",
-    className: {
-      smallText: "ya-small-text",
-      baseText: "ya-base-text",
-      mediumText: "ya-medium-text",
-      largeText: "ya-large-text",
-      xlargeText: "ya-xlarge-text",
-      xxlargeText: "ya-xxlarge-text",
-      hugeText: "ya-huge-text"
-    }
+    smallText: "small-text",
+    baseText: "base-text",
+    mediumText: "medium-text",
+    largeText: "large-text",
+    xlargeText: "xlarge-text",
+    xxlargeText: "xxlarge-text",
+    hugeText: "huge-text"
   }
 };
 

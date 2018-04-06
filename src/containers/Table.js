@@ -6,18 +6,20 @@ import "../style/Table.css";
 class Table extends Component {
   render() {
     const table = this.props.category.Table;
+    const prefix = this.props.appId.prefix;
+
     return (
       <section className="sgcreator-representation_section">
         <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(table.className).map((item, i) => (
+          {Object.keys(table).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_table"
               itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <table className={table.className[item]}>
+                <table className={table[item]}>
                   <tr>
                     <th>1</th>
                     <th>2</th>
@@ -36,7 +38,7 @@ class Table extends Component {
                 </table>
               </div>
               <div className="sgcreator-tag-box sgcreator-align-left">
-                {`<${table.tag} class="${table.className[item]}">`}
+                {`<table class="${prefix}${table[item]}">`}
                 {<br />}
                 {`    <tr>`}
                 {<br />}
@@ -68,7 +70,7 @@ class Table extends Component {
                 {<br />}
                 {`    </tr>`}
                 {<br />}
-                {`</${table.tag}>`}
+                {`</table>`}
               </div>
             </div>
           ))}
@@ -79,7 +81,10 @@ class Table extends Component {
 }
 
 function mapStateToProps(state) {
-  return { category: state.table };
+  return {
+    category: state.table,
+    appId: state.appId
+  };
 }
 
 export default connect(mapStateToProps)(Table);

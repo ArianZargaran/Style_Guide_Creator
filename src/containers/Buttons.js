@@ -7,26 +7,27 @@ import "../style/Buttons.css";
 class Buttons extends Component {
   render() {
     const buttons = this.props.category.Buttons;
+    const prefix = this.props.appId.prefix;
 
     return (
       <section className="sgcreator-representation_section">
         <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(buttons.className).map((item, i) => (
+          {Object.keys(buttons).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_buttons"
               itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <button href="#" className={buttons.className[item]}>
+                <button href="#" className={buttons[item]}>
                   Learn more
                 </button>
               </div>
               <div className="sgcreator-tag-box">
-                {`<${buttons.tag} href="/" class="${
-                  buttons.className[item]
-                }">Learn more</${buttons.tag}>`}
+                {`<button href="/" class="${prefix}${
+                  buttons[item]
+                }">Learn more</button>`}
               </div>
             </div>
           ))}
@@ -37,7 +38,10 @@ class Buttons extends Component {
 }
 
 function mapStateToProps(state) {
-  return { category: state.buttons };
+  return {
+    category: state.buttons,
+    appId: state.appId
+  };
 }
 
 export default connect(mapStateToProps)(Buttons);

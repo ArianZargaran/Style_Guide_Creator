@@ -1,21 +1,12 @@
 const lists = {
   Lists: {
-    tag: [["ul", "ol"], ["ul", "ol"], ["ul", "ol"], ["ul", "ol"]],
-    className: {
-      listItem: ["ya-list ya-ul-list", "ya-list ya-ol-list"],
-      listLinks: [
-        "ya-list ya-ul-list ya-ul-list_linked",
-        "ya-list ya-ol-list ya-ol-list_linked"
-      ],
-      listAnchor: [
-        "ya-list ya-ul-list ya-ul-list-anchor",
-        "ya-list ya-ol-list ya-ol-list-anchor"
-      ],
-      listAnchorSmall: [
-        "ya-list  ya-ul-list ya-ul-list-anchor ya-list-small",
-        "ya-list  ya-ol-list ya-ol-list-anchor ya-list-small"
-      ]
-    }
+    listItem: ["list ul-list", "list ol-list"],
+    listLinks: ["list ul-list ul-list_linked", "list ol-list ol-list_linked"],
+    listAnchor: ["list ul-list ul-list-anchor", "list ol-list ol-list-anchor"],
+    listAnchorSmall: [
+      "list ul-list ul-list-anchor list-small",
+      "list ol-list ol-list-anchor list-small"
+    ]
   }
 };
 

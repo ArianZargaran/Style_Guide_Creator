@@ -11,20 +11,20 @@ class Breadcrumbs extends Component {
       <section className="sgcreator-representation_section">
         <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(breadcrumbs.className).map((item, i) => (
+          {Object.keys(breadcrumbs).map((item, i) => (
             <div className="sgcreator-item-box" key={i}>
               <div className="sgcreator-sample-box">
                 <nav>
                   <p>
-                    <a href="#" className={breadcrumbs.className[item]}>
+                    <a href="#" className={breadcrumbs[item]}>
                       Link 1
                     </a>
                     <span>{" / "}</span>
-                    <a href="#" className={breadcrumbs.className[item]}>
+                    <a href="#" className={breadcrumbs[item]}>
                       Link 2
                     </a>
                     <span>{" / "}</span>
-                    <a href="#" className={breadcrumbs.className[item]}>
+                    <a href="#" className={breadcrumbs[item]}>
                       Link 3
                     </a>
                   </p>
@@ -35,29 +35,23 @@ class Breadcrumbs extends Component {
                 {<br />}
                 {`    <p>`}
                 {<br />}
-                {`        <${breadcrumbs.tag} className="${prefix}${
-                  breadcrumbs.className[item]
-                }">`}
+                {`        <a className="${prefix}${breadcrumbs[item]}">`}
                 {<br />}
                 {`            Link 1`}
                 {<br />}
-                {`        </${breadcrumbs.tag}> / `}
+                {`        </a> / `}
                 {<br />}
-                {`        <${breadcrumbs.tag} className="${prefix}${
-                  breadcrumbs.className[item]
-                }">`}
+                {`        <a className="${prefix}${breadcrumbs[item]}">`}
                 {<br />}
                 {`            Link 2`}
                 {<br />}
-                {`        </${breadcrumbs.tag}> / `}
+                {`        </a / `}
                 {<br />}
-                {`        <${breadcrumbs.tag} className="${prefix}${
-                  breadcrumbs.className[item]
-                }">`}
+                {`        <a className="${prefix}${breadcrumbs[item]}">`}
                 {<br />}
                 {`            Link 3`}
                 {<br />}
-                {`        </${breadcrumbs.tag}>`}
+                {`        </a>`}
                 {<br />}
                 {`    </p>`}
                 {<br />}

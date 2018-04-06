@@ -1,9 +1,6 @@
 const breadcrumbs = {
   Breadcrumbs: {
-    tag: "a",
-    className: {
-      "breadcrumbs bar": "ya-breadcrumbs"
-    }
+    "breadcrumbs bar": "breadcrumbs"
   }
 };
 

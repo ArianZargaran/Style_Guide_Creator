@@ -7,11 +7,13 @@ import "../style/Lists.css";
 class Lists extends Component {
   render() {
     const lists = this.props.category.Lists;
+    const prefix = this.props.appId.prefix;
+
     return (
       <section className="sgcreator-representation_section">
         <h1>{Object.keys(this.props.category)[0]}</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(lists.className).map((item, i) => {
+          {Object.keys(lists).map((item, i) => {
             if (i === 0) {
               return (
                 <div>
@@ -20,16 +22,14 @@ class Lists extends Component {
                     itemID={i}
                   >
                     <div className="sgcreator-sample-box">
-                      <ul className={lists.className[item][0]}>
+                      <ul className={lists[item][0]}>
                         <li>Lorem ipsum dolor sit amet.</li>
                         <li>Dicta optio cumque dolore hic ea facilis</li>
                         <li>Minus, possimus, veniam, incidunt eligendi</li>
                       </ul>
                     </div>
                     <div className="sgcreator-tag-box">
-                      {`<${lists.tag[i][0]} class="${
-                        lists.className[item][0]
-                      }">`}
+                      {`<ul class="${prefix}${lists[item][0]}">`}
                       {<br />}
                       {`    <li>Lorem ipsum dolor sit amet.</li>`}
                       {<br />}
@@ -37,7 +37,7 @@ class Lists extends Component {
                       {<br />}
                       {`    <li>Minus, possimus, veniam, incidunt eligendi</li>`}
                       {<br />}
-                      {`</${lists.tag[i][0]}>`}
+                      {`</ul>`}
                     </div>
                   </div>
                   <div
@@ -45,16 +45,14 @@ class Lists extends Component {
                     itemID={i}
                   >
                     <div className="sgcreator-sample-box">
-                      <ol className={lists.className[item][1]}>
+                      <ol className={lists[item][1]}>
                         <li>Lorem ipsum dolor sit amet.</li>
                         <li>Dicta optio cumque dolore hic ea facilis</li>
                         <li>Minus, possimus, veniam, incidunt eligendi</li>
                       </ol>
                     </div>
                     <div className="sgcreator-tag-box">
-                      {`<${lists.tag[i][1]} class="${
-                        lists.className[item][1]
-                      }">`}
+                      {`<ol class="${prefix}${lists[item][1]}">`}
                       {<br />}
                       {`    <li>Lorem ipsum dolor sit amet.</li>`}
                       {<br />}
@@ -62,7 +60,7 @@ class Lists extends Component {
                       {<br />}
                       {`    <li>Minus, possimus, veniam, incidunt eligendi</li>`}
                       {<br />}
-                      {`</${lists.tag[i][1]}>`}
+                      {`</ol>`}
                     </div>
                   </div>
                 </div>
@@ -77,7 +75,7 @@ class Lists extends Component {
                   key={i}
                 >
                   <div className="sgcreator-sample-box">
-                    <ul className={lists.className[item][0]}>
+                    <ul className={lists[item][0]}>
                       <li>
                         <a>Lorem ipsum dolor sit amet.</a>
                       </li>
@@ -90,7 +88,7 @@ class Lists extends Component {
                     </ul>
                   </div>
                   <div className="sgcreator-tag-box">
-                    {`<${lists.tag[i][0]} class="${lists.className[item][0]}">`}
+                    {`<ol class="${prefix}${lists[item][0]}">`}
                     {<br />}
                     {`    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>`}
                     {<br />}
@@ -98,7 +96,7 @@ class Lists extends Component {
                     {<br />}
                     {`    <li><a href="/">Minus, possimus, veniam, incidunt eligendi</a></li>`}
                     {<br />}
-                    {`</${lists.tag[i][0]}>`}
+                    {`</ol>`}
                   </div>
                 </div>
                 <div
@@ -107,7 +105,7 @@ class Lists extends Component {
                   key={i}
                 >
                   <div className="sgcreator-sample-box">
-                    <ol className={lists.className[item][1]}>
+                    <ol className={lists[item][1]}>
                       <li>
                         <a>Lorem ipsum dolor sit amet.</a>
                       </li>
@@ -120,7 +118,7 @@ class Lists extends Component {
                     </ol>
                   </div>
                   <div className="sgcreator-tag-box">
-                    {`<${lists.tag[i][1]} class="${lists.className[item][1]}">`}
+                    {`<ul class="${prefix}${lists[item][1]}">`}
                     {<br />}
                     {`    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>`}
                     {<br />}
@@ -128,7 +126,7 @@ class Lists extends Component {
                     {<br />}
                     {`    <li><a href="/">Minus, possimus, veniam, incidunt eligendi</a></li>`}
                     {<br />}
-                    {`</${lists.tag[i][1]}>`}
+                    {`</ul>`}
                   </div>
                 </div>
               </div>
@@ -141,7 +139,10 @@ class Lists extends Component {
 }
 
 function mapStateToProps(state) {
-  return { category: state.lists };
+  return {
+    category: state.lists,
+    appId: state.appId
+  };
 }
 
 export default connect(mapStateToProps)(Lists);

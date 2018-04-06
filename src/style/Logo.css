@@ -1,4 +1,4 @@
-.ya-logo {
+.logo {
   display: block;
   background-repeat: no-repeat;
   background-position: center;
@@ -7,21 +7,21 @@
   width: 300px;
 }
 
-.ya-logo_full {
+.logo_full {
   background-image: url(https://docs.joomla.org/images/5/53/Vertical-logo-light-background-en.png);
 }
 
-.ya-logo_negative {
+.logo_negative {
   background-image: url(https://docs.joomla.org/images/8/8d/Vertical-logo-dark-background-en.png);
 }
 
-.ya-logo_two-colors {
+.logo_two-colors {
   background-image: url(https://docs.joomla.org/images/5/51/Joomla-3D-Vertical-logo-dark-background-en.png);
 }
 
-.ya-logo_grey {
+.logo_grey {
   background-image: url(https://docs.joomla.org/images/b/bf/Joomla-Mono-Vertical-logo-dark-background-en.png);
 }
-.ya-logo_black {
+.logo_black {
   background-image: url(https://docs.joomla.org/images/e/ea/Joomla-Mono-Vertical-logo-light-background-en.png);
 }

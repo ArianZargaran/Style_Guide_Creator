@@ -1,9 +1,6 @@
 const form = {
   Form: {
-    tag: "form",
-    className: {
-      "form-tag": "ya-form"
-    }
+    "form-tag": "form"
   }
 };
 

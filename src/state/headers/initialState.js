@@ -1,14 +1,11 @@
 const Headers = {
   Headers: {
-    tag: "h1",
-    className: {
-      H1: "ya-header ya-header_one",
-      H2: "ya-header ya-header_two",
-      H3: "ya-header ya-header_three",
-      H4: "ya-header ya-header_four",
-      H5: "ya-header ya-header_five",
-      H6: "ya-header ya-header_six"
-    }
+    H1: "header header_one",
+    H2: "header header_two",
+    H3: "header header_three",
+    H4: "header header_four",
+    H5: "header header_five",
+    H6: "header header_six"
   }
 };
 
