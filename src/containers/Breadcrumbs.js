@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 import "../style/Breadcrumbs.css";

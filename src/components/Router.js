@@ -23,12 +23,12 @@ import FormElements from "../containers/FormElements";
 
 class Router extends Component {
   render() {
-    const root_styles = this.props.appId.root_styles;
+    const style = this.props.appId.style;
 
     return (
       <BrowserRouter>
         <div className="sgcreator-hook">
-          <Style>{root_styles}</Style>
+          <Style>{style}</Style>
           <Categories />
           <Switch>
             <Route path="/quote" component={Quote} />

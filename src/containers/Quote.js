@@ -27,7 +27,7 @@ class Quote extends Component {
               </div>
               <div className="sgcreator-css-box">
                 <p>{`Set new stylling for: ${this.capitalizeInitial(item)}`}</p>
-                <textarea />
+                <textarea>{quote.style}</textarea>
               </div>
             </div>
           ))}

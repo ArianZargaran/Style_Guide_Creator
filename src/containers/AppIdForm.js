@@ -7,17 +7,13 @@ import { fetchAppId } from "../state/app_id/action-creators";
 
 class AppIdForm extends Component {
   render() {
-    const formComponent = this.props.formComponent.Form;
     const prefix = this.props.appId.prefix;
     const name = this.props.appId.name;
-    const root_styles = this.props.appId.root_styles;
+    const style = this.props.appId.style;
     const { handleSubmit } = this.props;
 
     return (
-      <form
-        className={formComponent["form-tag"]}
-        onSubmit={handleSubmit(this.onSubmit.bind(this))}
-      >
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <h2>Set Up YourApp</h2>
         <Field
           label="App Name"
@@ -33,13 +29,13 @@ class AppIdForm extends Component {
         />
         <Field
           label="Global CSS variables"
-          name="root_styles"
-          placeholder={root_styles}
+          name="style"
+          placeholder={style}
           component={this.renderTextArea}
         />
         <button type="submit">Submit</button>
 
-        <Style>{root_styles}</Style>
+        <Style>{style}</Style>
       </form>
     );
   }

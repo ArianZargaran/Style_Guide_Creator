@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 import "../style/Links.css";
@@ -10,7 +11,7 @@ class Links extends Component {
 
     return (
       <section className="sgcreator-representation_section">
-        <h1>{Object.keys(this.props.category)[0]}</h1>
+        <h1>Links</h1>
         <div className="sgcreator-representation_wrapper">
           {Object.keys(links).map((item, i) => (
             <div

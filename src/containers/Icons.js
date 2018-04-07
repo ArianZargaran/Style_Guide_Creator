@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 class Icons extends Component {
@@ -8,7 +9,7 @@ class Icons extends Component {
 
     return (
       <section className="sgcreator-representation_section">
-        <h1>{Object.keys(this.props.category)[0]}</h1>
+        <h1>Icons</h1>
         <div className="sgcreator-representation_wrapper">
           {Object.keys(icons).map((item, i) => (
             <div

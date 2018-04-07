@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 import "../style/sgcreator/sgcreator-item-box/sgcreator-colors.css";
@@ -11,7 +12,7 @@ class Colors extends Component {
 
     return (
       <section className="sgcreator-representation_section">
-        <h1>{Object.keys(this.props.category)[0]}</h1>
+        <h1>Colors</h1>
         <div className="sgcreator-representation_wrapper">
           {Object.keys(colors).map((item, i) => (
             <div
