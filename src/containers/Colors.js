@@ -25,6 +25,9 @@ class Colors extends Component {
               <div className="sgcreator-tag-box">
                 {`<div class="${prefix}${colors[item]}"></div>`}
               </div>
+              <div className="sgcreator-css-box">
+                <textarea />
+              </div>
             </div>
           ))}
         </div>

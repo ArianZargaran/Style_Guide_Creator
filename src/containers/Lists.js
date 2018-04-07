@@ -39,6 +39,9 @@ class Lists extends Component {
                       {<br />}
                       {`</ul>`}
                     </div>
+                    <div className="sgcreator-css-box">
+                      <textarea />
+                    </div>
                   </div>
                   <div
                     className="sgcreator-item-box sgcreator-item-box_lists sgcreator-item-box_ol-lists"
@@ -61,6 +64,9 @@ class Lists extends Component {
                       {`    <li>Minus, possimus, veniam, incidunt eligendi</li>`}
                       {<br />}
                       {`</ol>`}
+                    </div>
+                    <div className="sgcreator-css-box">
+                      <textarea />
                     </div>
                   </div>
                 </div>
@@ -98,6 +104,9 @@ class Lists extends Component {
                     {<br />}
                     {`</ol>`}
                   </div>
+                  <div className="sgcreator-css-box">
+                    <textarea />
+                  </div>
                 </div>
                 <div
                   className="sgcreator-item-box sgcreator-item-box_lists sgcreator-item-box_ol-lists"
@@ -127,6 +136,9 @@ class Lists extends Component {
                     {`    <li><a href="/">Minus, possimus, veniam, incidunt eligendi</a></li>`}
                     {<br />}
                     {`</ul>`}
+                  </div>
+                  <div className="sgcreator-css-box">
+                    <textarea />
                   </div>
                 </div>
               </div>

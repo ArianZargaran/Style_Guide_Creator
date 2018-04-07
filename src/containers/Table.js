@@ -72,6 +72,9 @@ class Table extends Component {
                 {<br />}
                 {`</table>`}
               </div>
+              <div className="sgcreator-css-box">
+                <textarea />
+              </div>
             </div>
           ))}
         </div>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
+import Style from "react-style-tag";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchAppId } from "../state/app_id/action-creators";
@@ -9,6 +10,7 @@ class AppIdForm extends Component {
     const formComponent = this.props.formComponent.Form;
     const prefix = this.props.appId.prefix;
     const name = this.props.appId.name;
+    const root_styles = this.props.appId.root_styles;
     const { handleSubmit } = this.props;
 
     return (
@@ -29,7 +31,15 @@ class AppIdForm extends Component {
           placeholder={prefix}
           component={this.renderField}
         />
+        <Field
+          label="Global CSS variables"
+          name="root_styles"
+          placeholder={root_styles}
+          component={this.renderTextArea}
+        />
         <button type="submit">Submit</button>
+
+        <Style>{root_styles}</Style>
       </form>
     );
   }
@@ -40,7 +50,6 @@ class AppIdForm extends Component {
         <label className="label">{field.label}</label>
         <input
           placeholder={field.placeholder}
-          className="input"
           type="text"
           {...field.input}
           autoFocus
@@ -54,12 +63,17 @@ class AppIdForm extends Component {
     return (
       <div className="row">
         <label className="label">{field.label}</label>
-        <input
-          placeholder={field.placeholder}
-          className="input"
-          type="text"
-          {...field.input}
-        />
+        <input placeholder={field.placeholder} type="text" {...field.input} />
+        <p>{field.meta.touched ? field.meta.error : ""}</p>
+      </div>
+    );
+  }
+
+  renderTextArea(field) {
+    return (
+      <div className="row">
+        <label className="label">{field.label}</label>
+        <textarea placeholder={field.placeholder} {...field.input} />
         <p>{field.meta.touched ? field.meta.error : ""}</p>
       </div>
     );

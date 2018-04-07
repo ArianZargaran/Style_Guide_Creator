@@ -26,6 +26,9 @@ class Typography extends Component {
                   typography[item]
                 }">Lorem impsum dolor emet</p>`}
               </div>
+              <div className="sgcreator-css-box">
+                <textarea />
+              </div>
             </div>
           ))}
         </div>

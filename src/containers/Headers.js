@@ -25,6 +25,9 @@ class Headers extends Component {
                 {`<h${i + 1} class="${prefix}${headers[item]}">${item}</h${i +
                   1}>`}
               </div>
+              <div className="sgcreator-css-box">
+                <textarea />
+              </div>
             </div>
           ))}
         </div>

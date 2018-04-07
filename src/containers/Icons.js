@@ -22,6 +22,9 @@ class Icons extends Component {
               <div className="sgcreator-tag-box">
                 {`<i class="${prefix}${icons[item]}">${item}</i>`}
               </div>
+              <div className="sgcreator-css-box">
+                <textarea />
+              </div>
             </div>
           ))}
         </div>

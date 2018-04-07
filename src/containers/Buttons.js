@@ -29,6 +29,9 @@ class Buttons extends Component {
                   buttons[item]
                 }">Learn more</button>`}
               </div>
+              <div className="sgcreator-css-box">
+                <textarea />
+              </div>
             </div>
           ))}
         </div>

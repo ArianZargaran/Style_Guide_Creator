@@ -28,6 +28,9 @@ class Logo extends Component {
                 alt="${logo[item].alt}"
                 class="${prefix}${logo[item].name}">${item}</img>`}
               </div>
+              <div className="sgcreator-css-box">
+                <textarea />
+              </div>
             </div>
           ))}
         </div>

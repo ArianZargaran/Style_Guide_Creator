@@ -31,6 +31,9 @@ class Highlights extends Component {
                 {<br />}
                 {`</div>`}
               </div>
+              <div className="sgcreator-css-box">
+                <textarea />
+              </div>
             </div>
           ))}
         </div>

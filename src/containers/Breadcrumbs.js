@@ -57,6 +57,9 @@ class Breadcrumbs extends Component {
                 {<br />}
                 {`</nav>`}
               </div>
+              <div className="sgcreator-css-box">
+                <textarea />
+              </div>
             </div>
           ))}
         </div>

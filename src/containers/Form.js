@@ -57,6 +57,9 @@ class Form extends Component {
                 {<br />}
                 {`</form>`}
               </div>
+              <div className="sgcreator-css-box">
+                <textarea />
+              </div>
             </div>
           ))}
         </div>

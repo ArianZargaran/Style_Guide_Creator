@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Style from "react-style-tag";
+import { connect } from "react-redux";
 
 import Categories from "../containers/Categories";
 import Home from "./Home";
@@ -19,11 +21,14 @@ import Highlights from "../containers/Highlights";
 import FeaturedIcons from "../containers/FeaturedIcons";
 import FormElements from "../containers/FormElements";
 
-export default class Router extends Component {
+class Router extends Component {
   render() {
+    const root_styles = this.props.appId.root_styles;
+
     return (
       <BrowserRouter>
         <div className="sgcreator-hook">
+          <Style>{root_styles}</Style>
           <Categories />
           <Switch>
             <Route path="/quote" component={Quote} />
@@ -48,3 +53,11 @@ export default class Router extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    appId: state.appId
+  };
+}
+
+export default connect(mapStateToProps)(Router);

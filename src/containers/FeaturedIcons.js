@@ -35,6 +35,9 @@ class FeaturedIcons extends Component {
                 {<br />}
                 {`</span>`}
               </div>
+              <div className="sgcreator-css-box">
+                <textarea />
+              </div>
             </div>
           ))}
         </div>

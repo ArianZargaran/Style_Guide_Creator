@@ -28,6 +28,9 @@ class Links extends Component {
                   links[item]
                 }">Lorem impsum dolor emet</a>`}
               </div>
+              <div className="sgcreator-css-box">
+                <textarea />
+              </div>
             </div>
           ))}
         </div>
