@@ -1,13 +1,13 @@
 const icons = {
-  Icons: {
-    "Hyphen Icon": "icon fas fa-minus",
-    "Plus Icon": "icon fas fa-plus",
-    "Asterisk Icon": "icon fas fa-asterisk",
-    "Chevron Right Icon": "icon fas fa-chevron-right",
-    "Chevron Down Icon": "icon fas fa-chevron-down",
-    "Hash Icon": "icon fab fa-slack-hash",
-    "Code Parenthesis": "icon fas fa-code",
-    "Exclamation Icon": "icon fas fa-exclamation"
+  style: {
+    "icon fas fa-minus": ``,
+    "icon fas fa-plus": ``,
+    "icon fas fa-asterisk": ``,
+    "icon fas fa-chevron-right": ``,
+    "icon fas fa-chevron-down": ``,
+    "icon fab fa-slack-hash": ``,
+    "icon fas fa-code": ``,
+    "icon fas fa-exclamation": ``
   }
 };
 

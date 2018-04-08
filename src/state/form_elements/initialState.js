@@ -1,8 +1,8 @@
 const formElements = {
-  "Form Elements": {
-    formRow: "form_row",
-    formLabel: "form_label",
-    formInput: "form_input"
+  style: {
+    form_row: ``,
+    form_label: ``,
+    form_input: ``
   }
 };
 

@@ -23,6 +23,52 @@ const initialState = {
     --h5_font-size: 0.83em;
     --h6_font-size: 0.67em;
   }
+    /* TAGS */
+  .h1, .h2, .h3, .h4, .h5, .h6,
+  h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -1px;
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  font-family: var(--header_font-family);
+  }
+
+h1 {
+  font-size: var(--h1_font-size);
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+}
+
+h2 {
+  font-size: var(--h2_font-size);
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+}
+
+h3 {
+  font-size: var(--h3_font-size);
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h4 {
+  font-size: var(--h4_font-size);
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+}
+
+h5 {
+  font-size: var(--h5_font-size);
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+}
+
+h6 {
+  font-size: var(--h6_font-size);
+  margin-top: 2.33em;
+  margin-bottom: 2.33em;
+ }
 `
 };
 

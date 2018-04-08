@@ -6,7 +6,6 @@ class Typography extends Component {
   render() {
     const typography = this.props.category;
     const prefix = this.props.appId.prefix;
-
     return (
       <section className="sgcreator-representation_section">
         <h1>Typography</h1>
@@ -27,10 +26,10 @@ class Typography extends Component {
                 <p>{`Set new stylling for: ${this.capitalizeInitial(item)}`}</p>
                 <textarea>{typography.style[item]}</textarea>
               </div>
+              <Style>{typography.style[item]}</Style>
             </div>
           ))}
         </div>
-        <Style>{typography.style}</Style>
       </section>
     );
   }

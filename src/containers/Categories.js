@@ -25,13 +25,13 @@ class Categories extends Component {
   };
 
   render() {
-    const logo = this.props.logo.Logo;
+    const logo = this.props.logo.style;
     const name = this.props.appId.name;
 
     return (
       <section className="sgcreator-categories_section">
         <Link to="/">
-          <div className={logo["Full color logo"].name} />
+          <div className={Object.keys(logo)[0]} />
           <h1 className="sgcreator-category_header">{name}</h1>
         </Link>
         <ol className="sgcreator-categories_list">{this.renderIndexList()}</ol>

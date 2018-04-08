@@ -7,7 +7,7 @@ import "../style/Buttons.css";
 
 class Buttons extends Component {
   render() {
-    const buttons = this.props.category.Buttons;
+    const buttons = this.props.category.style;
     const prefix = this.props.appId.prefix;
 
     return (
@@ -21,17 +21,15 @@ class Buttons extends Component {
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <button href="#" className={buttons[item]}>
+                <button href="#" className={item}>
                   Learn more
                 </button>
               </div>
               <div className="sgcreator-tag-box">
-                {`<button href="/" class="${prefix}${
-                  buttons[item]
-                }">Learn more</button>`}
+                {`<button href="/" class="${prefix}${item}">Learn more</button>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea />
+                <textarea>{buttons[item]}</textarea>
               </div>
             </div>
           ))}

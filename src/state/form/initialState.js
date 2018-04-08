@@ -1,6 +1,6 @@
 const form = {
-  Form: {
-    "form-tag": "form"
+  style: {
+    form: ``
   }
 };
 

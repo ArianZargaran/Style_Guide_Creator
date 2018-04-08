@@ -1,30 +1,29 @@
 const logo = {
-  Logo: {
-    "Full color logo": {
-      name: "logo logo_full",
-      src: "../assets/images/logo.svg",
-      alt: "logo"
-    },
-    "Full color logo negative": {
-      name: "logo logo_negative",
-      src: "../assets/images/logo_negative.svg",
-      alt: "d"
-    },
-    "Two colors logo": {
-      name: "logo logo_two-colors",
-      src: "../assets/images/logo_two-colors.svg",
-      alt: "f"
-    },
-    "Grey scale logo": {
-      name: "logo logo_grey",
-      src: "../assets/images/logo_grey-scale.svg",
-      alt: "i"
-    },
-    "Black logo": {
-      name: "logo logo_black",
-      src: "../assets/images/logo_black.svg",
-      alt: "k"
-    }
+  style: {
+    "logo logo_full": `.logo {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 331px 275px;
+  height: 300px;
+  width: 300px;
+}
+
+.logo_full {
+  background-image: url(https://docs.joomla.org/images/5/53/Vertical-logo-light-background-en.png);
+}`,
+    "logo logo_negative": `.logo_negative {
+  background-image: url(https://docs.joomla.org/images/8/8d/Vertical-logo-dark-background-en.png);
+}`,
+    "logo logo_two-colors": `.logo_two-colors {
+  background-image: url(https://docs.joomla.org/images/5/51/Joomla-3D-Vertical-logo-dark-background-en.png);
+}`,
+    "logo logo_grey": `.logo_grey {
+  background-image: url(https://docs.joomla.org/images/b/bf/Joomla-Mono-Vertical-logo-dark-background-en.png);
+}`,
+    "logo logo_black": `.logo_black {
+  background-image: url(https://docs.joomla.org/images/e/ea/Joomla-Mono-Vertical-logo-light-background-en.png);
+}`
   }
 };
 
