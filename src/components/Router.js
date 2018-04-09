@@ -23,7 +23,11 @@ import FormElements from "../containers/FormElements";
 
 class Router extends Component {
   render() {
-    const style = this.props.appId.style;
+    const appId = this.props.appId.style;
+    const logoClass = Object.keys(this.props.logo.style)[0];
+    const logo = this.props.logo.style;
+    const prefix = this.props.appId.prefix;
+    const style = `${appId} .${prefix}${logo[logoClass]}`;
 
     return (
       <BrowserRouter>
@@ -45,7 +49,8 @@ class Router extends Component {
             <Route path="/buttons" component={Buttons} />
             <Route path="/typography" component={Typography} />
             <Route path="/form" component={Form} />
-            <Route path="/form-elements" component={FormElements} />
+            <Route path="/form-elements" component={Form} />
+            // Previous component needs to be changed back to FormElements
             <Route path="/" component={Home} />
           </Switch>
         </div>
@@ -56,7 +61,8 @@ class Router extends Component {
 
 function mapStateToProps(state) {
   return {
-    appId: state.appId
+    appId: state.appId,
+    logo: state.logo
   };
 }
 

@@ -6,14 +6,14 @@ import "../style/Featured_icons.css";
 
 class FeaturedIcons extends Component {
   render() {
-    const ficons = this.props.category["Featured Icons"];
+    const ficons = this.props.category.style;
     const prefix = this.props.appId.prefix;
 
     return (
       <section className="sgcreator-representation_section">
         <h1>Featured Icons</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(ficons.className).map((item, i) => (
+          {Object.keys(ficons).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_featured-icons"
               itemID={i}
@@ -23,7 +23,7 @@ class FeaturedIcons extends Component {
                 <a href="">
                   <span className="fa-stack fa-2x">
                     <i className="fas fa-circle fa-stack-2x" />
-                    <i className={ficons.className[item]} />
+                    <i className={item} />
                   </span>
                 </a>
               </div>
@@ -32,7 +32,7 @@ class FeaturedIcons extends Component {
                 {<br />}
                 {`    <i class="fas fa-circle fa-stack-2x"></i>`}
                 {<br />}
-                {`    <i class="${prefix}${ficons.className[item]}"></i>`}
+                {`    <i class="${prefix}${item}"></i>`}
                 {<br />}
                 {`</span>`}
               </div>

@@ -6,7 +6,7 @@ import "../style/Breadcrumbs.css";
 
 class Breadcrumbs extends Component {
   render() {
-    const breadcrumbs = this.props.category.Breadcrumbs;
+    const breadcrumbs = this.props.category.style;
     const prefix = this.props.appId.prefix;
     return (
       <section className="sgcreator-representation_section">

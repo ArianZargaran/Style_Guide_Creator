@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 class Icons extends Component {
   render() {
-    const icons = this.props.category.Icons;
+    const icons = this.props.category.style;
     const prefix = this.props.appId.prefix;
 
     return (

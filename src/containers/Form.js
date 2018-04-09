@@ -6,7 +6,7 @@ import "../style/Form.css";
 
 class Form extends Component {
   render() {
-    const form = this.props.category.Form;
+    const form = this.props.category.style;
     const prefix = this.props.appId.prefix;
 
     return (

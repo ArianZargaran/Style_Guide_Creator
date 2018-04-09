@@ -6,7 +6,7 @@ import "../style/Table.css";
 
 class Table extends Component {
   render() {
-    const table = this.props.category.Table;
+    const table = this.props.category.style;
     const prefix = this.props.appId.prefix;
 
     return (

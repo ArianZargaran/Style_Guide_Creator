@@ -9,7 +9,7 @@ const links = {
   color: var(--color_saturated);
 }`,
     link_secondary: `link_secondary::before {
-  content: "⇁";
+  content: "⇁ ";
 }`
   }
 };

@@ -27,7 +27,7 @@
 .sgcreator-category_header {
   font-family: var(--header_font-family);
   margin: 20px 20px 0;
-  color: white;
+  color: var(--color_background);
   font-size: 48px;
   cursor: pointer;
 }

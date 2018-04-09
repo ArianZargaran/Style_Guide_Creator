@@ -7,7 +7,7 @@ import "../style/Highlights.css";
 
 class Highlights extends Component {
   render() {
-    const highlights = this.props.category.Highlights;
+    const highlights = this.props.category.style;
     const prefix = this.props.appId.prefix;
 
     return (

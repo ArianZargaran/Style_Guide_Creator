@@ -7,7 +7,7 @@ import "../style/Colors.css";
 
 class Colors extends Component {
   render() {
-    const colors = this.props.category.Colors;
+    const colors = this.props.category.style;
     const prefix = this.props.appId.prefix;
 
     return (
