@@ -3,145 +3,50 @@ import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 import "../style/sgcreator/sgcreator-item-box/sgcreator-lists.css";
-import "../style/Lists.css";
 
 class Lists extends Component {
   render() {
-    const lists = this.props.category.Lists;
+    const lists = this.props.category.style;
     const prefix = this.props.appId.prefix;
 
     return (
       <section className="sgcreator-representation_section">
         <h1>Lists</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(lists).map((item, i) => {
-            if (i === 0) {
-              return (
-                <div>
-                  <div
-                    className="sgcreator-item-box sgcreator-item-box_lists"
-                    itemID={i}
-                  >
-                    <div className="sgcreator-sample-box">
-                      <ul className={lists[item][0]}>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Dicta optio cumque dolore hic ea facilis</li>
-                        <li>Minus, possimus, veniam, incidunt eligendi</li>
-                      </ul>
-                    </div>
-                    <div className="sgcreator-tag-box">
-                      {`<ul class="${prefix}${lists[item][0]}">`}
-                      {<br />}
-                      {`    <li>Lorem ipsum dolor sit amet.</li>`}
-                      {<br />}
-                      {`    <li>Dicta optio cumque dolore hic ea facilis</li>`}
-                      {<br />}
-                      {`    <li>Minus, possimus, veniam, incidunt eligendi</li>`}
-                      {<br />}
-                      {`</ul>`}
-                    </div>
-                    <div className="sgcreator-css-box">
-                      <textarea />
-                    </div>
-                  </div>
-                  <div
-                    className="sgcreator-item-box sgcreator-item-box_lists sgcreator-item-box_ol-lists"
-                    itemID={i}
-                  >
-                    <div className="sgcreator-sample-box">
-                      <ol className={lists[item][1]}>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Dicta optio cumque dolore hic ea facilis</li>
-                        <li>Minus, possimus, veniam, incidunt eligendi</li>
-                      </ol>
-                    </div>
-                    <div className="sgcreator-tag-box">
-                      {`<ol class="${prefix}${lists[item][1]}">`}
-                      {<br />}
-                      {`    <li>Lorem ipsum dolor sit amet.</li>`}
-                      {<br />}
-                      {`    <li>Dicta optio cumque dolore hic ea facilis</li>`}
-                      {<br />}
-                      {`    <li>Minus, possimus, veniam, incidunt eligendi</li>`}
-                      {<br />}
-                      {`</ol>`}
-                    </div>
-                    <div className="sgcreator-css-box">
-                      <textarea />
-                    </div>
-                  </div>
-                </div>
-              );
-            }
-
+          {Object.keys(lists).map((item, i, arr) => {
             return (
-              <div>
-                <div
-                  className="sgcreator-item-box sgcreator-item-box_lists sgcreator-item-box_ul-lists"
-                  itemID={i}
-                  key={i}
-                >
-                  <div className="sgcreator-sample-box">
-                    <ul className={lists[item][0]}>
-                      <li>
-                        <a>Lorem ipsum dolor sit amet.</a>
-                      </li>
-                      <li>
-                        <a>Dicta optio cumque dolore hic ea facilis</a>
-                      </li>
-                      <li>
-                        <a>Minus, possimus, veniam, incidunt eligendi</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="sgcreator-tag-box">
-                    {`<ol class="${prefix}${lists[item][0]}">`}
-                    {<br />}
-                    {`    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>`}
-                    {<br />}
-                    {`    <li><a href="/">Dicta optio cumque dolore hic ea facilis</a></li>`}
-                    {<br />}
-                    {`    <li><a href="/">Minus, possimus, veniam, incidunt eligendi</a></li>`}
-                    {<br />}
-                    {`</ol>`}
-                  </div>
-                  <div className="sgcreator-css-box">
-                    <textarea />
-                  </div>
+              <div
+                className="sgcreator-item-box sgcreator-item-box_lists"
+                key={i}
+              >
+                <div className="sgcreator-sample-box">
+                  <ul className={`${prefix}${arr[0]} ${prefix}${item}`}>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Dicta optio cumque dolore hic ea facilis</li>
+                    <li>Minus, possimus, veniam, incidunt eligendi</li>
+                  </ul>
                 </div>
-                <div
-                  className="sgcreator-item-box sgcreator-item-box_lists sgcreator-item-box_ol-lists"
-                  itemID={i}
-                  key={i}
-                >
-                  <div className="sgcreator-sample-box">
-                    <ol className={lists[item][1]}>
-                      <li>
-                        <a>Lorem ipsum dolor sit amet.</a>
-                      </li>
-                      <li>
-                        <a>Dicta optio cumque dolore hic ea facilis</a>
-                      </li>
-                      <li>
-                        <a>Minus, possimus, veniam, incidunt eligendi</a>
-                      </li>
-                    </ol>
-                  </div>
-                  <div className="sgcreator-tag-box">
-                    {`<ul class="${prefix}${lists[item][1]}">`}
-                    {<br />}
-                    {`    <li><a href="/">Lorem ipsum dolor sit amet.</a></li>`}
-                    {<br />}
-                    {`    <li><a href="/">Dicta optio cumque dolore hic ea facilis</a></li>`}
-                    {<br />}
-                    {`    <li><a href="/">Minus, possimus, veniam, incidunt eligendi</a></li>`}
-                    {<br />}
-                    {`</ul>`}
-                  </div>
-                  <div className="sgcreator-css-box">
-                    <textarea />
-                  </div>
+                <div className="sgcreator-tag-box">
+                  {i === 0 ? `<ul class="${prefix}${item}">` : ``}
+                  {i === 1
+                    ? `<ul class="${prefix}${arr[0]} ${prefix}${item}">`
+                    : ``}
+                  {i === 2
+                    ? `<ol class="${prefix}${arr[0]} ${prefix}${item}">`
+                    : ``}
+                  {<br />}
+                  {`    <li>Lorem ipsum dolor sit amet.</li>`}
+                  {<br />}
+                  {`    <li>Dicta optio cumque dolore hic ea facilis</li>`}
+                  {<br />}
+                  {`    <li>Minus, possimus, veniam, incidunt eligendi</li>`}
+                  {<br />}
+                  {i === 2 ? `</ol>` : `</ul>`}
                 </div>
+                <div className="sgcreator-css-box">
+                  <textarea>{`.${prefix}${lists[item]}`}</textarea>
+                </div>
+                <Style>{`.${prefix}${lists[item]}`}</Style>
               </div>
             );
           })}

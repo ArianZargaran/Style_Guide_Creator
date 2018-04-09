@@ -4,38 +4,29 @@ import { connect } from "react-redux";
 
 class Typography extends Component {
   render() {
-    const typography = this.props.category;
+    const typography = this.props.category.style;
     const prefix = this.props.appId.prefix;
     return (
       <section className="sgcreator-representation_section">
         <h1>Typography</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(typography.style).map((item, i) => (
-            <div
-              className="sgcreator-item-box sgcreator-item-box_typography"
-              itemID={i}
-              key={i}
-            >
+          {Object.keys(typography).map((item, i) => (
+            <div className="sgcreator-item-box" key={i}>
               <div className="sgcreator-sample-box">
-                <p className={item}>Lorem impsum dolor emet</p>
+                <p className={`${prefix}${item}`}>Lorem impsum dolor emet</p>
               </div>
               <div className="sgcreator-tag-box">
                 {`<p class="${prefix}${item}">Lorem impsum dolor emet</p>`}
               </div>
               <div className="sgcreator-css-box">
-                <p>{`Set new stylling for: ${this.capitalizeInitial(item)}`}</p>
-                <textarea>{typography.style[item]}</textarea>
+                <textarea>{`.${prefix}${typography[item]}`}</textarea>
               </div>
-              <Style>{typography.style[item]}</Style>
+              <Style>{`.${prefix}${typography[item]}`}</Style>
             </div>
           ))}
         </div>
       </section>
     );
-  }
-
-  capitalizeInitial(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 }
 

@@ -1,17 +1,4 @@
 /* APPLIED TO BUTTONS */
-.sgcreator-item-box_buttons .sgcreator-sample-box {
-  box-sizing: border-box;
-  position: relative;
-  display: inline-block;
-  padding: 5px 0;
-  width: 100%;
-}
-
-.sgcreator-item-box_buttons .sgcreator-sample-box > a {
-  float: none;
-  display: inline-block;
-}
-
-.sgcreator-item-box_buttons[itemID="2"] .sgcreator-sample-box {
-  background: rgba(0, 0, 0, 0.2);
+.sgcreator-item-box_buttons:last-child .sgcreator-sample-box {
+  background: var(--color_secondary);
 }

@@ -1,7 +1,6 @@
 const buttons = {
   style: {
-    "button button_primary": `.button,
-button {
+    button: `button {
   text-decoration: none;
   text-align: center;
   outline: var(--color_complementary);
@@ -11,29 +10,27 @@ button {
   border-radius: 2px;
   min-width: 120px;
   display: inline-block;
-}
-
-.button:hover,
-button:hover {
+  border: 2px solid var(--color_desaturated);
+}`,
+    "button:hover": `button:hover {
   border: 2px solid var(--color_desaturated);
   background: var(--color_desaturated);
   color: var(--color_background);
   cursor: pointer;
-}
+}`,
 
-.button_primary,
-button {
+    button_primary: `button_primary {
   border: 2px solid var(--color_main);
   color: var(--color_background);
   background: var(--color_main);
-}
-`,
-    "button button_secondary": `.button_secondary {
+}`,
+
+    button_secondary: `button_secondary {
   border: 2px solid var(--color_main);
   color: var(--color_main);
   background: var(--color_background);
 }`,
-    "button button_inverted-block": `.button_inverted-block {
+    "button_inverted-block": `button_inverted-block {
   border: 2px solid var(--color_tertiary);
   color: var(--color_tertiary);
   background: var(--color_background);

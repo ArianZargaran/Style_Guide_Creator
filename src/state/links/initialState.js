@@ -1,21 +1,15 @@
 const links = {
   style: {
-    "link primary-link": `.link {
+    link: `link {
   text-decoration: none;
   color: var(--color_main);
-}
-
-.link:hover {
-  color: var(--color_desaturated);
-}
-
-.primary-link::before {
-  content: "⇁";
   padding-right: 8px;
 }`,
-    "link secondary-link": `.secondary-link::before {
+    link_primary: `link_primary:hover {
+  color: var(--color_saturated);
+}`,
+    link_secondary: `link_secondary::before {
   content: "⇁";
-  padding-right: 8px;
 }`
   }
 };
