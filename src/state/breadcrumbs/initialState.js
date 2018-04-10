@@ -1,16 +1,16 @@
 const breadcrumbs = {
   style: {
-    breadcrumbs: `.breadcrumbs {
+    breadcrumbs: `breadcrumbs {
   text-decoration: none;
   color: var(--color_complementary);
   font-size: calc(var(--base_font-size)-4px);
 }
 
-.breadcrumbs: hover {
+breadcrumbs: hover {
   color: var(--color_desaturated);
 }
 
-.breadcrumbs + span {
+breadcrumbs + span {
   color: var(--color_desaturated);
   font-size: calc(var(--base_font-size)-4px);
 }`

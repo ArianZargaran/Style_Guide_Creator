@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Style from "react-style-tag";
 import { connect } from "react-redux";
 
-import "../style/Form.css";
-
 class Form extends Component {
   render() {
     const form = this.props.category.style;
@@ -16,51 +14,65 @@ class Form extends Component {
           {Object.keys(form).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_editorial-form"
-              itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
                 <form
-                  className={form[item]}
+                  className={`${prefix}${item}`}
                   onSubmit={this.onFormSubmit.bind(this)}
                 >
-                  <label for="full name">Full Name</label>
-                  <input type="text" id="full name" />
-                  <br />
-                  <label for="password">Password</label>
-                  <input type="password" id="password" />
-                  <br />
-                  <input type="checkbox" id="terms" />
-                  <label for="terms">Accept Terms & Conditions</label>
-                  <br />
-                  <input type="submit" value="Submit" />
+                  <div>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" />
+                  </div>
+                  <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" />
+                  </div>
+                  <div>
+                    <span>
+                      <input type="checkbox" id="terms" />
+                      <label for="terms">Accept Terms & Conditions</label>
+                    </span>
+                  </div>
+                  <button type="submit">Submit</button>
                 </form>
               </div>
               <div className="sgcreator-tag-box">
-                {`<form class="${prefix}${form[item]}">`}
+                {`<form class="${prefix}${item}">`}
                 {<br />}
-                {`    <label for="full name">Full Name</label>`}
+                {`    <div>`}
                 {<br />}
-                {`    <input type="text" id="full name" />`}
+                {`        <label for="full name">Full Name</label>`}
                 {<br />}
+                {`        <input type="text" id="full name" />`}
                 {<br />}
-                {`    <label for="password">Password</label>`}
+                {`    </div>`}
                 {<br />}
-                {`    <input type="password" id="password" />`}
+                {`    <div>`}
                 {<br />}
+                {`        <label for="password">Password</label>`}
                 {<br />}
-                {`    <input type="checkbox" id="terms" required />`}
+                {`        <input type="password" id="password" />`}
                 {<br />}
-                {`    <label for="terms">Accept Terms & Conditions</label>`}
+                {`    </div>`}
                 {<br />}
+                {`    <div>`}
+                {<br />}
+                {`        <input type="checkbox" id="terms" required />`}
+                {<br />}
+                {`        <label for="terms">Accept Terms & Conditions</label>`}
+                {<br />}
+                {`    </div>`}
                 {<br />}
                 {`    <input type="submit" value="Submit">`}
                 {<br />}
                 {`</form>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea />
+                <textarea>{`.${prefix}${form[item]}`}</textarea>
               </div>
+              <Style>{`.${prefix}${form[item]}`}</Style>
             </div>
           ))}
         </div>

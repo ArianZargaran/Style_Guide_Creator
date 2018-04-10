@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import Style from "react-style-tag";
 import { connect } from "react-redux";
 
-import "../style/sgcreator/sgcreator-item-box/sgcreator-colors.css";
-import "../style/Colors.css";
-
 class Colors extends Component {
   render() {
     const colors = this.props.category.style;
@@ -17,18 +14,18 @@ class Colors extends Component {
           {Object.keys(colors).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_colors"
-              itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <p className={colors[item]}>{item}</p>
+                <p className={`${prefix}${item}`}>{item}</p>
               </div>
               <div className="sgcreator-tag-box">
-                {`<div class="${prefix}${colors[item]}"></div>`}
+                {`<div class="${prefix}${item}"></div>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea />
+                <textarea>{`.${prefix}${colors[item]}`}</textarea>
               </div>
+              <Style>{`.${prefix}${colors[item]}`}</Style>
             </div>
           ))}
         </div>

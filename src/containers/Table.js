@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Style from "react-style-tag";
 import { connect } from "react-redux";
 
-import "../style/Table.css";
-
 class Table extends Component {
   render() {
     const table = this.props.category.style;
@@ -14,13 +12,9 @@ class Table extends Component {
         <h1>Table</h1>
         <div className="sgcreator-representation_wrapper">
           {Object.keys(table).map((item, i) => (
-            <div
-              className="sgcreator-item-box sgcreator-item-box_table"
-              itemID={i}
-              key={i}
-            >
+            <div className="sgcreator-item-box" key={i}>
               <div className="sgcreator-sample-box">
-                <table className={table[item]}>
+                <table className={`${prefix}${item}`}>
                   <tr>
                     <th>1</th>
                     <th>2</th>
@@ -39,7 +33,7 @@ class Table extends Component {
                 </table>
               </div>
               <div className="sgcreator-tag-box">
-                {`<table class="${prefix}${table[item]}">`}
+                {`<table class="${prefix}${item}">`}
                 {<br />}
                 {`    <tr>`}
                 {<br />}
@@ -74,8 +68,9 @@ class Table extends Component {
                 {`</table>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea />
+                <textarea>{`.${prefix}${table[item]}`}</textarea>
               </div>
+              <Style>{`.${prefix}${table[item]}`}</Style>
             </div>
           ))}
         </div>

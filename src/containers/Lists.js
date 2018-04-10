@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Style from "react-style-tag";
 import { connect } from "react-redux";
 
-import "../style/sgcreator/sgcreator-item-box/sgcreator-lists.css";
+import "../style/sgcreator-item-box/sgcreator-lists.css";
 
 class Lists extends Component {
   render() {

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Style from "react-style-tag";
 import { connect } from "react-redux";
 
-import "../style/sgcreator/sgcreator-item-box/sgcreator-buttons.css";
+import "../style/sgcreator-item-box/sgcreator-buttons.css";
 
 class Buttons extends Component {
   render() {

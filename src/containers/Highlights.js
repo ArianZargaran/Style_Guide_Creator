@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import Style from "react-style-tag";
 import { connect } from "react-redux";
 
-import "../style/sgcreator/sgcreator-item-box/sgcreator-highlights.css";
-import "../style/Highlights.css";
+import "../style/sgcreator-item-box/sgcreator-highlights.css";
 
 class Highlights extends Component {
   render() {
@@ -17,24 +16,24 @@ class Highlights extends Component {
           {Object.keys(highlights).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_highlights sgcreator-align-left"
-              itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
                 <div className={highlights[item]}>
-                  <h1>{`This is a ${item}`}</h1>
+                  <h1>Highlight {i}</h1>
                 </div>
               </div>
               <div className="sgcreator-tag-box">
-                {`<div class="${prefix}${highlights[item]}">`}
+                {`<div class="${prefix}${item}">`}
                 {<br />}
-                {`    <h1>This is a ${item}</h1>`}
+                {`    <h1>Highlight ${i}</h1>`}
                 {<br />}
                 {`</div>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea />
+                <textarea>{`.${prefix}${highlights[item]}`}</textarea>
               </div>
+              <Style>{`.${prefix}${highlights[item]}`}</Style>
             </div>
           ))}
         </div>

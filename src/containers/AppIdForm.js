@@ -8,12 +8,16 @@ import { fetchAppId } from "../state/app_id/action-creators";
 class AppIdForm extends Component {
   render() {
     const prefix = this.props.appId.prefix;
+    const form = this.props.formComponent.form;
     const name = this.props.appId.name;
     const style = this.props.appId.style;
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+      <form
+        className={`${prefix}form`}
+        onSubmit={handleSubmit(this.onSubmit.bind(this))}
+      >
         <h2>Set Up YourApp</h2>
         <Field
           label="App Name"
@@ -42,7 +46,7 @@ class AppIdForm extends Component {
 
   renderFirstField(field) {
     return (
-      <div className="row">
+      <div>
         <label className="label">{field.label}</label>
         <input
           placeholder={field.placeholder}
@@ -57,8 +61,8 @@ class AppIdForm extends Component {
 
   renderField(field) {
     return (
-      <div className="row">
-        <label className="label">{field.label}</label>
+      <div>
+        <label>{field.label}</label>
         <input placeholder={field.placeholder} type="text" {...field.input} />
         <p>{field.meta.touched ? field.meta.error : ""}</p>
       </div>
@@ -67,8 +71,8 @@ class AppIdForm extends Component {
 
   renderTextArea(field) {
     return (
-      <div className="row">
-        <label className="label">{field.label}</label>
+      <div>
+        <label>{field.label}</label>
         <textarea placeholder={field.placeholder} {...field.input} />
         <p>{field.meta.touched ? field.meta.error : ""}</p>
       </div>

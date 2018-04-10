@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Style from "react-style-tag";
 import { connect } from "react-redux";
 
-import "../style/Breadcrumbs.css";
-
 class Breadcrumbs extends Component {
   render() {
     const breadcrumbs = this.props.category.style;
@@ -17,15 +15,15 @@ class Breadcrumbs extends Component {
               <div className="sgcreator-sample-box">
                 <nav>
                   <p>
-                    <a href="#" className={breadcrumbs[item]}>
+                    <a href="#" className={`${prefix}${item}`}>
                       Link 1
                     </a>
                     <span>{" / "}</span>
-                    <a href="#" className={breadcrumbs[item]}>
+                    <a href="#" className={`${prefix}${item}`}>
                       Link 2
                     </a>
                     <span>{" / "}</span>
-                    <a href="#" className={breadcrumbs[item]}>
+                    <a href="#" className={`${prefix}${item}`}>
                       Link 3
                     </a>
                   </p>
@@ -36,19 +34,19 @@ class Breadcrumbs extends Component {
                 {<br />}
                 {`    <p>`}
                 {<br />}
-                {`        <a className="${prefix}${breadcrumbs[item]}">`}
+                {`        <a className="${prefix}${item}">`}
                 {<br />}
                 {`            Link 1`}
                 {<br />}
                 {`        </a> / `}
                 {<br />}
-                {`        <a className="${prefix}${breadcrumbs[item]}">`}
+                {`        <a className="${prefix}${item}">`}
                 {<br />}
                 {`            Link 2`}
                 {<br />}
                 {`        </a / `}
                 {<br />}
-                {`        <a className="${prefix}${breadcrumbs[item]}">`}
+                {`        <a className="${prefix}${item}">`}
                 {<br />}
                 {`            Link 3`}
                 {<br />}
@@ -59,8 +57,9 @@ class Breadcrumbs extends Component {
                 {`</nav>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea />
+                <textarea>{`.${prefix}${breadcrumbs[item]}`}</textarea>
               </div>
+              <Style>{`.${prefix}${breadcrumbs[item]}`}</Style>
             </div>
           ))}
         </div>
