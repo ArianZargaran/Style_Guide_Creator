@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Style from "react-style-tag";
 import { connect } from "react-redux";
 
-import "../style/Featured_icons.css";
-
 class FeaturedIcons extends Component {
   render() {
     const ficons = this.props.category.style;
@@ -13,34 +11,49 @@ class FeaturedIcons extends Component {
       <section className="sgcreator-representation_section">
         <h1>Featured Icons</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(ficons).map((item, i) => (
-            <div
-              className="sgcreator-item-box sgcreator-item-box_featured-icons"
-              itemID={i}
-              key={i}
-            >
-              <div className="sgcreator-sample-box">
-                <a href="">
-                  <span className="fa-stack fa-2x">
-                    <i className="fas fa-circle fa-stack-2x" />
-                    <i className={item} />
-                  </span>
-                </a>
-              </div>
-              <div className="sgcreator-tag-box">
-                {`<span class="fa-stack fa-2x">`}
-                {<br />}
-                {`    <i class="fas fa-circle fa-stack-2x"></i>`}
-                {<br />}
-                {`    <i class="${prefix}${item}"></i>`}
-                {<br />}
-                {`</span>`}
-              </div>
-              <div className="sgcreator-css-box">
-                <textarea />
-              </div>
-            </div>
-          ))}
+          {Object.keys(ficons).map(
+            (item, i, arr) =>
+              i === 0 ? (
+                <div className="sgcreator-item-box" key={i}>
+                  <div className="sgcreator-sample-box" />
+                  <div className="sgcreator-tag-box">
+                    {`Properties common for all Featured Icons`}
+                  </div>
+                  <div className="sgcreator-css-box">
+                    <textarea>{`.${prefix}${ficons[item]}`}</textarea>
+                  </div>
+                  <Style>{`.${prefix}${ficons[item]}`}</Style>
+                </div>
+              ) : (
+                <div className="sgcreator-item-box" key={i}>
+                  <div className="sgcreator-sample-box">
+                    <a href="#">
+                      <span className="fa-stack fa-2x">
+                        <i className="fas fa-circle fa-stack-2x" />
+                        <i className={`${prefix}${arr[0]} ${prefix}${item}`} />
+                      </span>
+                    </a>
+                  </div>
+                  <div className="sgcreator-tag-box">
+                    {`<span class="fa-stack fa-2x">`}
+                    {<br />}
+                    {`    <i class="fas fa-circle fa-stack-2x"></i>`}
+                    {<br />}
+                    {i > 1
+                      ? `    <i class="${prefix}${
+                          arr[0]
+                        } ${prefix}${item}"></i>`
+                      : `    <i class="${prefix}${item}"></i>`}
+                    {<br />}
+                    {`</span>`}
+                  </div>
+                  <div className="sgcreator-css-box">
+                    <textarea>{`.${prefix}${ficons[item]}`}</textarea>
+                  </div>
+                  <Style>{`.${prefix}${ficons[item]}`}</Style>
+                </div>
+              )
+          )}
         </div>
       </section>
     );

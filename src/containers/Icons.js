@@ -14,18 +14,18 @@ class Icons extends Component {
           {Object.keys(icons).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_icons"
-              itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <i className={icons[item]} />
+                <i className={`${prefix}${item}`} />
               </div>
               <div className="sgcreator-tag-box">
-                {`<i class="${prefix}${icons[item]}">${item}</i>`}
+                {`<i class="${prefix}${item}"></i>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea />
+                <textarea>{`.${prefix}${icons[item]}`}</textarea>
               </div>
+              <Style>{`.${prefix}${icons[item]}`}</Style>
             </div>
           ))}
         </div>

@@ -26,25 +26,20 @@ class Quote extends Component {
                 {`<p class="${prefix}${item}">Lorem impsum dolor emet</p>`}
               </div>
               <div className="sgcreator-css-box">
-                <p>{`Set new stylling for: ${this.capitalizeInitial(item)}`}</p>
-                <textarea>{quote.style}</textarea>
+                <textarea>{`${this.state.prefix}${quote.style}`}</textarea>
               </div>
             </div>
           ))}
         </div>
-
         <Style>{quote.style}</Style>
       </section>
     );
   }
 
   state = {
-    classes: ["quote"]
+    classes: ["quote"],
+    prefix: `ya-`
   };
-
-  capitalizeInitial(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
 }
 
 function mapStateToProps(state) {
