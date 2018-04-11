@@ -4,21 +4,20 @@ import { connect } from "react-redux";
 
 class Quote extends Component {
   render() {
-    const quote = this.props.category;
+    const quote = this.props.category.style;
     const prefix = this.props.appId.prefix;
 
     return (
       <section className="sgcreator-representation_section">
         <h1>Quote</h1>
         <div className="sgcreator-representation_wrapper">
-          {this.state.classes.map((item, i) => (
+          {Object.keys(quote).map((item, i) => (
             <div
               className="sgcreator-item-box sgcreator-item-box_quote"
-              itemID={i}
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <div className={item}>
+                <div className={`${prefix}${item}`}>
                   <p>Lorem impsum dolor emet</p>
                 </div>
               </div>
@@ -26,20 +25,15 @@ class Quote extends Component {
                 {`<p class="${prefix}${item}">Lorem impsum dolor emet</p>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea>{`${this.state.prefix}${quote.style}`}</textarea>
+                <textarea>{`.${prefix}${quote[item]}`}</textarea>
               </div>
+              <Style>{`.${prefix}${quote[item]}`}</Style>
             </div>
           ))}
         </div>
-        <Style>{quote.style}</Style>
       </section>
     );
   }
-
-  state = {
-    classes: ["quote"],
-    prefix: `ya-`
-  };
 }
 
 function mapStateToProps(state) {

@@ -22,3 +22,10 @@
   background: rgba(0, 0, 0, 0.1);
   text-align: start;
 }
+
+/* FORM ERROR MESSAGE */
+.sgcreator-error_message {
+  position: absolute;
+  float: right;
+  color: red;
+}

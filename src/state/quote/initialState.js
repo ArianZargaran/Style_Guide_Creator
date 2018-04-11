@@ -1,6 +1,6 @@
 const quote = {
-  style: `
-    .quote {
+  style: {
+    quote: `quote {
       background: var(--color_secondary);
       font-size: calc(var(--h1_font-size));
       padding: 1px 20px 20px 20px;
@@ -28,8 +28,8 @@ const quote = {
       bottom: -110px;
       right: 0;
       opacity: 0.5;
-    }
-  `
+    }`
+  }
 };
 
 export default quote;

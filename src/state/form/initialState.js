@@ -6,6 +6,7 @@ const form = {
   margin: 12px auto;
   padding: 20px 30px;
   border: 3px solid var(--color_main);
+  border-radius: 5px;
 }
 
 form div {
@@ -41,6 +42,13 @@ form input, form textarea {
   margin: 5px;
   padding: 5px;
   font-size: var(--h5_font-size);
+  outline-color: var(--color_complementary);
+}
+
+form textarea {
+  resize: vertical;
+  border: 1px solid var(--color_secondary);
+  height: 350px;
 }
 `
   }

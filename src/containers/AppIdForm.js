@@ -8,17 +8,17 @@ import { fetchAppId } from "../state/app_id/action-creators";
 class AppIdForm extends Component {
   render() {
     const prefix = this.props.appId.prefix;
-    const form = this.props.formComponent.form;
+    const form = Object.keys(this.props.formComponent.style)[0];
     const name = this.props.appId.name;
     const style = this.props.appId.style;
-    const { handleSubmit } = this.props;
+    const { handleSubmit, children = "Form" } = this.props;
 
     return (
       <form
-        className={`${prefix}form`}
+        className={`${prefix}${form}`}
         onSubmit={handleSubmit(this.onSubmit.bind(this))}
       >
-        <h2>Set Up YourApp</h2>
+        <h2>{children}</h2>
         <Field
           label="App Name"
           name="name"
@@ -38,7 +38,6 @@ class AppIdForm extends Component {
           component={this.renderTextArea}
         />
         <button type="submit">Submit</button>
-
         <Style>{style}</Style>
       </form>
     );
@@ -47,14 +46,16 @@ class AppIdForm extends Component {
   renderFirstField(field) {
     return (
       <div>
-        <label className="label">{field.label}</label>
+        <label>{field.label}</label>
         <input
           placeholder={field.placeholder}
           type="text"
           {...field.input}
           autoFocus
         />
-        <p>{field.meta.touched ? field.meta.error : ""}</p>
+        <span className="sgcreator-error_message">
+          {field.meta.touched ? field.meta.error : ""}
+        </span>
       </div>
     );
   }
@@ -64,7 +65,9 @@ class AppIdForm extends Component {
       <div>
         <label>{field.label}</label>
         <input placeholder={field.placeholder} type="text" {...field.input} />
-        <p>{field.meta.touched ? field.meta.error : ""}</p>
+        <span className="sgcreator-error_message">
+          {field.meta.touched ? field.meta.error : ""}
+        </span>
       </div>
     );
   }
@@ -74,12 +77,13 @@ class AppIdForm extends Component {
       <div>
         <label>{field.label}</label>
         <textarea placeholder={field.placeholder} {...field.input} />
-        <p>{field.meta.touched ? field.meta.error : ""}</p>
+        <span>{field.meta.touched ? field.meta.error : ""}</span>
       </div>
     );
   }
 
   onSubmit(values) {
+    console.log(values);
     this.props.fetchAppId(values);
   }
 }
