@@ -29,7 +29,7 @@ class Buttons extends Component {
               <div className="sgcreator-tag-box">
                 {i <= 1
                   ? `Common properties for all Buttons`
-                  : `<button class="${prefix}${
+                  : `<button class="${prefix}-${
                       arr[0]
                     } ${prefix}${item}">Learn more</button>`}
               </div>

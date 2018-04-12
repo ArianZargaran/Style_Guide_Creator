@@ -37,7 +37,6 @@ class AppIdForm extends Component {
           component={this.renderTextArea}
         />
         <button type="submit">Submit</button>
-        <style>{style}</style>
       </form>
     );
   }

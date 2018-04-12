@@ -19,15 +19,15 @@ class Breadcrumbs extends Component {
               <div className="sgcreator-sample-box">
                 <nav>
                   <p>
-                    <a href="#" className={`${prefix}${item}`}>
+                    <a href="#" className={`${prefix}-${item}`}>
                       Link 1
                     </a>
                     <span>{" / "}</span>
-                    <a href="#" className={`${prefix}${item}`}>
+                    <a href="#" className={`${prefix}-${item}`}>
                       Link 2
                     </a>
                     <span>{" / "}</span>
-                    <a href="#" className={`${prefix}${item}`}>
+                    <a href="#" className={`${prefix}-${item}`}>
                       Link 3
                     </a>
                   </p>
@@ -38,19 +38,19 @@ class Breadcrumbs extends Component {
                 {<br />}
                 {`    <p>`}
                 {<br />}
-                {`        <a className="${prefix}${item}">`}
+                {`        <a className="${prefix}-${item}">`}
                 {<br />}
                 {`            Link 1`}
                 {<br />}
                 {`        </a> / `}
                 {<br />}
-                {`        <a className="${prefix}${item}">`}
+                {`        <a className="${prefix}-${item}">`}
                 {<br />}
                 {`            Link 2`}
                 {<br />}
                 {`        </a / `}
                 {<br />}
-                {`        <a className="${prefix}${item}">`}
+                {`        <a className="${prefix}-${item}">`}
                 {<br />}
                 {`            Link 3`}
                 {<br />}
