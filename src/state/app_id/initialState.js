@@ -1,7 +1,8 @@
 const initialState = {
   name: "YourApp  Name",
-  prefix: "ya-",
-  style: `:root {
+  prefix: "ya",
+  style: {
+    ":root": `
     /* COLORS */
     --color_main: #5c80bc;
     --color_secondary: #cdd1c4;
@@ -22,7 +23,8 @@ const initialState = {
     --h4_font-size: 1em;
     --h5_font-size: 0.83em;
     --h6_font-size: 0.67em;
-  }`
+  `
+  }
 };
 
 export default initialState;

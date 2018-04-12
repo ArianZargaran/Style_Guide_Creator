@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 class Typography extends Component {
@@ -21,7 +20,6 @@ class Typography extends Component {
               <div className="sgcreator-css-box">
                 <textarea>{`.${prefix}${typography[item]}`}</textarea>
               </div>
-              <Style>{`.${prefix}${typography[item]}`}</Style>
             </div>
           ))}
         </div>

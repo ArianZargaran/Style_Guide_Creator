@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 class Quote extends Component {
@@ -27,7 +26,6 @@ class Quote extends Component {
               <div className="sgcreator-css-box">
                 <textarea>{`.${prefix}${quote[item]}`}</textarea>
               </div>
-              <Style>{`.${prefix}${quote[item]}`}</Style>
             </div>
           ))}
         </div>

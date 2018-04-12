@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchAppId } from "../state/app_id/action-creators";
@@ -38,7 +37,7 @@ class AppIdForm extends Component {
           component={this.renderTextArea}
         />
         <button type="submit">Submit</button>
-        <Style>{style}</Style>
+        <style>{style}</style>
       </form>
     );
   }
@@ -83,7 +82,6 @@ class AppIdForm extends Component {
   }
 
   onSubmit(values) {
-    console.log(values);
     this.props.fetchAppId(values);
   }
 }

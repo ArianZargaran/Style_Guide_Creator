@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 import Categories from "../containers/Categories";
@@ -22,20 +21,34 @@ import FeaturedIcons from "../containers/FeaturedIcons";
 
 class Router extends Component {
   render() {
-    const appId = this.props.appId.style;
-    const logoClass = Object.keys(this.props.logo.style)[0];
-    const logo = this.props.logo.style;
-    const formClass = Object.keys(this.props.form.style)[0];
-    const form = this.props.form.style;
-    const prefix = this.props.appId.prefix;
-    const style = `${appId} .${prefix}${logo[logoClass]} .${prefix}${
-      form[formClass]
-    }`;
+    const { state } = this.props;
+    let style = "";
+
+    Object.keys(state).forEach(itemGroup => {
+      if (!state[itemGroup].style) return;
+      //VVVVVVVVV   DELETE ME WEHN EVERYTHING IS CLEAN   VVVVVVVVVVV
+      if (
+        itemGroup !== "buttons" &&
+        itemGroup !== "appId" &&
+        itemGroup !== "breadcrumbs"
+      )
+        return;
+      //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      const isAppId = itemGroup === "appId";
+
+      Object.keys(state[itemGroup].style).forEach(item => {
+        const prefix = isAppId ? "" : `.${state.appId.prefix}-`;
+        style += `${prefix}${item}{ ${state[itemGroup].style[item]} }\n\n`;
+      });
+    });
+
+    console.log(state);
+    console.log(style);
 
     return (
       <BrowserRouter>
         <div className="sgcreator-hook">
-          <Style>{style}</Style>
+          <style>{style}</style>
           <Categories />
           <Switch>
             <Route path="/quote" component={Quote} />
@@ -62,9 +75,7 @@ class Router extends Component {
 
 function mapStateToProps(state) {
   return {
-    appId: state.appId,
-    logo: state.logo,
-    form: state.formComponent
+    state
   };
 }
 

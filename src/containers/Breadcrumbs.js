@@ -1,6 +1,10 @@
 import React, { Component } from "react";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { UnControlled as CodeMirror } from "react-codemirror2";
+import { changeBreadcrumbsStyles } from "../state/breadcrumbs/action-creators";
+import "../style/sgcreator-item-box/sgcreator-buttons.css";
+require("codemirror/mode/css/css");
 
 class Breadcrumbs extends Component {
   render() {
@@ -57,15 +61,27 @@ class Breadcrumbs extends Component {
                 {`</nav>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea>{`.${prefix}${breadcrumbs[item]}`}</textarea>
+                <CodeMirror
+                  options={{ mode: "css", theme: "monokai" }}
+                  value={breadcrumbs[item]}
+                  onChange={(editor, data, value) =>
+                    this.onEditorChange(item, value)
+                  }
+                />
               </div>
-              <Style>{`.${prefix}${breadcrumbs[item]}`}</Style>
             </div>
           ))}
         </div>
       </section>
     );
   }
+
+  onEditorChange = (item, value) => {
+    console.log(item, value);
+    this.props.changeBreadcrumbsStyles({
+      [item]: value
+    });
+  };
 }
 
 function mapStateToProps(state) {
@@ -75,4 +91,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Breadcrumbs);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ changeBreadcrumbsStyles }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Breadcrumbs);

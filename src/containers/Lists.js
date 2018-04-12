@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 import "../style/sgcreator-item-box/sgcreator-lists.css";
@@ -46,7 +45,6 @@ class Lists extends Component {
                 <div className="sgcreator-css-box">
                   <textarea>{`.${prefix}${lists[item]}`}</textarea>
                 </div>
-                <Style>{`.${prefix}${lists[item]}`}</Style>
               </div>
             );
           })}

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 class FeaturedIcons extends Component {
@@ -50,7 +49,6 @@ class FeaturedIcons extends Component {
                   <div className="sgcreator-css-box">
                     <textarea>{`.${prefix}${ficons[item]}`}</textarea>
                   </div>
-                  <Style>{`.${prefix}${ficons[item]}`}</Style>
                 </div>
               )
           )}

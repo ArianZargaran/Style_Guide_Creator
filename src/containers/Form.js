@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 class Form extends Component {
@@ -72,7 +71,6 @@ class Form extends Component {
               <div className="sgcreator-css-box">
                 <textarea>{`.${prefix}${form[item]}`}</textarea>
               </div>
-              <Style>{`.${prefix}${form[item]}`}</Style>
             </div>
           ))}
         </div>

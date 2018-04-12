@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 class Colors extends Component {
@@ -25,7 +24,6 @@ class Colors extends Component {
               <div className="sgcreator-css-box">
                 <textarea>{`.${prefix}${colors[item]}`}</textarea>
               </div>
-              <Style>{`.${prefix}${colors[item]}`}</Style>
             </div>
           ))}
         </div>

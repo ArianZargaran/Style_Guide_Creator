@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 class Links extends Component {
   render() {
     const links = this.props.category.style;
     const prefix = this.props.appId.prefix;
+    const { children = "Links" } = this.props;
 
     return (
       <section className="sgcreator-representation_section">
-        <h1>Links</h1>
+        <h1>{this.props.children}</h1>
         <div className="sgcreator-representation_wrapper">
           {Object.keys(links).map((item, i, arr) => (
             <div className="sgcreator-item-box" key={i}>
@@ -28,7 +28,6 @@ class Links extends Component {
               <div className="sgcreator-css-box">
                 <textarea>{`.${prefix}${links[item]}`}</textarea>
               </div>
-              <Style>{`.${prefix}${links[item]}`}</Style>
             </div>
           ))}
         </div>

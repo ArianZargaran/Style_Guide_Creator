@@ -1,13 +1,11 @@
 const form = {
   style: {
-    form: `form {
-  display: inline-block;
+    form: `display: inline-block;
   min-width: 350px;
   margin: 12px auto;
   padding: 20px 30px;
   border: 3px solid var(--color_main);
   border-radius: 5px;
-}
 
 form div {
   display: flex;
@@ -49,7 +47,6 @@ form textarea {
   resize: vertical;
   border: 1px solid var(--color_secondary);
   height: 350px;
-}
 `
   }
 };

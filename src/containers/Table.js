@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 class Table extends Component {
@@ -70,7 +69,6 @@ class Table extends Component {
               <div className="sgcreator-css-box">
                 <textarea>{`.${prefix}${table[item]}`}</textarea>
               </div>
-              <Style>{`.${prefix}${table[item]}`}</Style>
             </div>
           ))}
         </div>

@@ -12,13 +12,13 @@ import links from "../state/links/reducer";
 import lists from "../state/lists/reducer";
 import formComponent from "../state/form/reducer";
 import logo from "../state/logo/reducer";
-import form_elements from "../state/form_elements/reducer";
 import quote from "../state/quote/reducer";
 import table from "../state/table/reducer";
 import typography from "../state/typography/reducer";
 import appId from "../state/app_id/reducer";
 
 const reducers = combineReducers({
+  appId,
   breadcrumbs,
   buttons,
   colors,
@@ -29,12 +29,10 @@ const reducers = combineReducers({
   links,
   lists,
   logo,
-  form_elements,
   quote,
   table,
   typography,
   formComponent,
-  appId,
   form: formReducer
 });
 

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 class Logo extends Component {
@@ -29,7 +28,6 @@ class Logo extends Component {
               <div className="sgcreator-css-box">
                 <textarea>{`.${prefix}${logo[item]}`}</textarea>
               </div>
-              <Style>{`.${prefix}${logo[item]}`}</Style>
             </div>
           ))}
         </div>

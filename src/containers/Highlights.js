@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Style from "react-style-tag";
 import { connect } from "react-redux";
 
 import "../style/sgcreator-item-box/sgcreator-highlights.css";
@@ -33,7 +32,6 @@ class Highlights extends Component {
               <div className="sgcreator-css-box">
                 <textarea>{`.${prefix}${highlights[item]}`}</textarea>
               </div>
-              <Style>{`.${prefix}${highlights[item]}`}</Style>
             </div>
           ))}
         </div>

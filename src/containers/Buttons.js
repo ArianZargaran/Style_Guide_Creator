@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import Style from "react-style-tag";
+import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-
+import { UnControlled as CodeMirror } from "react-codemirror2";
+import { changeButtonStyles } from "../state/buttons/action-creators";
 import "../style/sgcreator-item-box/sgcreator-buttons.css";
+require("codemirror/mode/css/css");
 
 class Buttons extends Component {
   render() {
@@ -20,7 +22,7 @@ class Buttons extends Component {
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <button className={`${prefix}${arr[0]} ${prefix}${item}`}>
+                <button className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
                   Learn more
                 </button>
               </div>
@@ -32,15 +34,27 @@ class Buttons extends Component {
                     } ${prefix}${item}">Learn more</button>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea>{`.${prefix}${buttons[item]}`}</textarea>
+                <CodeMirror
+                  options={{ mode: "css", theme: "monokai" }}
+                  value={buttons[item]}
+                  onChange={(editor, data, value) =>
+                    this.onEditorChange(item, value)
+                  }
+                />
               </div>
-              <Style>{`.${prefix}${buttons[item]}`}</Style>
             </div>
           ))}
         </div>
       </section>
     );
   }
+
+  onEditorChange = (item, value) => {
+    console.log(item, value);
+    this.props.changeButtonStyles({
+      [item]: value
+    });
+  };
 }
 
 function mapStateToProps(state) {
@@ -50,4 +64,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Buttons);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ changeButtonStyles }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Buttons);
