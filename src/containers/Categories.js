@@ -39,7 +39,7 @@ class Categories extends Component {
     );
   }
   renderIndexList() {
-    return _.map(this.state.categories).map((category, idx) => {
+    return this.state.categories.map((category, idx) => {
       return (
         <Link to={this.formatUrl(category)} key={category}>
           <li className="sgcreator-categories_list_item">{category}</li>

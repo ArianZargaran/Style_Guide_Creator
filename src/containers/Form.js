@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { UnControlled as CodeMirror } from "react-codemirror2";
+import { changeBreadcrumbsStyles } from "../state/breadcrumbs/action-creators";
+import "../style/sgcreator-item-box/sgcreator-buttons.css";
+require("codemirror/mode/css/css");
 
 class Form extends Component {
   render() {
