@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { UnControlled as CodeMirror } from "react-codemirror2";
-import { changeBreadcrumbsStyles } from "../state/breadcrumbs/action-creators";
-import "../style/sgcreator-item-box/sgcreator-buttons.css";
-require("codemirror/mode/css/css");
+import { changeIconsStyles } from "../state/icons/action-creators";
+import "codemirror/mode/css/css";
 
 class Icons extends Component {
   render() {
@@ -21,13 +20,19 @@ class Icons extends Component {
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <i className={`${prefix}${item}`} />
+                <i className={`${prefix}-${item} fas fa-minus`} />
               </div>
               <div className="sgcreator-tag-box">
-                {`<i class="${prefix}${item}"></i>`}
+                {`<i class="${prefix}-${item} fas fa-minus"></i>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea>{`.${prefix}${icons[item]}`}</textarea>
+                <CodeMirror
+                  options={{ mode: "css", theme: "monokai" }}
+                  value={icons[item]}
+                  onChange={(editor, data, value) =>
+                    this.onEditorChange(item, value)
+                  }
+                />
               </div>
             </div>
           ))}
@@ -35,6 +40,13 @@ class Icons extends Component {
       </section>
     );
   }
+
+  onEditorChange = (item, value) => {
+    console.log(item, value);
+    this.props.changeIconsStyles({
+      [item]: value
+    });
+  };
 }
 
 function mapStateToProps(state) {
@@ -44,4 +56,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Icons);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ changeIconsStyles }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Icons);

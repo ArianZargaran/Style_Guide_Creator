@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { UnControlled as CodeMirror } from "react-codemirror2";
-import { changeBreadcrumbsStyles } from "../state/breadcrumbs/action-creators";
-import "../style/sgcreator-item-box/sgcreator-buttons.css";
-require("codemirror/mode/css/css");
+import { changeTableStyles } from "../state/table/action-creators";
+import "codemirror/mode/css/css";
 
 class Table extends Component {
   render() {
@@ -18,7 +17,7 @@ class Table extends Component {
           {Object.keys(table).map((item, i) => (
             <div className="sgcreator-item-box" key={i}>
               <div className="sgcreator-sample-box">
-                <table className={`${prefix}${item}`}>
+                <table className={`${prefix}-${item}`}>
                   <tr>
                     <th>1</th>
                     <th>2</th>
@@ -37,7 +36,7 @@ class Table extends Component {
                 </table>
               </div>
               <div className="sgcreator-tag-box">
-                {`<table class="${prefix}${item}">`}
+                {`<table class="${prefix}-${item}">`}
                 {<br />}
                 {`    <tr>`}
                 {<br />}
@@ -72,7 +71,13 @@ class Table extends Component {
                 {`</table>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea>{`.${prefix}${table[item]}`}</textarea>
+                <CodeMirror
+                  options={{ mode: "css", theme: "monokai" }}
+                  value={table[item]}
+                  onChange={(editor, data, value) =>
+                    this.onEditorChange(item, value)
+                  }
+                />
               </div>
             </div>
           ))}
@@ -80,6 +85,13 @@ class Table extends Component {
       </section>
     );
   }
+
+  onEditorChange = (item, value) => {
+    console.log(item, value);
+    this.props.changeTableStyles({
+      [item]: value
+    });
+  };
 }
 
 function mapStateToProps(state) {
@@ -89,4 +101,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Table);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ changeTableStyles }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table);

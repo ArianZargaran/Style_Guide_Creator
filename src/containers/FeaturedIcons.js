@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { UnControlled as CodeMirror } from "react-codemirror2";
-import { changeBreadcrumbsStyles } from "../state/breadcrumbs/action-creators";
-import "../style/sgcreator-item-box/sgcreator-buttons.css";
-require("codemirror/mode/css/css");
+import { changeFiconsStyles } from "../state/featured_icons/action-creators";
+import "codemirror/mode/css/css";
 
 class FeaturedIcons extends Component {
   render() {
@@ -24,9 +23,14 @@ class FeaturedIcons extends Component {
                     {`Properties common for all Featured Icons`}
                   </div>
                   <div className="sgcreator-css-box">
-                    <textarea>{`.${prefix}${ficons[item]}`}</textarea>
+                    <CodeMirror
+                      options={{ mode: "css", theme: "monokai" }}
+                      value={ficons[item]}
+                      onChange={(editor, data, value) =>
+                        this.onEditorChange(item, value)
+                      }
+                    />
                   </div>
-                  <Style>{`.${prefix}${ficons[item]}`}</Style>
                 </div>
               ) : (
                 <div className="sgcreator-item-box" key={i}>
@@ -34,7 +38,11 @@ class FeaturedIcons extends Component {
                     <a href="#">
                       <span className="fa-stack fa-2x">
                         <i className="fas fa-circle fa-stack-2x" />
-                        <i className={`${prefix}${arr[0]} ${prefix}${item}`} />
+                        <i
+                          className={`${prefix}-${
+                            arr[0]
+                          } fas fa-terminal fa-stack-1x fa-inverse`}
+                        />
                       </span>
                     </a>
                   </div>
@@ -43,16 +51,20 @@ class FeaturedIcons extends Component {
                     {<br />}
                     {`    <i class="fas fa-circle fa-stack-2x"></i>`}
                     {<br />}
-                    {i > 1
-                      ? `    <i class="${prefix}${
-                          arr[0]
-                        } ${prefix}${item}"></i>`
-                      : `    <i class="${prefix}${item}"></i>`}
+                    {`    <i class="${prefix}-${
+                      arr[0]
+                    } ${prefix}-${item}"></i>`}
                     {<br />}
                     {`</span>`}
                   </div>
                   <div className="sgcreator-css-box">
-                    <textarea>{`.${prefix}${ficons[item]}`}</textarea>
+                    <CodeMirror
+                      options={{ mode: "css", theme: "monokai" }}
+                      value={ficons[item]}
+                      onChange={(editor, data, value) =>
+                        this.onEditorChange(item, value)
+                      }
+                    />
                   </div>
                 </div>
               )
@@ -61,6 +73,13 @@ class FeaturedIcons extends Component {
       </section>
     );
   }
+
+  onEditorChange = (item, value) => {
+    console.log(item, value);
+    this.props.changeFiconsStyles({
+      [item]: value
+    });
+  };
 }
 
 function mapStateToProps(state) {
@@ -70,4 +89,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(FeaturedIcons);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ changeFiconsStyles }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FeaturedIcons);

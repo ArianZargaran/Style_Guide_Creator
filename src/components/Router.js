@@ -26,14 +26,6 @@ class Router extends Component {
 
     Object.keys(state).forEach(itemGroup => {
       if (!state[itemGroup].style) return;
-      //VVVVVVVVV   DELETE ME WEHN EVERYTHING IS CLEAN   VVVVVVVVVVV
-      if (
-        itemGroup !== "buttons" &&
-        itemGroup !== "appId" &&
-        itemGroup !== "breadcrumbs"
-      )
-        return;
-      //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
       const isAppId = itemGroup === "appId";
 
       Object.keys(state[itemGroup].style).forEach(item => {

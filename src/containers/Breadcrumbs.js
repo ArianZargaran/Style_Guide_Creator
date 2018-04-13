@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux";
 import { UnControlled as CodeMirror } from "react-codemirror2";
 import { changeBreadcrumbsStyles } from "../state/breadcrumbs/action-creators";
 import "../style/sgcreator-item-box/sgcreator-buttons.css";
-require("codemirror/mode/css/css");
+import "codemirror/mode/css/css";
 
 class Breadcrumbs extends Component {
   render() {
@@ -14,20 +14,29 @@ class Breadcrumbs extends Component {
       <section className="sgcreator-representation_section">
         <h1>Breadcrumbs</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(breadcrumbs).map((item, i) => (
+          {Object.keys(breadcrumbs).map((item, i, arr) => (
             <div className="sgcreator-item-box" key={i}>
               <div className="sgcreator-sample-box">
                 <nav>
                   <p>
-                    <a href="#" className={`${prefix}-${item}`}>
+                    <a
+                      href="#"
+                      className={`${prefix}-${arr[0]} ${prefix}-${item}`}
+                    >
                       Link 1
                     </a>
                     <span>{" / "}</span>
-                    <a href="#" className={`${prefix}-${item}`}>
+                    <a
+                      href="#"
+                      className={`${prefix}-${arr[0]} ${prefix}-${item}`}
+                    >
                       Link 2
                     </a>
                     <span>{" / "}</span>
-                    <a href="#" className={`${prefix}-${item}`}>
+                    <a
+                      href="#"
+                      className={`${prefix}-${arr[0]} ${prefix}-${item}`}
+                    >
                       Link 3
                     </a>
                   </p>
@@ -38,19 +47,25 @@ class Breadcrumbs extends Component {
                 {<br />}
                 {`    <p>`}
                 {<br />}
-                {`        <a className="${prefix}-${item}">`}
+                {`        <a className="${prefix}-${
+                  arr[0]
+                } ${prefix}-${item}">`}
                 {<br />}
                 {`            Link 1`}
                 {<br />}
                 {`        </a> / `}
                 {<br />}
-                {`        <a className="${prefix}-${item}">`}
+                {`        <a className="${prefix}-${
+                  arr[0]
+                } ${prefix}-${item}">`}
                 {<br />}
                 {`            Link 2`}
                 {<br />}
                 {`        </a / `}
                 {<br />}
-                {`        <a className="${prefix}-${item}">`}
+                {`        <a className="${prefix}-${
+                  arr[0]
+                } ${prefix}-${item}">`}
                 {<br />}
                 {`            Link 3`}
                 {<br />}

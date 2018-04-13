@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { UnControlled as CodeMirror } from "react-codemirror2";
-import { changeBreadcrumbsStyles } from "../state/breadcrumbs/action-creators";
-import "../style/sgcreator-item-box/sgcreator-buttons.css";
-require("codemirror/mode/css/css");
+import { changeTypographyStyles } from "../state/typography/action-creators";
+import "codemirror/mode/css/css";
 
 class Typography extends Component {
   render() {
@@ -17,13 +16,19 @@ class Typography extends Component {
           {Object.keys(typography).map((item, i) => (
             <div className="sgcreator-item-box" key={i}>
               <div className="sgcreator-sample-box">
-                <p className={`${prefix}${item}`}>Lorem impsum dolor emet</p>
+                <p className={`${prefix}-${item}`}>Lorem impsum dolor emet</p>
               </div>
               <div className="sgcreator-tag-box">
-                {`<p class="${prefix}${item}">Lorem impsum dolor emet</p>`}
+                {`<p class="${prefix}-${item}">Lorem impsum dolor emet</p>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea>{`.${prefix}${typography[item]}`}</textarea>
+                <CodeMirror
+                  options={{ mode: "css", theme: "monokai" }}
+                  value={typography[item]}
+                  onChange={(editor, data, value) =>
+                    this.onEditorChange(item, value)
+                  }
+                />
               </div>
             </div>
           ))}
@@ -31,6 +36,13 @@ class Typography extends Component {
       </section>
     );
   }
+
+  onEditorChange = (item, value) => {
+    console.log(item, value);
+    this.props.changeTypographyStyles({
+      [item]: value
+    });
+  };
 }
 
 function mapStateToProps(state) {
@@ -40,4 +52,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Typography);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ changeTypographyStyles }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Typography);

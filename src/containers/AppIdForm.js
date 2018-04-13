@@ -14,7 +14,7 @@ class AppIdForm extends Component {
 
     return (
       <form
-        className={`${prefix}${form}`}
+        className={`${prefix}-${form}`}
         onSubmit={handleSubmit(this.onSubmit.bind(this))}
       >
         <h2>{children}</h2>

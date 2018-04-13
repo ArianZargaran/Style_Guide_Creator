@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { UnControlled as CodeMirror } from "react-codemirror2";
-import { changeBreadcrumbsStyles } from "../state/breadcrumbs/action-creators";
-import "../style/sgcreator-item-box/sgcreator-buttons.css";
-require("codemirror/mode/css/css");
+import { changeHeadersStyles } from "../state/headers/action-creators";
+import "codemirror/mode/css/css";
 
 class Headers extends Component {
   render() {
@@ -18,19 +17,25 @@ class Headers extends Component {
           {Object.keys(headers).map((item, i, arr) => (
             <div className="sgcreator-item-box" key={item}>
               <div className="sgcreator-sample-box">
-                <p className={`${prefix}${arr[0]} ${prefix}${item}`}>
+                <p className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
                   Lorem Ipsum
                 </p>
               </div>
               <div className="sgcreator-tag-box">
                 {i === 0
                   ? `Common properties for all Headers`
-                  : `<h${i} class="${prefix}${
+                  : `<h${i} class="${prefix}-${
                       arr[0]
-                    } ${prefix}${item}">Lorem Ipsum</h${i}>`}
+                    } ${prefix}-${item}">Lorem Ipsum</h${i}>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea>{`.${prefix}${headers[item]}`}</textarea>
+                <CodeMirror
+                  options={{ mode: "css", theme: "monokai" }}
+                  value={headers[item]}
+                  onChange={(editor, data, value) =>
+                    this.onEditorChange(item, value)
+                  }
+                />
               </div>
             </div>
           ))}
@@ -38,6 +43,13 @@ class Headers extends Component {
       </section>
     );
   }
+
+  onEditorChange = (item, value) => {
+    console.log(item, value);
+    this.props.changeHeadersStyles({
+      [item]: value
+    });
+  };
 }
 
 function mapStateToProps(state) {
@@ -47,4 +59,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Headers);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ changeHeadersStyles }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Headers);

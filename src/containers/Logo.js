@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { UnControlled as CodeMirror } from "react-codemirror2";
-import { changeBreadcrumbsStyles } from "../state/breadcrumbs/action-creators";
-import "../style/sgcreator-item-box/sgcreator-buttons.css";
-require("codemirror/mode/css/css");
+import { changeLogoStyles } from "../state/logo/action-creators";
+import "codemirror/mode/css/css";
 
 class Logo extends Component {
   render() {
@@ -16,29 +15,63 @@ class Logo extends Component {
       <section className="sgcreator-representation_section">
         <h1>Logo</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(logo).map((item, i, arr) => (
-            <div className="sgcreator-item-box sgcreator-item-box_logo" key={i}>
-              <div className="sgcreator-sample-box">
-                <h1 className={`${prefix}${arr[0]} ${prefix}${item}`}>
-                  {name}
-                </h1>
+          {Object.keys(logo).map((item, i, arr) => {
+            return i === 0 ? (
+              <div
+                className="sgcreator-item-box sgcreator-item-box_logo"
+                key={i}
+              >
+                <div className="sgcreator-tag-box">
+                  {`Common properties to all Logos`}
+                </div>
+                <div className="sgcreator-css-box">
+                  <CodeMirror
+                    options={{ mode: "css", theme: "monokai" }}
+                    value={logo[item]}
+                    onChange={(editor, data, value) =>
+                      this.onEditorChange(item, value)
+                    }
+                  />
+                </div>
               </div>
-              <div className="sgcreator-tag-box">
-                {i === 0
-                  ? `Common properties for all Links`
-                  : `<h1 class="${prefix}${
-                      arr[0]
-                    } ${prefix}${item}">${name}</h1>`}
+            ) : (
+              <div
+                className="sgcreator-item-box sgcreator-item-box_logo"
+                key={i}
+              >
+                <div className="sgcreator-sample-box">
+                  <h1 className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
+                    {name}
+                  </h1>
+                </div>
+                <div className="sgcreator-tag-box">
+                  {`<h1 class=${prefix}-${arr[0]} ${prefix}-${item}">
+                    ${name}
+                  </h1>`}
+                </div>
+                <div className="sgcreator-css-box">
+                  <CodeMirror
+                    options={{ mode: "css", theme: "monokai" }}
+                    value={logo[item]}
+                    onChange={(editor, data, value) =>
+                      this.onEditorChange(item, value)
+                    }
+                  />
+                </div>
               </div>
-              <div className="sgcreator-css-box">
-                <textarea>{`.${prefix}${logo[item]}`}</textarea>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     );
   }
+
+  onEditorChange = (item, value) => {
+    console.log(item, value);
+    this.props.changeLogoStyles({
+      [item]: value
+    });
+  };
 }
 
 function mapStateToProps(state) {
@@ -48,4 +81,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Logo);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ changeLogoStyles }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Logo);

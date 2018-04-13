@@ -1,4 +1,3 @@
-import _ from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -31,7 +30,7 @@ class Categories extends Component {
     return (
       <section className="sgcreator-categories_section">
         <Link to="/">
-          <div className={`${prefix}${logo}`}>{name}</div>
+          <div className={`${prefix}-logo ${prefix}-logo_full`}>{name}</div>
           <h1 className="sgcreator-category_header">{name}</h1>
         </Link>
         <ol className="sgcreator-categories_list">{this.renderIndexList()}</ol>

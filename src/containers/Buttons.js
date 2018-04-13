@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { UnControlled as CodeMirror } from "react-codemirror2";
 import { changeButtonStyles } from "../state/buttons/action-creators";
 import "../style/sgcreator-item-box/sgcreator-buttons.css";
-require("codemirror/mode/css/css");
+import "codemirror/mode/css/css";
 
 class Buttons extends Component {
   render() {
@@ -15,35 +15,54 @@ class Buttons extends Component {
       <section className="sgcreator-representation_section">
         <h1>Buttons</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(buttons).map((item, i, arr) => (
-            <div
-              className="sgcreator-item-box sgcreator-item-box_buttons"
-              itemID={i}
-              key={i}
-            >
-              <div className="sgcreator-sample-box">
-                <button className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
-                  Learn more
-                </button>
+          {Object.keys(buttons).map((item, i, arr) => {
+            return i === 0 ? (
+              <div
+                className="sgcreator-item-box sgcreator-item-box_buttons"
+                itemID={i}
+                key={i}
+              >
+                <div className="sgcreator-tag-box">
+                  {`Common propperties to all Buttons`}
+                </div>
+                <div className="sgcreator-css-box">
+                  <CodeMirror
+                    options={{ mode: "css", theme: "monokai" }}
+                    value={buttons[item]}
+                    onChange={(editor, data, value) =>
+                      this.onEditorChange(item, value)
+                    }
+                  />
+                </div>
               </div>
-              <div className="sgcreator-tag-box">
-                {i <= 1
-                  ? `Common properties for all Buttons`
-                  : `<button class="${prefix}-${
-                      arr[0]
-                    } ${prefix}${item}">Learn more</button>`}
+            ) : (
+              <div
+                className="sgcreator-item-box sgcreator-item-box_buttons"
+                itemID={i}
+                key={i}
+              >
+                <div className="sgcreator-sample-box">
+                  <button className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
+                    Learn more
+                  </button>
+                </div>
+                <div className="sgcreator-tag-box">
+                  {`<button class="${prefix}-${
+                    arr[0]
+                  } ${prefix}-${item}">Learn more</button>`}
+                </div>
+                <div className="sgcreator-css-box">
+                  <CodeMirror
+                    options={{ mode: "css", theme: "monokai" }}
+                    value={buttons[item]}
+                    onChange={(editor, data, value) =>
+                      this.onEditorChange(item, value)
+                    }
+                  />
+                </div>
               </div>
-              <div className="sgcreator-css-box">
-                <CodeMirror
-                  options={{ mode: "css", theme: "monokai" }}
-                  value={buttons[item]}
-                  onChange={(editor, data, value) =>
-                    this.onEditorChange(item, value)
-                  }
-                />
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     );

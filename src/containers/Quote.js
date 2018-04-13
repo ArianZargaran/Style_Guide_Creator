@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { UnControlled as CodeMirror } from "react-codemirror2";
-import { changeBreadcrumbsStyles } from "../state/breadcrumbs/action-creators";
-import "../style/sgcreator-item-box/sgcreator-buttons.css";
-require("codemirror/mode/css/css");
+import { changeQuoteStyles } from "../state/quote/action-creators";
+import "codemirror/mode/css/css";
 
 class Quote extends Component {
   render() {
@@ -21,15 +20,21 @@ class Quote extends Component {
               key={i}
             >
               <div className="sgcreator-sample-box">
-                <div className={`${prefix}${item}`}>
+                <div className={`${prefix}-${item}`}>
                   <p>Lorem impsum dolor emet</p>
                 </div>
               </div>
               <div className="sgcreator-tag-box">
-                {`<p class="${prefix}${item}">Lorem impsum dolor emet</p>`}
+                {`<p class="${prefix}-${item}">Lorem impsum dolor emet</p>`}
               </div>
               <div className="sgcreator-css-box">
-                <textarea>{`.${prefix}${quote[item]}`}</textarea>
+                <CodeMirror
+                  options={{ mode: "css", theme: "monokai" }}
+                  value={quote[item]}
+                  onChange={(editor, data, value) =>
+                    this.onEditorChange(item, value)
+                  }
+                />
               </div>
             </div>
           ))}
@@ -37,6 +42,13 @@ class Quote extends Component {
       </section>
     );
   }
+
+  onEditorChange = (item, value) => {
+    console.log(item, value);
+    this.props.changeQuoteStyles({
+      [item]: value
+    });
+  };
 }
 
 function mapStateToProps(state) {
@@ -46,4 +58,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Quote);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ changeQuoteStyles }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Quote);

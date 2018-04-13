@@ -15,7 +15,7 @@ top: -10px;
 left: 0;
 opacity: 0.5;`,
 
-    ".quote p::after": `content: "”";
+    "quote p::after": `content: "”";
 font-size: calc(var(--h1_font-size) + 100px);
 position: absolute;
 color: var(--color_background);

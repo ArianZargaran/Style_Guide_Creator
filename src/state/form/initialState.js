@@ -6,6 +6,7 @@ const form = {
   padding: 20px 30px;
   border: 3px solid var(--color_main);
   border-radius: 5px;
+  }
 
 form div {
   display: flex;
