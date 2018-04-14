@@ -43,7 +43,7 @@ class Breadcrumbs extends Component {
                   <div className="sgcreator-css-box">
                     <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                     <CodeMirror
-                      options={{ mode: "css" }}
+                      options={{ mode: "css", theme: "ttcn" }}
                       value={breadcrumbs[item]}
                       onChange={(editor, data, value) =>
                         this.onEditorChange(item, value)
@@ -57,7 +57,10 @@ class Breadcrumbs extends Component {
                   <div className="sgcreator-css-box">
                     <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                     <CodeMirror
-                      options={{ mode: "css" }}
+                      options={{
+                        mode: "css",
+                        theme: "ttcn"
+                      }}
                       value={breadcrumbs[item]}
                       onChange={(editor, data, value) =>
                         this.onEditorChange(item, value)

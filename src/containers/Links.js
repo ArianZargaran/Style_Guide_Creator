@@ -22,7 +22,7 @@ class Links extends Component {
                 </div>
                 <div className="sgcreator-css-box">
                   <CodeMirror
-                    options={{ mode: "css", theme: "monokai" }}
+                    options={{ mode: "css", theme: "ttcn" }}
                     value={links[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)
@@ -49,7 +49,7 @@ class Links extends Component {
                 </div>
                 <div className="sgcreator-css-box">
                   <CodeMirror
-                    options={{ mode: "css", theme: "monokai" }}
+                    options={{ mode: "css", theme: "ttcn" }}
                     value={links[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)

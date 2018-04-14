@@ -9,7 +9,7 @@ class AppIdForm extends Component {
     const prefix = this.props.appId.prefix;
     const form = Object.keys(this.props.formComponent.style)[0];
     const name = this.props.appId.name;
-    const style = this.props.appId.style;
+    const style = this.props.appId.style[":root"];
     const { handleSubmit, children = "Form" } = this.props;
 
     return (
@@ -35,7 +35,9 @@ class AppIdForm extends Component {
           name="style"
           placeholder={style}
           component={this.renderTextArea}
-        />
+        >
+          {style}
+        </Field>
         <button type="submit">Submit</button>
       </form>
     );
@@ -74,7 +76,7 @@ class AppIdForm extends Component {
     return (
       <div>
         <label>{field.label}</label>
-        <textarea placeholder={field.placeholder} {...field.input} />
+        <textarea {...field.input} placeholder={field.placeholder} />
         <span>{field.meta.touched ? field.meta.error : ""}</span>
       </div>
     );
