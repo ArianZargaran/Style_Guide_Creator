@@ -1,10 +1,31 @@
-.sgcreator-css-box > textarea {
-  width: 600px;
-  height: 120px;
-  border: 3px solid rgba(0, 0, 0, 0.1);
-  padding: 5px;
-}
-
 .sgcreator-css-box {
   text-align: left;
+  background: transparent;
+  padding: 0 3px;
+  color: black;
+  font-family: monospace;
+}
+
+.sgcreator-css-box .sgcreator-selector_open {
+  margin-top: -10px;
+  padding-top: 5px;
+}
+
+.sgcreator-css-box .sgcreator-selector_close {
+  margin-top: -10px;
+  padding-top: 10px;
+}
+
+.CodeMirror {
+  margin-top: -13px;
+  height: auto;
+  padding-left: 10px;
+}
+
+.CodeMirror-gutters {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 3;
 }
