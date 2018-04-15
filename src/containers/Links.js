@@ -15,19 +15,25 @@ class Links extends Component {
         <h1>Links</h1>
         <div className="sgcreator-representation_wrapper">
           {Object.keys(links).map((item, i, arr) => {
-            return i === 0 ? (
+            return i <= 1 || i === 4 ? (
               <div className="sgcreator-item-box" key={i}>
-                <div className="sgcreator-tag-box">
-                  {`Common properties for all Links`}
-                </div>
+                {i === 0 ? (
+                  <div className="sgcreator-tag-box">
+                    "Common properties for all Links"
+                  </div>
+                ) : (
+                  ""
+                )}
                 <div className="sgcreator-css-box">
+                  <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "ttcn" }}
+                    options={{ mode: "css", theme: "neo" }}
                     value={links[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)
                     }
                   />
+                  <p className="sgcreator-selector_close">}</p>
                 </div>
               </div>
             ) : (
@@ -41,20 +47,20 @@ class Links extends Component {
                   </a>
                 </div>
                 <div className="sgcreator-tag-box">
-                  {i === 0
-                    ? `Common properties for all Links`
-                    : `<a href="" class="${prefix}-${
-                        arr[0]
-                      } ${prefix}-${item}">Lorem impsum dolor emet</a>`}
+                  {`<a href="" class="${prefix}-${
+                    arr[0]
+                  } ${prefix}-${item}">Lorem impsum dolor emet</a>`}
                 </div>
                 <div className="sgcreator-css-box">
+                  <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "ttcn" }}
+                    options={{ mode: "css", theme: "neo" }}
                     value={links[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)
                     }
                   />
+                  <p className="sgcreator-selector_close">}</p>
                 </div>
               </div>
             );

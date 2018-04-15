@@ -17,29 +17,31 @@ class Highlights extends Component {
         <div className="sgcreator-representation_wrapper">
           {Object.keys(highlights).map((item, i, arr) => {
             return i === 0 ? (
-              <div>
-                <div className="sgcreator-sample-box">
-                  <p className="sgcreator-tag-box">
-                    Common properties for all Highlights
-                  </p>
-                </div>
+              <div className="sgcreator-item-box" key={item}>
+                <p className="sgcreator-tag-box">
+                  Common properties for all Highlights
+                </p>
                 <div className="sgcreator-css-box">
+                  <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "ttcn" }}
+                    options={{ mode: "css", theme: "neo" }}
                     value={highlights[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)
                     }
                   />
+                  <p className="sgcreator-selector_close">}</p>
                 </div>
               </div>
             ) : (
               <div
-                className="sgcreator-item-box sgcreator-item-box_highlights sgcreator-align-left"
+                className="sgcreator-item-box sgcreator-item-box_highlights"
                 key={i}
               >
-                <div className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
-                  <h1 className="ya-header">Highlight</h1>
+                <div className="sgcreator-sample-box">
+                  <div className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
+                    <h1 className="ya-header">Highlight</h1>
+                  </div>
                 </div>
                 <div className="sgcreator-tag-box">
                   {`<div class="${prefix}-${arr[0]} ${prefix}-${item}">`}
@@ -49,13 +51,15 @@ class Highlights extends Component {
                   {`</div>`}
                 </div>
                 <div className="sgcreator-css-box">
+                  <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "ttcn" }}
+                    options={{ mode: "css", theme: "neo" }}
                     value={highlights[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)
                     }
                   />
+                  <p className="sgcreator-selector_close">}</p>
                 </div>
               </div>
             );

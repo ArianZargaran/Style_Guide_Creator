@@ -26,13 +26,15 @@ class Icons extends Component {
                 {`<i class="${prefix}-${item} fas fa-minus"></i>`}
               </div>
               <div className="sgcreator-css-box">
+                <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                 <CodeMirror
-                  options={{ mode: "css", theme: "ttcn" }}
+                  options={{ mode: "css", theme: "neo" }}
                   value={icons[item]}
                   onChange={(editor, data, value) =>
                     this.onEditorChange(item, value)
                   }
                 />
+                <p className="sgcreator-selector_close">}</p>
               </div>
             </div>
           ))}

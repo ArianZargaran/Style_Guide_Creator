@@ -23,13 +23,15 @@ class FeaturedIcons extends Component {
                     {`Properties common for all Featured Icons`}
                   </div>
                   <div className="sgcreator-css-box">
+                    <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                     <CodeMirror
-                      options={{ mode: "css", theme: "ttcn" }}
+                      options={{ mode: "css", theme: "neo" }}
                       value={ficons[item]}
                       onChange={(editor, data, value) =>
                         this.onEditorChange(item, value)
                       }
                     />
+                    <p className="sgcreator-selector_close">}</p>
                   </div>
                 </div>
               ) : (
@@ -58,13 +60,15 @@ class FeaturedIcons extends Component {
                     {`</span>`}
                   </div>
                   <div className="sgcreator-css-box">
+                    <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                     <CodeMirror
-                      options={{ mode: "css", theme: "ttcn" }}
+                      options={{ mode: "css", theme: "neo" }}
                       value={ficons[item]}
                       onChange={(editor, data, value) =>
                         this.onEditorChange(item, value)
                       }
                     />
+                    <p className="sgcreator-selector_close">}</p>
                   </div>
                 </div>
               )

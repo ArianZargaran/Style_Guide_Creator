@@ -6,6 +6,9 @@
   font-family: monospace;
 }
 
+.sgcreator-css-box:hover {
+}
+
 .sgcreator-css-box .sgcreator-selector_open {
   margin-top: -10px;
   padding-top: 5px;

@@ -43,7 +43,11 @@ class Breadcrumbs extends Component {
                   <div className="sgcreator-css-box">
                     <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                     <CodeMirror
-                      options={{ mode: "css", theme: "ttcn" }}
+                      options={{
+                        mode: "css",
+                        theme: "neo",
+                        autofocus: true
+                      }}
                       value={breadcrumbs[item]}
                       onChange={(editor, data, value) =>
                         this.onEditorChange(item, value)
@@ -59,7 +63,7 @@ class Breadcrumbs extends Component {
                     <CodeMirror
                       options={{
                         mode: "css",
-                        theme: "ttcn"
+                        theme: "neo"
                       }}
                       value={breadcrumbs[item]}
                       onChange={(editor, data, value) =>

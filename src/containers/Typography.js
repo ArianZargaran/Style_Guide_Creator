@@ -22,13 +22,15 @@ class Typography extends Component {
                 {`<p class="${prefix}-${item}">Lorem impsum dolor emet</p>`}
               </div>
               <div className="sgcreator-css-box">
+                <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                 <CodeMirror
-                  options={{ mode: "css", theme: "ttcn" }}
+                  options={{ mode: "css", theme: "neo" }}
                   value={typography[item]}
                   onChange={(editor, data, value) =>
                     this.onEditorChange(item, value)
                   }
                 />
+                <p className="sgcreator-selector_close">}</p>
               </div>
             </div>
           ))}

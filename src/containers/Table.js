@@ -18,66 +18,86 @@ class Table extends Component {
             <div className="sgcreator-item-box" key={i}>
               <div className="sgcreator-sample-box">
                 <table className={`${prefix}-${item}`}>
-                  <tr>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>3</th>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                  </tr>
+                  <thead>
+                    <tr>
+                      <th>1</th>
+                      <th>2</th>
+                      <th>3</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>4</td>
+                      <td>5</td>
+                      <td>6</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td>7</td>
+                      <td>8</td>
+                      <td>9</td>
+                    </tr>
+                  </tfoot>
                 </table>
               </div>
               <div className="sgcreator-tag-box">
                 {`<table class="${prefix}-${item}">`}
                 {<br />}
-                {`    <tr>`}
+                {`    <thead>`}
                 {<br />}
-                {`        <th>1</th>`}
+                {`        <tr>`}
                 {<br />}
-                {`        <th>2</th>`}
+                {`            <th>1</th>`}
                 {<br />}
-                {`        <th>3</th>`}
+                {`            <th>2</th>`}
                 {<br />}
-                {`    </tr>`}
+                {`            <th>3</th>`}
                 {<br />}
-                {`    <tr>`}
+                {`        </tr>`}
                 {<br />}
-                {`        <td>4</td>`}
+                {`    </thead>`}
                 {<br />}
-                {`        <td>5</td>`}
+                {`    <tbody>`}
                 {<br />}
-                {`        <td>6</td>`}
+                {`        <tr>`}
                 {<br />}
-                {`    </tr>`}
+                {`            <td>4</td>`}
                 {<br />}
-                {`    <tr>`}
+                {`            <td>5</td>`}
                 {<br />}
-                {`        <td>7</td>`}
+                {`            <td>6</td>`}
                 {<br />}
-                {`        <td>8</td>`}
+                {`        </tr>`}
                 {<br />}
-                {`        <td>9</td>`}
+                {`    </tbody>`}
                 {<br />}
-                {`    </tr>`}
+                {`    <tfoot>`}
+                {<br />}
+                {`        <tr>`}
+                {<br />}
+                {`            <td>7</td>`}
+                {<br />}
+                {`            <td>8</td>`}
+                {<br />}
+                {`            <td>9</td>`}
+                {<br />}
+                {`        </tr>`}
+                {<br />}
+                {`    </tfoot>`}
                 {<br />}
                 {`</table>`}
               </div>
               <div className="sgcreator-css-box">
+                <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                 <CodeMirror
-                  options={{ mode: "css", theme: "ttcn" }}
+                  options={{ mode: "css", theme: "neo" }}
                   value={table[item]}
                   onChange={(editor, data, value) =>
                     this.onEditorChange(item, value)
                   }
                 />
+                <p className="sgcreator-selector_close">}</p>
               </div>
             </div>
           ))}

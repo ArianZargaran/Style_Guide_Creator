@@ -6,7 +6,7 @@ import store from "./store";
 import Router from "./components/Router";
 
 import "codemirror/lib/codemirror.css";
-import "codemirror/theme/ttcn.css";
+import "codemirror/theme/neo.css";
 import "./style/sgcreator-hook.css";
 import "./style/sgcreator-categories.css";
 import "./style/sgcreator-section.css";

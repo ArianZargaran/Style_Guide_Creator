@@ -25,13 +25,15 @@ class Lists extends Component {
                   {"Common properties to all Lists"}
                 </div>
                 <div className="sgcreator-css-box">
+                  <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "ttcn" }}
+                    options={{ mode: "css", theme: "neo" }}
                     value={lists[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)
                     }
                   />
+                  <p className="sgcreator-selector_close">}</p>
                 </div>
               </div>
             ) : (
@@ -60,13 +62,15 @@ class Lists extends Component {
                   {i === 1 ? `</ul>` : `</ol>`}
                 </div>
                 <div className="sgcreator-css-box">
+                  <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "ttcn" }}
+                    options={{ mode: "css", theme: "neo" }}
                     value={lists[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)
                     }
                   />
+                  <p className="sgcreator-selector_close">}</p>
                 </div>
               </div>
             );

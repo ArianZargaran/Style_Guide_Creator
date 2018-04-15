@@ -16,29 +16,29 @@ class Buttons extends Component {
         <h1>Buttons</h1>
         <div className="sgcreator-representation_wrapper">
           {Object.keys(buttons).map((item, i, arr) => {
-            return i === 0 ? (
+            return i <= 1 ? (
               <div
                 className="sgcreator-item-box sgcreator-item-box_buttons"
-                itemID={i}
                 key={i}
               >
-                <div className="sgcreator-tag-box">
-                  {`Common propperties to all Buttons`}
-                </div>
+                <p className="sgcreator-tag-box">
+                  Common propperties to all Buttons
+                </p>
                 <div className="sgcreator-css-box">
+                  <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "ttcn" }}
+                    options={{ mode: "css", theme: "neo" }}
                     value={buttons[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)
                     }
                   />
+                  <p className="sgcreator-selector_close">}</p>
                 </div>
               </div>
             ) : (
               <div
                 className="sgcreator-item-box sgcreator-item-box_buttons"
-                itemID={i}
                 key={i}
               >
                 <div className="sgcreator-sample-box">
@@ -52,13 +52,15 @@ class Buttons extends Component {
                   } ${prefix}-${item}">Learn more</button>`}
                 </div>
                 <div className="sgcreator-css-box">
+                  <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "ttcn" }}
+                    options={{ mode: "css", theme: "neo" }}
                     value={buttons[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)
                     }
                   />
+                  <p className="sgcreator-selector_close">}</p>
                 </div>
               </div>
             );
