@@ -26,15 +26,15 @@ class Colors extends Component {
                 {`<div class="${prefix}-${item}"></div>`}
               </div>
               <div className="sgcreator-css-box">
-                <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
+                <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                 <CodeMirror
-                  options={{ mode: "css", theme: "neo" }}
+                  options={{ mode: "css", theme: "mdn-like" }}
                   value={colors[item]}
                   onChange={(editor, data, value) =>
                     this.onEditorChange(item, value)
                   }
                 />
-                <p className="sgcreator-selector_close">}</p>
+                <p className="sgcreator-selector sgcreator-selector_close">}</p>
               </div>
             </div>
           ))}

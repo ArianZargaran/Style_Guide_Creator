@@ -14,7 +14,7 @@ class Typography extends Component {
         <h1>Typography</h1>
         <div className="sgcreator-representation_wrapper">
           {Object.keys(typography).map((item, i) => (
-            <div className="sgcreator-item-box" key={i}>
+            <div className="sgcreator-item-box" key={item}>
               <div className="sgcreator-sample-box">
                 <p className={`${prefix}-${item}`}>Lorem impsum dolor emet</p>
               </div>
@@ -22,15 +22,15 @@ class Typography extends Component {
                 {`<p class="${prefix}-${item}">Lorem impsum dolor emet</p>`}
               </div>
               <div className="sgcreator-css-box">
-                <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
+                <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                 <CodeMirror
-                  options={{ mode: "css", theme: "neo" }}
+                  options={{ mode: "css", theme: "mdn-like" }}
                   value={typography[item]}
                   onChange={(editor, data, value) =>
                     this.onEditorChange(item, value)
                   }
                 />
-                <p className="sgcreator-selector_close">}</p>
+                <p className="sgcreator-selector sgcreator-selector_close">}</p>
               </div>
             </div>
           ))}

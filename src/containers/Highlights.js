@@ -22,15 +22,17 @@ class Highlights extends Component {
                   Common properties for all Highlights
                 </p>
                 <div className="sgcreator-css-box">
-                  <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
+                  <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "neo" }}
+                    options={{ mode: "css", theme: "mdn-like" }}
                     value={highlights[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)
                     }
                   />
-                  <p className="sgcreator-selector_close">}</p>
+                  <p className="sgcreator-selector sgcreator-selector_close">
+                    }
+                  </p>
                 </div>
               </div>
             ) : (
@@ -51,15 +53,17 @@ class Highlights extends Component {
                   {`</div>`}
                 </div>
                 <div className="sgcreator-css-box">
-                  <p className="sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
+                  <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "neo" }}
+                    options={{ mode: "css", theme: "mdn-like" }}
                     value={highlights[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)
                     }
                   />
-                  <p className="sgcreator-selector_close">}</p>
+                  <p className="sgcreator-selector sgcreator-selector_close">
+                    }
+                  </p>
                 </div>
               </div>
             );

@@ -1,34 +1,25 @@
 .sgcreator-css-box {
   text-align: left;
   background: transparent;
-  padding: 0 3px;
-  color: black;
   font-family: monospace;
 }
 
-.sgcreator-css-box:hover {
+.sgcreator-css-box .sgcreator-selector {
+  position: relative;
+  background: transparent;
 }
 
 .sgcreator-css-box .sgcreator-selector_open {
-  margin-top: -10px;
-  padding-top: 5px;
+  top: 13px;
+  background: transparent;
 }
 
 .sgcreator-css-box .sgcreator-selector_close {
-  margin-top: -10px;
-  padding-top: 10px;
+  bottom: 13px;
+  background: transparent;
 }
 
 .CodeMirror {
-  margin-top: -13px;
   height: auto;
   padding-left: 10px;
-}
-
-.CodeMirror-gutters {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  z-index: 3;
 }
