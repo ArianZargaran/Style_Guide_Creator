@@ -1,25 +1,36 @@
 .sgcreator-css-box {
   text-align: left;
-  background: transparent;
   font-family: monospace;
+  position: relative;
+  padding: 10px 2px;
+}
+
+.sgcreator-css-box_focused {
+  border: 1px solid tomato;
 }
 
 .sgcreator-css-box .sgcreator-selector {
-  position: relative;
   background: transparent;
+  z-index: 3;
+  left: 10px;
+  position: absolute;
 }
 
 .sgcreator-css-box .sgcreator-selector_open {
-  top: 13px;
-  background: transparent;
+  top: 3px;
 }
 
 .sgcreator-css-box .sgcreator-selector_close {
-  bottom: 13px;
-  background: transparent;
+  bottom: 5px;
 }
 
 .CodeMirror {
   height: auto;
-  padding-left: 10px;
+  padding: 17px;
+  border: 1px solid transparent;
+  transition: border ease-in-out 0.3s;
+}
+
+.CodeMirror-focused {
+  border: 1px solid #ccc;
 }

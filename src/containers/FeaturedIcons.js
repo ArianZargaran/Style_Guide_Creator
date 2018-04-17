@@ -25,7 +25,7 @@ class FeaturedIcons extends Component {
                   <div className="sgcreator-css-box">
                     <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                     <CodeMirror
-                      options={{ mode: "css", theme: "mdn-like" }}
+                      options={{ mode: "css", theme: "neo" }}
                       value={ficons[item]}
                       onChange={(editor, data, value) =>
                         this.onEditorChange(item, value)
@@ -64,7 +64,7 @@ class FeaturedIcons extends Component {
                   <div className="sgcreator-css-box">
                     <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                     <CodeMirror
-                      options={{ mode: "css", theme: "mdn-like" }}
+                      options={{ mode: "css", theme: "neo" }}
                       value={ficons[item]}
                       onChange={(editor, data, value) =>
                         this.onEditorChange(item, value)

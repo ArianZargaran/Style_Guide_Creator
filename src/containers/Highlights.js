@@ -10,13 +10,14 @@ class Highlights extends Component {
   render() {
     const highlights = this.props.category.style;
     const prefix = this.props.appId.prefix;
+    const commonProps = 0;
 
     return (
       <section className="sgcreator-representation_section">
         <h1>Highlights</h1>
         <div className="sgcreator-representation_wrapper">
           {Object.keys(highlights).map((item, i, arr) => {
-            return i === 0 ? (
+            return i <= commonProps ? (
               <div className="sgcreator-item-box" key={item}>
                 <p className="sgcreator-tag-box">
                   Common properties for all Highlights
@@ -24,9 +25,9 @@ class Highlights extends Component {
                 <div className="sgcreator-css-box">
                   <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "mdn-like" }}
+                    options={{ mode: "css", theme: "neo" }}
                     value={highlights[item]}
-                    onChange={(editor, data, value) =>
+                    onBlur={(editor, data, value) =>
                       this.onEditorChange(item, value)
                     }
                   />
@@ -55,7 +56,7 @@ class Highlights extends Component {
                 <div className="sgcreator-css-box">
                   <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "mdn-like" }}
+                    options={{ mode: "css", theme: "neo" }}
                     value={highlights[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)

@@ -27,7 +27,7 @@ class Logo extends Component {
                 <div className="sgcreator-css-box">
                   <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "mdn-like" }}
+                    options={{ mode: "css", theme: "neo" }}
                     value={logo[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)
@@ -56,7 +56,7 @@ class Logo extends Component {
                 <div className="sgcreator-css-box">
                   <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
-                    options={{ mode: "css", theme: "mdn-like" }}
+                    options={{ mode: "css", theme: "neo" }}
                     value={logo[item]}
                     onChange={(editor, data, value) =>
                       this.onEditorChange(item, value)

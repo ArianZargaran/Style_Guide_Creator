@@ -24,7 +24,7 @@ class Headers extends Component {
                   <div className="sgcreator-css-box">
                     <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                     <CodeMirror
-                      options={{ mode: "css", theme: "mdn-like" }}
+                      options={{ mode: "css", theme: "neo" }}
                       value={headers[item]}
                       editorDidMount={editor => editor.focus()}
                       onChange={(editor, data, value) =>
@@ -51,7 +51,7 @@ class Headers extends Component {
                   <div className="sgcreator-css-box">
                     <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                     <CodeMirror
-                      options={{ mode: "css", theme: "mdn-like" }}
+                      options={{ mode: "css", theme: "neo" }}
                       value={headers[item]}
                       onChange={(editor, data, value) =>
                         this.onEditorChange(item, value)

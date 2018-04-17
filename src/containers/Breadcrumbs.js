@@ -45,7 +45,7 @@ class Breadcrumbs extends Component {
                     <CodeMirror
                       options={{
                         mode: "css",
-                        theme: "mdn-like",
+                        theme: "neo",
                         autofocus: true
                       }}
                       value={breadcrumbs[item]}
@@ -65,7 +65,7 @@ class Breadcrumbs extends Component {
                     <CodeMirror
                       options={{
                         mode: "css",
-                        theme: "mdn-like"
+                        theme: "neo"
                       }}
                       value={breadcrumbs[item]}
                       onChange={(editor, data, value) =>

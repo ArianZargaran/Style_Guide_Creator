@@ -34,8 +34,8 @@ class Router extends Component {
       });
     });
 
-    console.log(state);
-    console.log(style);
+    // console.log(state);
+    // console.log(style);
 
     return (
       <BrowserRouter>

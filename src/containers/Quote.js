@@ -1,27 +1,31 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { UnControlled as CodeMirror } from "react-codemirror2";
+import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeQuoteStyles } from "../state/quote/action-creators";
 import "codemirror/mode/css/css";
 
 class Quote extends Component {
+  constructor(props) {
+    super(props);
+    this.editorRefs = [];
+    this.state = this.props.category.style;
+  }
+
   componentDidMount() {
-    if (this.focusable) {
-      console.log(this.focusable);
-    }
+    this.editorRefs[0].editor.focus();
   }
 
   render() {
     const quote = this.props.category.style;
     const prefix = this.props.appId.prefix;
-    const styleList = Object.keys(quote);
+    const stylesList = Object.keys(quote);
 
     return (
       <section className="sgcreator-representation_section">
-        <h1>Quote</h1>
+        <h1 ref={this.title}>Quote</h1>
         <div className="sgcreator-representation_wrapper">
-          <div className="sgcreator-item-box sgcreator-item-box_quote">
+          <div className="sgcreator-item-box">
             <div className="sgcreator-sample-box">
               <div className={`${prefix}-quote`}>
                 <p>Lorem impsum dolor emet</p>
@@ -35,46 +39,30 @@ class Quote extends Component {
               {`</div>`}
             </div>
           </div>
-          {styleList.map(
-            (item, i) =>
-              i === 0 ? (
-                <div key={item} className="sgcreator-css-box">
-                  <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                  <CodeMirror
-                    options={{ mode: "css", theme: "mdn-like" }}
-                    value={quote[item]}
-                    editorDidMount={editor => editor.focus()}
-                    onChange={(editor, data, value) =>
-                      this.onEditorChange(item, value)
-                    }
-                  />
-                  <p className="sgcreator-selector sgcreator-selector_close">
-                    {`}`}
-                  </p>
-                </div>
-              ) : (
-                <div key={item} className="sgcreator-css-box">
-                  <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                  <CodeMirror
-                    options={{ mode: "css", theme: "mdn-like" }}
-                    value={quote[item]}
-                    onChange={(editor, data, value) =>
-                      this.onEditorChange(item, value)
-                    }
-                  />
-                  <p className="sgcreator-selector sgcreator-selector_close">
-                    {`}`}
-                  </p>
-                </div>
-              )
-          )}
+          {stylesList.map((item, i) => (
+            <div key={item} className="sgcreator-css-box">
+              <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
+              <CodeMirror
+                ref={ed => (this.editorRefs[i] = ed)}
+                options={{ mode: "css", theme: "neo" }}
+                value={this.state[item]}
+                onBeforeChange={(editor, data, value) => {
+                  this.onEditorChange(item, value);
+                }}
+              />
+              <p className="sgcreator-selector sgcreator-selector_close">
+                {`}`}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     );
   }
 
   onEditorChange = (item, value) => {
-    console.log(item, value);
+    this.setState({ [item]: value });
+
     this.props.changeQuoteStyles({
       [item]: value
     });
