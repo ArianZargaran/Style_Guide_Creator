@@ -3,7 +3,7 @@ const initialState = {
   prefix: "ya",
   style: {
     ":root": `/*NO NEED TO CHANGE*/
-    
+
     /* COLORS */
 --color_main: #5c80bc;
 --color_secondary: #cdd1c4;
@@ -29,3 +29,11 @@ const initialState = {
 };
 
 export default initialState;
+
+/* fix logo */
+/* fix AppId action */
+/* fix SetUp form */
+/* continue with form Refactor */
+/* Refactor sgcreator stylling */
+/* Reduce CodeMirror to one Functional Component */
+/* Downloadable .css */
