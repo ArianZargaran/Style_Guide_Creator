@@ -23,14 +23,23 @@ class Categories extends Component {
   };
 
   render() {
-    const logo = Object.keys(this.props.logo.style)[0];
     const name = this.props.appId.name;
-    const prefix = this.props.appId.prefix;
-
+    //const prefix = this.props.appId.prefix;
+    var style = {
+      backgroundImage:
+        "url(https://docs.joomla.org/images/5/53/Vertical-logo-light-background-en.png)",
+      display: "block",
+      textIndent: "-9999px",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      height: "170px",
+      width: "170px",
+      margin: "10px auto 5px"
+    };
     return (
       <section className="sgcreator-categories_section">
         <Link to="/">
-          <div className={`${prefix}-logo ${prefix}-logo_full`}>{name}</div>
+          <div style={style}>{name}</div>
           <h1 className="sgcreator-category_header">{name}</h1>
         </Link>
         <ol className="sgcreator-categories_list">{this.renderIndexList()}</ol>

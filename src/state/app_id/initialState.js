@@ -2,7 +2,9 @@ const initialState = {
   name: "YourApp  Name",
   prefix: "ya",
   style: {
-    ":root": `/* COLORS */
+    ":root": `/*NO NEED TO CHANGE*/
+    
+    /* COLORS */
 --color_main: #5c80bc;
 --color_secondary: #cdd1c4;
 --color_tertiary: #4d5061;

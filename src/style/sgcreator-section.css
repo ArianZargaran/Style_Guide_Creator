@@ -3,6 +3,7 @@
   grid-area: representation;
   text-align: center;
   margin: 10px auto;
+  background: transparent;
 }
 
 /* VISUAL REPRESENTATION SECTION BOXES */

@@ -5,13 +5,14 @@ import { bindActionCreators } from "redux";
 import { fetchAppId } from "../state/app_id/action-creators";
 
 class AppIdForm extends Component {
+  state = this.props.appId;
+
   render() {
     const prefix = this.props.appId.prefix;
     const form = Object.keys(this.props.formComponent.style)[0];
     const name = this.props.appId.name;
     const style = this.props.appId.style[":root"];
     const { handleSubmit, children = "Form" } = this.props;
-
     return (
       <form
         className={`${prefix}-${form}`}
@@ -21,13 +22,13 @@ class AppIdForm extends Component {
         <Field
           label="App Name"
           name="name"
-          placeholder={name}
+          placeholder={this.state.name}
           component={this.renderFirstField}
         />
         <Field
           label="CSS classes prefix"
           name="prefix"
-          placeholder={prefix}
+          placeholder={this.state.prefix}
           component={this.renderField}
         />
         <Field
@@ -35,9 +36,7 @@ class AppIdForm extends Component {
           name="style"
           placeholder={style}
           component={this.renderTextArea}
-        >
-          {style}
-        </Field>
+        />
         <button type="submit">Submit</button>
       </form>
     );
