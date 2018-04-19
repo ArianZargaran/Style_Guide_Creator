@@ -3,32 +3,34 @@ import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchAppId } from "../state/app_id/action-creators";
+import "../style/Form.css";
 
 class AppIdForm extends Component {
   state = this.props.appId;
 
   render() {
-    const prefix = this.props.appId.prefix;
+    const { name, prefix } = this.state;
+    //const prefix = this.props.appId.prefix;
     const form = Object.keys(this.props.formComponent.style)[0];
-    const name = this.props.appId.name;
+    //const name = this.props.appId.name;
     const style = this.props.appId.style[":root"];
     const { handleSubmit, children = "Form" } = this.props;
     return (
       <form
-        className={`${prefix}-${form}`}
+        className="sgcreator-form"
         onSubmit={handleSubmit(this.onSubmit.bind(this))}
       >
         <h2>{children}</h2>
         <Field
           label="App Name"
           name="name"
-          placeholder={this.state.name}
+          placeholder={name}
           component={this.renderFirstField}
         />
         <Field
           label="CSS classes prefix"
           name="prefix"
-          placeholder={this.state.prefix}
+          placeholder={prefix}
           component={this.renderField}
         />
         <Field

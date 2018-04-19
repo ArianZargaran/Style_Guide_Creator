@@ -9,7 +9,6 @@ class Colors extends Component {
   constructor(props) {
     super(props);
     this.editorRefs = [];
-    this.state = this.props.category.style;
   }
 
   componentDidMount() {
@@ -38,7 +37,7 @@ class Colors extends Component {
                 <CodeMirror
                   ref={ed => (this.editorRefs[i] = ed)}
                   options={{ mode: "css", theme: "neo" }}
-                  value={this.state[item]}
+                  value={colors[item]}
                   onBeforeChange={(editor, data, value) => {
                     this.onEditorChange(item, value);
                   }}
@@ -53,8 +52,6 @@ class Colors extends Component {
   }
 
   onEditorChange = (item, value) => {
-    this.setState({ [item]: value });
-
     this.props.changeColorsStyles({
       [item]: value
     });

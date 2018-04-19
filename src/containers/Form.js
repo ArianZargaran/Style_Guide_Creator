@@ -1,109 +1,96 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { UnControlled as CodeMirror } from "react-codemirror2";
+import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeFormStyles } from "../state/form/action-creators";
 import "codemirror/mode/css/css";
 
 class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.editorRefs = [];
+    this.state = this.props.category.style;
+  }
+
+  componentDidMount() {
+    this.editorRefs[0].editor.focus();
+  }
+
   render() {
     const form = this.props.category.style;
     const prefix = this.props.appId.prefix;
+    const stylesList = Object.keys(form);
 
     return (
       <section className="sgcreator-representation_section">
         <h1>Form</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(form).map(
-            (item, i) =>
-              i === 0 ? (
-                <div
-                  className="sgcreator-item-box sgcreator-item-box_editorial-form"
-                  key={i}
-                >
-                  <div className="sgcreator-sample-box">
-                    <form
-                      className={`${prefix}-${item}`}
-                      onSubmit={this.onFormSubmit.bind(this)}
-                    >
-                      <div>
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" />
-                      </div>
-                      <div>
-                        <label for="password">Password</label>
-                        <input type="password" id="password" />
-                      </div>
-                      <div>
-                        <span>
-                          <input type="checkbox" id="terms" />
-                          <label for="terms">Accept Terms & Conditions</label>
-                        </span>
-                      </div>
-                      <button type="submit">Submit</button>
-                    </form>
-                  </div>
-                  <div className="sgcreator-tag-box">
-                    {`<form class="${prefix}-${item}">`}
-                    {<br />}
-                    {`    <div>`}
-                    {<br />}
-                    {`        <label for="full name">Full Name</label>`}
-                    {<br />}
-                    {`        <input type="text" id="full name" />`}
-                    {<br />}
-                    {`    </div>`}
-                    {<br />}
-                    {`    <div>`}
-                    {<br />}
-                    {`        <label for="password">Password</label>`}
-                    {<br />}
-                    {`        <input type="password" id="password" />`}
-                    {<br />}
-                    {`    </div>`}
-                    {<br />}
-                    {`    <div>`}
-                    {<br />}
-                    {`        <input type="checkbox" id="terms" required />`}
-                    {<br />}
-                    {`        <label for="terms">Accept Terms & Conditions</label>`}
-                    {<br />}
-                    {`    </div>`}
-                    {<br />}
-                    {`    <input type="submit" value="Submit">`}
-                    {<br />}
-                    {`</form>`}
-                  </div>
-                  <div className="sgcreator-css-box">
-                    <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                    <CodeMirror
-                      options={{ mode: "css", theme: "neo" }}
-                      value={form[item]}
-                      onChange={(editor, data, value) =>
-                        this.onEditorChange(item, value)
-                      }
-                    />
-                    <p className="sgcreator-selector sgcreator-selector_close">
-                      }
-                    </p>
-                  </div>
+          <div className="sgcreator-item-box sgcreator-item-box_editorial-form">
+            <div className="sgcreator-sample-box">
+              <div className={`${prefix}-form`}>
+                <div>
+                  <label HTMLfor="name">Full Name</label>
+                  <input type="text" id="name" />
                 </div>
-              ) : (
-                <div className="sgcreator-css-box">
-                  <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                  <CodeMirror
-                    options={{ mode: "css", theme: "neo" }}
-                    value={form[item]}
-                    onChange={(editor, data, value) =>
-                      this.onEditorChange(item, value)
-                    }
-                  />
-                  <p className="sgcreator-selector sgcreator-selector_close">
-                    }
-                  </p>
+                <div>
+                  <label HTMLfor="password">Password</label>
+                  <input type="password" id="password" />
                 </div>
-              )
-          )}
+                <div>
+                  <span>
+                    <input type="checkbox" id="terms" />
+                    <label HTMLfor="terms">Accept Terms & Conditions</label>
+                  </span>
+                </div>
+                <button type="submit">Submit</button>
+              </div>
+            </div>
+            <div className="sgcreator-tag-box">
+              {`<form class="${prefix}-form">`}
+              {<br />}
+              {`    <div>`}
+              {<br />}
+              {`        <label for="full name">Full Name</label>`}
+              {<br />}
+              {`        <input type="text" id="full name" />`}
+              {<br />}
+              {`    </div>`}
+              {<br />}
+              {`    <div>`}
+              {<br />}
+              {`        <label for="password">Password</label>`}
+              {<br />}
+              {`        <input type="password" id="password" />`}
+              {<br />}
+              {`    </div>`}
+              {<br />}
+              {`    <div>`}
+              {<br />}
+              {`        <input type="checkbox" id="terms" required />`}
+              {<br />}
+              {`        <label for="terms">Accept Terms & Conditions</label>`}
+              {<br />}
+              {`    </div>`}
+              {<br />}
+              {`    <input type="submit" value="Submit">`}
+              {<br />}
+              {`</form>`}
+            </div>
+            {stylesList.map((item, i) => (
+              <div key={item} className="sgcreator-css-box">
+                <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
+                <CodeMirror
+                  ref={ed => (this.editorRefs[i] = ed)}
+                  options={{ mode: "css", theme: "neo" }}
+                  value={this.state[item]}
+                  onBeforeChange={(editor, data, value) => {
+                    this.onEditorChange(item, value);
+                  }}
+                />
+                <p className="sgcreator-selector sgcreator-selector_close">}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     );
@@ -114,6 +101,8 @@ class Form extends Component {
   }
 
   onEditorChange = (item, value) => {
+    this.setState({ [item]: value });
+
     this.props.changeFormStyles({
       [item]: value
     });

@@ -1,50 +1,57 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { UnControlled as CodeMirror } from "react-codemirror2";
+import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeIconsStyles } from "../state/icons/action-creators";
 import "codemirror/mode/css/css";
 
 class Icons extends Component {
+  constructor(props) {
+    super(props);
+    this.editorRefs = [];
+  }
+
+  componentDidMount() {
+    this.editorRefs[0].editor.focus();
+  }
+
   render() {
     const icons = this.props.category.style;
     const prefix = this.props.appId.prefix;
+    const stylesList = Object.keys(icons);
 
     return (
       <section className="sgcreator-representation_section">
         <h1>Icons</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(icons).map((item, i) => (
-            <div
-              className="sgcreator-item-box sgcreator-item-box_icons"
-              key={i}
-            >
-              <div className="sgcreator-sample-box">
-                <i className={`${prefix}-${item} fas fa-minus`} />
-              </div>
-              <div className="sgcreator-tag-box">
-                {`<i class="${prefix}-${item} fas fa-minus"></i>`}
-              </div>
-              <div className="sgcreator-css-box">
+          <div className="sgcreator-item-box sgcreator-item-box_icons">
+            <div className="sgcreator-sample-box">
+              <i className={`${prefix}-icon fas fa-minus`} />
+            </div>
+            <div className="sgcreator-tag-box">
+              {`<i class="${prefix}-icon fas fa-minus"></i>`}
+            </div>
+            {stylesList.map((item, i) => (
+              <div className="sgcreator-css-box" key={item}>
                 <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                 <CodeMirror
+                  ref={ed => (this.editorRefs[i] = ed)}
                   options={{ mode: "css", theme: "neo" }}
                   value={icons[item]}
-                  onChange={(editor, data, value) =>
-                    this.onEditorChange(item, value)
-                  }
+                  onBeforeChange={(editor, data, value) => {
+                    this.onEditorChange(item, value);
+                  }}
                 />
-                <p className="sgcreator-selector sgcreator-selector_close">}</p>
+                <p className="sgcreator-selector sgcreator-selector_close">{`}`}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     );
   }
 
   onEditorChange = (item, value) => {
-    console.log(item, value);
     this.props.changeIconsStyles({
       [item]: value
     });

@@ -10,7 +10,6 @@ class Breadcrumbs extends Component {
   constructor(props) {
     super(props);
     this.editorRefs = [];
-    this.state = this.props.category.style;
   }
 
   componentDidMount() {
@@ -58,7 +57,7 @@ class Breadcrumbs extends Component {
                     mode: "css",
                     theme: "neo"
                   }}
-                  value={this.state[item]}
+                  value={breadcrumbs[item]}
                   onBeforeChange={(editor, data, value) => {
                     this.onEditorChange(item, value);
                   }}
@@ -75,8 +74,6 @@ class Breadcrumbs extends Component {
   }
 
   onEditorChange = (item, value) => {
-    this.setState({ [item]: value });
-
     this.props.changeBreadcrumbsStyles({
       [item]: value
     });

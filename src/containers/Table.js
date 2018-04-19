@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeTableStyles } from "../state/table/action-creators";
+
 import "codemirror/mode/css/css";
 
 class Table extends Component {
   constructor(props) {
     super(props);
     this.editorRefs = [];
-    this.state = this.props.category.style;
   }
 
   componentDidMount() {
@@ -104,7 +104,7 @@ class Table extends Component {
                 <CodeMirror
                   ref={ed => (this.editorRefs[i] = ed)}
                   options={{ mode: "css", theme: "neo" }}
-                  value={this.state[item]}
+                  value={table[item]}
                   onBeforeChange={(editor, data, value) => {
                     this.onEditorChange(item, value);
                   }}
@@ -119,8 +119,6 @@ class Table extends Component {
   }
 
   onEditorChange = (item, value) => {
-    this.setState({ [item]: value });
-
     this.props.changeTableStyles({
       [item]: value
     });

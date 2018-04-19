@@ -9,7 +9,6 @@ class Quote extends Component {
   constructor(props) {
     super(props);
     this.editorRefs = [];
-    this.state = this.props.category.style;
   }
 
   componentDidMount() {
@@ -44,8 +43,11 @@ class Quote extends Component {
               <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
               <CodeMirror
                 ref={ed => (this.editorRefs[i] = ed)}
-                options={{ mode: "css", theme: "neo" }}
-                value={this.state[item]}
+                options={{
+                  mode: "css",
+                  theme: "neo"
+                }}
+                value={quote[item]}
                 onBeforeChange={(editor, data, value) => {
                   this.onEditorChange(item, value);
                 }}
@@ -61,8 +63,6 @@ class Quote extends Component {
   }
 
   onEditorChange = (item, value) => {
-    this.setState({ [item]: value });
-
     this.props.changeQuoteStyles({
       [item]: value
     });

@@ -1,6 +1,6 @@
 const icons = {
   style: {
-    icon: `/* This is a sample. Check Font Awesome */
+    icon: `/* ICONS IMPORTED FROM FONT-AWESOME */
 color: var(--color_complementary);
 font-size: var(--h2_font-size);`
   }

@@ -1,19 +1,29 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { UnControlled as CodeMirror } from "react-codemirror2";
+import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeTypographyStyles } from "../state/typography/action-creators";
 import "codemirror/mode/css/css";
 
 class Typography extends Component {
+  constructor(props) {
+    super(props);
+    this.editorRefs = [];
+  }
+
+  componentDidMount() {
+    this.editorRefs[0].editor.focus();
+  }
+
   render() {
     const typography = this.props.category.style;
     const prefix = this.props.appId.prefix;
+    const stylesList = Object.keys(typography);
     return (
       <section className="sgcreator-representation_section">
         <h1>Typography</h1>
         <div className="sgcreator-representation_wrapper">
-          {Object.keys(typography).map((item, i) => (
+          {stylesList.map((item, i) => (
             <div className="sgcreator-item-box" key={item}>
               <div className="sgcreator-sample-box">
                 <p className={`${prefix}-${item}`}>Lorem impsum dolor emet</p>
@@ -24,13 +34,16 @@ class Typography extends Component {
               <div className="sgcreator-css-box">
                 <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                 <CodeMirror
+                  ref={ed => (this.editorRefs[i] = ed)}
                   options={{ mode: "css", theme: "neo" }}
                   value={typography[item]}
-                  onChange={(editor, data, value) =>
-                    this.onEditorChange(item, value)
-                  }
+                  onBeforeChange={(editor, data, value) => {
+                    this.onEditorChange(item, value);
+                  }}
                 />
-                <p className="sgcreator-selector sgcreator-selector_close">}</p>
+                <p className="sgcreator-selector sgcreator-selector_close">
+                  {`}`}
+                </p>
               </div>
             </div>
           ))}
@@ -40,7 +53,6 @@ class Typography extends Component {
   }
 
   onEditorChange = (item, value) => {
-    console.log(item, value);
     this.props.changeTypographyStyles({
       [item]: value
     });
