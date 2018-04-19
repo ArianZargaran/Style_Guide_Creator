@@ -7,13 +7,8 @@ import { fetchAppId } from "../state/app_id/action-creators";
 import "../style/Form.css";
 
 class AppIdForm extends Component {
-  constructor(props) {
-    super(props);
-    this.editorRefs = [];
-  }
-
   componentDidMount() {
-    ReactDOM.findDOMNode(this.editorRefs[0])
+    ReactDOM.findDOMNode(this.firstFieldRef)
       .getElementsByTagName("input")[0]
       .focus();
   }
@@ -27,7 +22,7 @@ class AppIdForm extends Component {
       >
         <h2>{children}</h2>
         <Field
-          ref={ed => (this.editorRefs[0] = ed)}
+          ref={ed => (this.firstFieldRef = ed)}
           withRef
           type="text"
           label="App Name"
@@ -35,7 +30,6 @@ class AppIdForm extends Component {
           component={this.renderFirstField}
         />
         <Field
-          ref={ed => (this.editorRefs[1] = ed)}
           withRef
           type="text"
           label="CSS classes prefix"
@@ -43,7 +37,6 @@ class AppIdForm extends Component {
           component={this.renderField}
         />
         <Field
-          ref={ed => (this.editorRefs[1] = ed)}
           withRef
           label="Global CSS variables"
           name={`style[":root"]`}

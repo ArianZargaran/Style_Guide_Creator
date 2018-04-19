@@ -9,12 +9,9 @@ import "codemirror/lib/codemirror.css";
 import "codemirror/theme/neo.css";
 
 import "./style/Index.css";
+import "./style/Categories.css";
+import "./style/Section.css";
 import "./style/Codemirror.css";
-import "./style/sgcreator-hook.css";
-import "./style/sgcreator-categories.css";
-import "./style/sgcreator-section.css";
-
-import "./style/sgcreator-tag-box.css";
 
 ReactDOM.render(
   <Provider store={store}>

@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
 import Categories from "../containers/Categories";
-import Home from "./Home";
+import InitialSection from "./InitialSection";
 import Typography from "../containers/Typography";
 import Buttons from "../containers/Buttons";
 import Links from "../containers/Links";
@@ -57,7 +57,7 @@ class Router extends Component {
             <Route path="/buttons" component={Buttons} />
             <Route path="/typography" component={Typography} />
             <Route path="/form" component={Form} />
-            <Route path="/" component={Home} />
+            <Route path="/" component={InitialSection} />
           </Switch>
         </div>
       </BrowserRouter>
