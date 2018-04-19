@@ -2,9 +2,7 @@ const initialState = {
   name: "YourApp  Name",
   prefix: "ya",
   style: {
-    ":root": `/*NO NEED TO CHANGE*/
-
-    /* COLORS */
+    ":root": `/* COLORS */
 --color_main: #5c80bc;
 --color_secondary: #cdd1c4;
 --color_tertiary: #4d5061;
@@ -23,16 +21,13 @@ const initialState = {
 --h3_font-size: 1.17em;
 --h4_font-size: 1em;
 --h5_font-size: 0.83em;
---h6_font-size: 0.67em;
-  `
+--h6_font-size: 0.67em;`
   }
 };
 
 export default initialState;
 
 /* fix logo */
-/* fix AppId action */
-/* fix SetUp form */
 /* continue with form Refactor */
 /* Refactor sgcreator stylling */
 /* Reduce CodeMirror to one Functional Component */
