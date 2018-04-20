@@ -23,7 +23,7 @@ class Quote extends Component {
     return (
       <section className="sgcreator-representation_section">
         <h1>Quote</h1>
-        <div className="sgcreator-representation_wrapper">
+        <div>
           <div className="sgcreator-item-box">
             <div className="sgcreator-sample-box">
               <div className={`${prefix}-quote`}>

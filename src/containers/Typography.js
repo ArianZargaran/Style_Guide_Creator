@@ -22,7 +22,7 @@ class Typography extends Component {
     return (
       <section className="sgcreator-representation_section">
         <h1>Typography</h1>
-        <div className="sgcreator-representation_wrapper">
+        <div>
           {stylesList.map((item, i) => (
             <div className="sgcreator-item-box" key={item}>
               <div className="sgcreator-sample-box">

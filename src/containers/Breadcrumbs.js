@@ -24,50 +24,48 @@ class Breadcrumbs extends Component {
     return (
       <section className="sgcreator-representation_section">
         <h1>Breadcrumbs</h1>
-        <div className="sgcreator-representation_wrapper">
-          <div className="sgcreator-item-box">
-            <div className="sgcreator-sample-box">
-              <ul className={`${prefix}-breadcrumbs`}>
-                <li>
-                  <a href="#">Link 1</a>
-                </li>
-                <li>
-                  <a href="#">Link 2</a>
-                </li>
-                <li>Actual</li>
-              </ul>
-            </div>
-            <div className="sgcreator-tag-box">
-              {`<ul class="${prefix}-breadcrumbs>`}
-              {<br />}
-              {`    <li><a>Link 1</a></li>`}
-              {<br />}
-              {`    <li><a>Link 2</a></li>`}
-              {<br />}
-              {`    <li><a>Actual</a></li>`}
-              {<br />}
-              {`</ul>`}
-            </div>
-            {stylesList.map((item, i, arr) => (
-              <div className="sgcreator-css-box" key={item}>
-                <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                <CodeMirror
-                  ref={ed => (this.editorRefs[i] = ed)}
-                  options={{
-                    mode: "css",
-                    theme: "neo"
-                  }}
-                  value={breadcrumbs[item]}
-                  onBeforeChange={(editor, data, value) => {
-                    this.onEditorChange(item, value);
-                  }}
-                />
-                <p className="sgcreator-selector sgcreator-selector sgcreator-selector_close">
-                  {"}"}
-                </p>
-              </div>
-            ))}
+        <div className="sgcreator-item-box">
+          <div className="sgcreator-sample-box">
+            <ul className={`${prefix}-breadcrumbs`}>
+              <li>
+                <a href="#">Link 1</a>
+              </li>
+              <li>
+                <a href="#">Link 2</a>
+              </li>
+              <li>Actual</li>
+            </ul>
           </div>
+          <div className="sgcreator-tag-box">
+            {`<ul class="${prefix}-breadcrumbs>`}
+            {<br />}
+            {`    <li><a>Link 1</a></li>`}
+            {<br />}
+            {`    <li><a>Link 2</a></li>`}
+            {<br />}
+            {`    <li><a>Actual</a></li>`}
+            {<br />}
+            {`</ul>`}
+          </div>
+          {stylesList.map((item, i, arr) => (
+            <div className="sgcreator-css-box" key={item}>
+              <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
+              <CodeMirror
+                ref={ed => (this.editorRefs[i] = ed)}
+                options={{
+                  mode: "css",
+                  theme: "neo"
+                }}
+                value={breadcrumbs[item]}
+                onBeforeChange={(editor, data, value) => {
+                  this.onEditorChange(item, value);
+                }}
+              />
+              <p className="sgcreator-selector sgcreator-selector sgcreator-selector_close">
+                {"}"}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     );

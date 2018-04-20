@@ -11,6 +11,7 @@ import "codemirror/theme/neo.css";
 import "./style/Index.css";
 import "./style/Categories.css";
 import "./style/Section.css";
+import "./style/Download.css";
 import "./style/Codemirror.css";
 
 ReactDOM.render(

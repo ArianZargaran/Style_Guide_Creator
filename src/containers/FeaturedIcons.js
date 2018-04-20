@@ -23,42 +23,40 @@ class FeaturedIcons extends Component {
     return (
       <section className="sgcreator-representation_section">
         <h1>Featured Icons</h1>
-        <div className="sgcreator-representation_wrapper">
-          <div className="sgcreator-item-box">
-            <div className="sgcreator-sample-box">
-              <a href="#">
-                <span className="fa-stack fa-2x">
-                  <i className="fas fa-circle fa-stack-2x" />
-                  <i
-                    className={`${prefix}-featured-icon fas fa-terminal fa-stack-1x fa-inverse`}
-                  />
-                </span>
-              </a>
-            </div>
-            <div className="sgcreator-tag-box">
-              {`<span class="fa-stack fa-2x">`}
-              {<br />}
-              {`    <i class="fas fa-circle fa-stack-2x"></i>`}
-              {<br />}
-              {`    <i class="${prefix}-featured-icon"></i>`}
-              {<br />}
-              {`</span>`}
-            </div>
-            {stylesList.map((item, i, arr) => (
-              <div className="sgcreator-css-box" key={item}>
-                <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                <CodeMirror
-                  ref={ed => (this.editorRefs[i] = ed)}
-                  options={{ mode: "css", theme: "neo" }}
-                  value={ficons[item]}
-                  onBeforeChange={(editor, data, value) => {
-                    this.onEditorChange(item, value);
-                  }}
+        <div className="sgcreator-item-box">
+          <div className="sgcreator-sample-box">
+            <a href="#">
+              <span className="fa-stack fa-2x">
+                <i className="fas fa-circle fa-stack-2x" />
+                <i
+                  className={`${prefix}-featured-icon fas fa-terminal fa-stack-1x fa-inverse`}
                 />
-                <p className="sgcreator-selector sgcreator-selector_close">{`}`}</p>
-              </div>
-            ))}
+              </span>
+            </a>
           </div>
+          <div className="sgcreator-tag-box">
+            {`<span class="fa-stack fa-2x">`}
+            {<br />}
+            {`    <i class="fas fa-circle fa-stack-2x"></i>`}
+            {<br />}
+            {`    <i class="${prefix}-featured-icon"></i>`}
+            {<br />}
+            {`</span>`}
+          </div>
+          {stylesList.map((item, i, arr) => (
+            <div className="sgcreator-css-box" key={item}>
+              <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
+              <CodeMirror
+                ref={ed => (this.editorRefs[i] = ed)}
+                options={{ mode: "css", theme: "neo" }}
+                value={ficons[item]}
+                onBeforeChange={(editor, data, value) => {
+                  this.onEditorChange(item, value);
+                }}
+              />
+              <p className="sgcreator-selector sgcreator-selector_close">{`}`}</p>
+            </div>
+          ))}
         </div>
       </section>
     );

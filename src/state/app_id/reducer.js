@@ -5,9 +5,7 @@ const appId = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_APP_ID: {
       state = {
-        ...state,
-        prefix: action.payload.prefix,
-        name: action.payload.name
+        ...action.payload
       };
       break;
     }

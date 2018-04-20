@@ -30,14 +30,12 @@ class AppIdForm extends Component {
           component={this.renderFirstField}
         />
         <Field
-          withRef
           type="text"
           label="CSS classes prefix"
           name="prefix"
           component={this.renderField}
         />
         <Field
-          withRef
           label="Global CSS variables"
           name={`style[":root"]`}
           component={this.renderTextArea}
@@ -51,7 +49,7 @@ class AppIdForm extends Component {
     return (
       <div>
         <label>{field.label}</label>
-        <input ref={this.props.ref} type="text" {...field.input} autoFocus />
+        <input type="text" {...field.input} autoFocus />
         <span className="sgcreator-error_message">
           {field.meta.touched ? field.meta.error : ""}
         </span>

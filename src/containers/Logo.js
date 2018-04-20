@@ -25,14 +25,37 @@ class Logo extends Component {
     return (
       <section className="sgcreator-representation_section">
         <h1>Logo</h1>
-        <div className="sgcreator-representation_wrapper">
-          <div className="sgcreator-item-box sgcreator-item-box_logo">
-            <div className="sgcreator-tag-box">
-              {`Common properties to all Logos`}
-            </div>
-            {stylesList.map((item, i, arr) => {
-              return i <= commonProps ? (
-                <div key={item} className="sgcreator-css-box">
+        <div className="sgcreator-item-box sgcreator-item-box_logo">
+          <p className="sgcreator-tag-box">Common properties to all Logos</p>
+          {stylesList.map((item, i, arr) => {
+            return i <= commonProps ? (
+              <div key={item} className="sgcreator-css-box">
+                <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
+                <CodeMirror
+                  ref={ed => (this.editorRefs[i] = ed)}
+                  options={{ mode: "css", theme: "neo" }}
+                  value={logo[item]}
+                  onBeforeChange={(editor, data, value) => {
+                    this.onEditorChange(item, value);
+                  }}
+                />
+                <p className="sgcreator-selector sgcreator-selector_close">
+                  {"}"}
+                </p>
+              </div>
+            ) : (
+              <div className="sgcreator-item-box sgcreator-item-box_logo">
+                <div key={item} className="sgcreator-sample-box">
+                  <h1 className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
+                    {name}
+                  </h1>
+                </div>
+                <div className="sgcreator-tag-box">
+                  {`<h1 class=${prefix}-${arr[0]} ${prefix}-${item}">
+                    ${name}
+                  </h1>`}
+                </div>
+                <div className="sgcreator-css-box">
                   <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
                     ref={ed => (this.editorRefs[i] = ed)}
@@ -46,36 +69,9 @@ class Logo extends Component {
                     {"}"}
                   </p>
                 </div>
-              ) : (
-                <div className="sgcreator-item-box sgcreator-item-box_logo">
-                  <div key={item} className="sgcreator-sample-box">
-                    <h1 className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
-                      {name}
-                    </h1>
-                  </div>
-                  <div className="sgcreator-tag-box">
-                    {`<h1 class=${prefix}-${arr[0]} ${prefix}-${item}">
-                    ${name}
-                  </h1>`}
-                  </div>
-                  <div className="sgcreator-css-box">
-                    <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                    <CodeMirror
-                      ref={ed => (this.editorRefs[i] = ed)}
-                      options={{ mode: "css", theme: "neo" }}
-                      value={logo[item]}
-                      onBeforeChange={(editor, data, value) => {
-                        this.onEditorChange(item, value);
-                      }}
-                    />
-                    <p className="sgcreator-selector sgcreator-selector_close">
-                      {"}"}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     );

@@ -1,0 +1,29 @@
+.sgcreator-download {
+  box-sizing: border-box;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: flex-start;
+}
+.sgcreator-download a {
+  display: inline-block;
+  cursor: pointer;
+  padding: 12px 9px;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  margin-right: 12px;
+  outline: none;
+  background: #4d5061;
+  color: #eee;
+}
+
+.sgcreator-download a:hover {
+  background: #fff;
+  color: #4d5061;
+}
+
+.sgcreator-download a:active {
+  background: #4d5061;
+  color: #eee;
+}

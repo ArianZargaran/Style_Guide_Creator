@@ -1,34 +1,37 @@
 /* LIST SECTION */
 .sgcreator-categories_section {
   grid-area: categories;
-  background: var(--color_main);
+  background: #5c80bc;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
 }
 
 .sgcreator-categories_section > a {
   text-align: center;
 }
 
-.sgcreator-categories_section > a > div {
+/* ROUNDED LOGO */
+.sgcreator-categories_logo {
   align-self: center;
+  height: 170px;
+  width: 170px;
+  background: url(https://docs.joomla.org/images/5/53/Vertical-logo-light-background-en.png);
+  background-color: #fff;
   background-size: 200px;
-  background-position-x: center;
-  background-color: var(--color_background);
-  height: 200px;
-  width: 200px;
   border-radius: 100%;
-  margin: 15px auto -20px;
-  border: 2px solid var(--color_background);
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px auto 5px;
 }
 
-/* LIST SECTION TITLE */
+/* CATEGORIES SECTION TITLE */
 .sgcreator-category_header {
-  font-family: var(--header_font-family);
+  font-family: monospace;
   margin: 20px 20px 0;
-  color: var(--color_background);
-  font-size: 48px;
+  color: #fff;
+  font-size: 30px;
   cursor: pointer;
 }
 
@@ -36,30 +39,29 @@
   text-decoration: none;
 } /* Removes Link and a underlines */
 
-/* LIST SECTION LIST */
+/* CATEGORIES SECTION LIST */
 .sgcreator-categories_list {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  padding: 0 10px;
 }
 
-/* LIST SECTION LINK */
+/* CATEGORIES SECTION LINK */
 .sgcreator-categories_section > ol > a {
-  padding: 1px 20px;
   color: #fff;
-  width: 200px;
   cursor: pointer;
+  width: 200px;
 }
 
 /* LIST SECTION LINK:HOVER */
 .sgcreator-categories_section > ol > a:hover {
   filter: opacity(0.5) drop-shadow(0 0 0 var(--color_main));
-  font-weight: 900;
   color: black;
+  font-weight: 900;
 }
 
 /* LIST SECTION LINK ELEMENT */
 .sgcreator-categories_section > ol > a > li {
   list-style-type: decimal-leading-zero;
-  margin: 10px;
+  margin: 10px 0;
 }

@@ -25,14 +25,44 @@ class Highlights extends Component {
     return (
       <section className="sgcreator-representation_section">
         <h1>Highlights</h1>
-        <div className="sgcreator-representation_wrapper">
-          <div className="sgcreator-item-box">
-            <p className="sgcreator-tag-box">
-              Common properties for all Highlights
-            </p>
-            {stylesList.map((item, i, arr) => {
-              return i <= commonProps ? (
-                <div className="sgcreator-css-box" key={item}>
+        <div className="sgcreator-item-box">
+          <p className="sgcreator-tag-box">
+            Common properties for all Highlights
+          </p>
+          {stylesList.map((item, i, arr) => {
+            return i <= commonProps ? (
+              <div className="sgcreator-css-box" key={item}>
+                <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
+                <CodeMirror
+                  ref={ed => (this.editorRefs[i] = ed)}
+                  options={{ mode: "css", theme: "neo" }}
+                  value={highlights[item]}
+                  onBeforeChange={(editor, data, value) => {
+                    this.onEditorChange(item, value);
+                  }}
+                />
+                <p className="sgcreator-selector sgcreator-selector_close">
+                  {"}"}
+                </p>
+              </div>
+            ) : (
+              <div
+                className="sgcreator-item-box sgcreator-item-box_highlights"
+                key={item}
+              >
+                <div className="sgcreator-sample-box">
+                  <div className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
+                    <h1 className="ya-header">Highlight</h1>
+                  </div>
+                </div>
+                <div className="sgcreator-tag-box">
+                  {`<div class="${prefix}-${arr[0]} ${prefix}-${item}">`}
+                  {<br />}
+                  {`    <h1 class="ya-header">Highlight</h1>`}
+                  {<br />}
+                  {`</div>`}
+                </div>
+                <div className="sgcreator-css-box">
                   <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
                   <CodeMirror
                     ref={ed => (this.editorRefs[i] = ed)}
@@ -46,41 +76,9 @@ class Highlights extends Component {
                     {"}"}
                   </p>
                 </div>
-              ) : (
-                <div
-                  className="sgcreator-item-box sgcreator-item-box_highlights"
-                  key={item}
-                >
-                  <div className="sgcreator-sample-box">
-                    <div className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
-                      <h1 className="ya-header">Highlight</h1>
-                    </div>
-                  </div>
-                  <div className="sgcreator-tag-box">
-                    {`<div class="${prefix}-${arr[0]} ${prefix}-${item}">`}
-                    {<br />}
-                    {`    <h1 class="ya-header">Highlight</h1>`}
-                    {<br />}
-                    {`</div>`}
-                  </div>
-                  <div className="sgcreator-css-box">
-                    <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                    <CodeMirror
-                      ref={ed => (this.editorRefs[i] = ed)}
-                      options={{ mode: "css", theme: "neo" }}
-                      value={highlights[item]}
-                      onBeforeChange={(editor, data, value) => {
-                        this.onEditorChange(item, value);
-                      }}
-                    />
-                    <p className="sgcreator-selector sgcreator-selector_close">
-                      {"}"}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     );

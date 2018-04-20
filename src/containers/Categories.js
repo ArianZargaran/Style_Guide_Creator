@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Download from "./Download";
 
 class Categories extends Component {
   state = {
@@ -24,25 +25,14 @@ class Categories extends Component {
 
   render() {
     const name = this.props.appId.name;
-    //const prefix = this.props.appId.prefix;
-    var style = {
-      backgroundImage:
-        "url(https://docs.joomla.org/images/5/53/Vertical-logo-light-background-en.png)",
-      display: "block",
-      textIndent: "-9999px",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "center",
-      height: "170px",
-      width: "170px",
-      margin: "10px auto 5px"
-    };
     return (
       <section className="sgcreator-categories_section">
         <Link to="/">
-          <div style={style}>{name}</div>
+          <div className="sgcreator-categories_logo">{name}</div>
           <h1 className="sgcreator-category_header">{name}</h1>
         </Link>
         <ol className="sgcreator-categories_list">{this.renderIndexList()}</ol>
+        <Download data={this.props.data} />
       </section>
     );
   }

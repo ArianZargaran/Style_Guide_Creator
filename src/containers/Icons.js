@@ -23,29 +23,27 @@ class Icons extends Component {
     return (
       <section className="sgcreator-representation_section">
         <h1>Icons</h1>
-        <div className="sgcreator-representation_wrapper">
-          <div className="sgcreator-item-box sgcreator-item-box_icons">
-            <div className="sgcreator-sample-box">
-              <i className={`${prefix}-icon fas fa-minus`} />
-            </div>
-            <div className="sgcreator-tag-box">
-              {`<i class="${prefix}-icon fas fa-minus"></i>`}
-            </div>
-            {stylesList.map((item, i) => (
-              <div className="sgcreator-css-box" key={item}>
-                <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                <CodeMirror
-                  ref={ed => (this.editorRefs[i] = ed)}
-                  options={{ mode: "css", theme: "neo" }}
-                  value={icons[item]}
-                  onBeforeChange={(editor, data, value) => {
-                    this.onEditorChange(item, value);
-                  }}
-                />
-                <p className="sgcreator-selector sgcreator-selector_close">{`}`}</p>
-              </div>
-            ))}
+        <div className="sgcreator-item-box sgcreator-item-box_icons">
+          <div className="sgcreator-sample-box">
+            <i className={`${prefix}-icon fas fa-minus`} />
           </div>
+          <div className="sgcreator-tag-box">
+            {`<i class="${prefix}-icon fas fa-minus"></i>`}
+          </div>
+          {stylesList.map((item, i) => (
+            <div className="sgcreator-css-box" key={item}>
+              <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
+              <CodeMirror
+                ref={ed => (this.editorRefs[i] = ed)}
+                options={{ mode: "css", theme: "neo" }}
+                value={icons[item]}
+                onBeforeChange={(editor, data, value) => {
+                  this.onEditorChange(item, value);
+                }}
+              />
+              <p className="sgcreator-selector sgcreator-selector_close">{`}`}</p>
+            </div>
+          ))}
         </div>
       </section>
     );

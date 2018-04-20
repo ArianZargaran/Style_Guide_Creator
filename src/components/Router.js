@@ -34,14 +34,14 @@ class Router extends Component {
       });
     });
 
-    // console.log(state);
+    //console.log(state);
     // console.log(style);
 
     return (
       <BrowserRouter>
         <div className="sgcreator-hook">
           <style>{style}</style>
-          <Categories />
+          <Categories data={style} />
           <Switch>
             <Route path="/quote" component={Quote} />
             <Route path="/featured-icons" component={FeaturedIcons} />

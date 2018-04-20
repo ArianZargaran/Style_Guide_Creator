@@ -25,7 +25,7 @@ class Buttons extends Component {
     return (
       <section className="sgcreator-representation_section">
         <h1>Buttons</h1>
-        <div className="sgcreator-representation_wrapper">
+        <div>
           <div className="sgcreator-item-box sgcreator-item-box_buttons">
             <p className="sgcreator-tag-box">
               Common propperties to all Buttons

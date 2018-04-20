@@ -7,13 +7,13 @@
 
 .sgcreator-css-box .sgcreator-selector {
   background: transparent;
-  z-index: 9999;
+  z-index: 99;
   left: 10px;
   position: absolute;
 }
 
 .sgcreator-css-box .sgcreator-selector_open {
-  top: 3px;
+  top: 9px;
 }
 
 .sgcreator-css-box .sgcreator-selector_close {
@@ -23,7 +23,6 @@
 .CodeMirror {
   height: auto;
   padding: 20px;
-  width: 91%;
   border: 1px solid #ccc;
   transition: border ease-in-out 0.3s;
 }
