@@ -9,59 +9,53 @@
 
 .sgcreator-categories_section > a {
   text-align: center;
-}
-
-/* ROUNDED LOGO */
-.sgcreator-categories_logo {
-  align-self: center;
-  height: 170px;
-  width: 170px;
-  background: url(https://docs.joomla.org/images/5/53/Vertical-logo-light-background-en.png);
-  background-color: #fff;
-  background-size: 200px;
-  border-radius: 100%;
-  text-indent: -9999px;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 10px auto 5px;
-}
-
-/* CATEGORIES SECTION TITLE */
-.sgcreator-category_header {
-  font-family: monospace;
-  margin: 20px 20px 0;
-  color: #fff;
-  font-size: 30px;
-  cursor: pointer;
+  text-decoration: none;
 }
 
 .sgcreator-categories_section a {
   text-decoration: none;
-} /* Removes Link and a underlines */
+}
 
-/* CATEGORIES SECTION LIST */
+/* ROUNDED LOGO */
+.sgcreator-categories_logo {
+  flex-grow: 1;
+  align-self: center;
+  height: 150px;
+  width: 150px;
+  background: url(https://docs.joomla.org/images/5/53/Vertical-logo-light-background-en.png);
+  background-color: #fff;
+  background-size: 170px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px auto 5px;
+  border-radius: 100%;
+  text-indent: -9999px;
+}
+
+/* CATEGORIES SECTION TITLE */
+.sgcreator-categories_header {
+  font-family: monospace;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 34px;
+  cursor: pointer;
+  line-height: 30px;
+}
 .sgcreator-categories_list {
-  display: flex;
-  flex-direction: column;
-  padding: 0 10px;
+  width: 100%;
 }
 
 /* CATEGORIES SECTION LINK */
-.sgcreator-categories_section > ol > a {
+.sgcreator-categories_list > a {
+  display: block;
   color: #fff;
   cursor: pointer;
-  width: 200px;
+  padding: 0.5rem 1.7rem;
 }
 
 /* LIST SECTION LINK:HOVER */
-.sgcreator-categories_section > ol > a:hover {
+.sgcreator-categories_list > a:hover {
   filter: opacity(0.5) drop-shadow(0 0 0 var(--color_main));
   color: black;
   font-weight: 900;
-}
-
-/* LIST SECTION LINK ELEMENT */
-.sgcreator-categories_section > ol > a > li {
-  list-style-type: decimal-leading-zero;
-  margin: 10px 0;
 }

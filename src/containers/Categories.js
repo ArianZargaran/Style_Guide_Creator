@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import Download from "./Download";
 
 class Categories extends Component {
-  state = {
-    categories: [
+  constructor(props) {
+    super(props);
+    this.categories = [
       "Headers",
       "Typography",
       "Buttons",
@@ -20,8 +21,8 @@ class Categories extends Component {
       "Colors",
       "Highlights",
       "Quote"
-    ]
-  };
+    ];
+  }
 
   render() {
     const name = this.props.appId.name;
@@ -29,18 +30,24 @@ class Categories extends Component {
       <section className="sgcreator-categories_section">
         <Link to="/">
           <div className="sgcreator-categories_logo">{name}</div>
-          <h1 className="sgcreator-category_header">{name}</h1>
+          <h1 className="sgcreator-categories_header ">{name}</h1>
         </Link>
-        <ol className="sgcreator-categories_list">{this.renderIndexList()}</ol>
+        <nav className="sgcreator-categories_list">
+          {this.renderIndexList()}
+        </nav>
         <Download data={this.props.data} />
       </section>
     );
   }
   renderIndexList() {
-    return this.state.categories.map((category, idx) => {
+    return this.categories.map((category, idx) => {
       return (
-        <Link to={this.formatUrl(category)} key={category}>
-          <li className="sgcreator-categories_list_item">{category}</li>
+        <Link
+          className="sgcreator-categories_list_item"
+          to={this.formatUrl(category)}
+          key={category}
+        >
+          {category}
         </Link>
       );
     });

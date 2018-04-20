@@ -13,7 +13,7 @@
 }
 
 .sgcreator-css-box .sgcreator-selector_open {
-  top: 9px;
+  top: 5px;
 }
 
 .sgcreator-css-box .sgcreator-selector_close {
@@ -25,6 +25,13 @@
   padding: 20px;
   border: 1px solid #ccc;
   transition: border ease-in-out 0.3s;
+}
+
+.cm-s-neo .CodeMirror-cursor {
+  width: auto;
+  background: transparent;
+  z-index: 1;
+  border-left: 2px solid #666;
 }
 
 .CodeMirror-scroll {
