@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeFiconsStyles } from "../state/featured_icons/action-creators";
+import Editor from "../components/Editor";
 import "codemirror/mode/css/css";
 
 class FeaturedIcons extends Component {
@@ -12,13 +12,13 @@ class FeaturedIcons extends Component {
   }
 
   componentDidMount() {
-    this.editorRefs[0].editor.focus();
+    this.editorRefs[0].focus();
   }
 
   render() {
-    const ficons = this.props.category.style;
     const prefix = this.props.appId.prefix;
-    const stylesList = Object.keys(ficons);
+    const selector = this.props.category.style;
+    const stylesList = Object.keys(selector);
 
     return (
       <section className="sgcreator-representation_section">
@@ -43,19 +43,16 @@ class FeaturedIcons extends Component {
             {<br />}
             {`</span>`}
           </div>
-          {stylesList.map((item, i, arr) => (
-            <div className="sgcreator-css-box" key={item}>
-              <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-              <CodeMirror
-                ref={ed => (this.editorRefs[i] = ed)}
-                options={{ mode: "css", theme: "neo" }}
-                value={ficons[item]}
-                onBeforeChange={(editor, data, value) => {
-                  this.onEditorChange(item, value);
-                }}
-              />
-              <p className="sgcreator-selector sgcreator-selector_close">{`}`}</p>
-            </div>
+          {stylesList.map((item, idx, arr) => (
+            <Editor
+              key={item}
+              item={item}
+              idx={idx}
+              prefix={prefix}
+              selector={selector}
+              onEditorChange={(item, value) => this.onEditorChange(item, value)}
+              editorMounted={editor => this.editorRefs.push(editor)}
+            />
           ))}
         </div>
       </section>

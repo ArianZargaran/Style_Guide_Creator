@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { Controlled as CodeMirror } from "react-codemirror2";
+import Editor from "../components/Editor";
 import { changeButtonStyles } from "../state/buttons/action-creators";
 import "../style/sgcreator-item-box/sgcreator-buttons.css";
 import "codemirror/mode/css/css";
@@ -13,13 +13,13 @@ class Buttons extends Component {
   }
 
   componentDidMount() {
-    this.editorRefs[0].editor.focus();
+    this.editorRefs[0].focus();
   }
 
   render() {
-    const buttons = this.props.category.style;
     const prefix = this.props.appId.prefix;
-    const stylesList = Object.keys(buttons);
+    const selector = this.props.category.style;
+    const stylesList = Object.keys(selector);
     const commonProps = 1;
 
     return (
@@ -32,26 +32,23 @@ class Buttons extends Component {
             </p>
           </div>
           {stylesList.map(
-            (item, i, arr) =>
-              i <= commonProps ? (
-                <div key={item} className="sgcreator-css-box">
-                  <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                  <CodeMirror
-                    ref={ed => (this.editorRefs[i] = ed)}
-                    options={{ mode: "css", theme: "neo" }}
-                    value={buttons[item]}
-                    onBeforeChange={(editor, data, value) => {
-                      this.onEditorChange(item, value);
-                    }}
-                  />
-                  <p className="sgcreator-selector sgcreator-selector_close">
-                    {"}"}
-                  </p>
-                </div>
+            (item, idx, arr) =>
+              idx <= commonProps ? (
+                <Editor
+                  key={item}
+                  item={item}
+                  idx={idx}
+                  prefix={prefix}
+                  selector={selector}
+                  onEditorChange={(item, value) =>
+                    this.onEditorChange(item, value)
+                  }
+                  editorMounted={editor => this.editorRefs.push(editor)}
+                />
               ) : (
                 <div
                   className="sgcreator-item-box sgcreator-item-box_buttons"
-                  key={i}
+                  key={idx}
                 >
                   <div className="sgcreator-sample-box">
                     <button className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
@@ -63,20 +60,16 @@ class Buttons extends Component {
                       arr[0]
                     } ${prefix}-${item}">Learn more</button>`}
                   </div>
-                  <div className="sgcreator-css-box">
-                    <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                    <CodeMirror
-                      ref={ed => (this.editorRefs[i] = ed)}
-                      options={{ mode: "css", theme: "neo" }}
-                      value={buttons[item]}
-                      onBeforeChange={(editor, data, value) => {
-                        this.onEditorChange(item, value);
-                      }}
-                    />
-                    <p className="sgcreator-selector sgcreator-selector_close">
-                      {"}"}
-                    </p>
-                  </div>
+                  <Editor
+                    item={item}
+                    idx={idx}
+                    prefix={prefix}
+                    selector={selector}
+                    onEditorChange={(item, value) =>
+                      this.onEditorChange(item, value)
+                    }
+                    editorMounted={editor => this.editorRefs.push(editor)}
+                  />
                 </div>
               )
           )}

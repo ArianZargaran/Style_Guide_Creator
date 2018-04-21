@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeListsStyles } from "../state/lists/action-creators";
+import Editor from "../components/Editor";
 import "codemirror/mode/css/css";
 import "../style/sgcreator-item-box/sgcreator-lists.css";
 
@@ -13,13 +13,13 @@ class Lists extends Component {
   }
 
   componentDidMount() {
-    this.editorRefs[0].editor.focus();
+    this.editorRefs[0].focus();
   }
 
   render() {
-    const lists = this.props.category.style;
     const prefix = this.props.appId.prefix;
-    const stylesList = Object.keys(lists);
+    const selector = this.props.category.style;
+    const stylesList = Object.keys(selector);
     const commonProps = 0;
 
     return (
@@ -28,22 +28,19 @@ class Lists extends Component {
         <div className="sgcreator-item-box sgcreator-item-box_lists">
           <p className="sgcreator-tag-box">Common properties to all Lists</p>
           {stylesList.map(
-            (item, i, arr) =>
-              i <= commonProps ? (
-                <div key={item} className="sgcreator-css-box">
-                  <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                  <CodeMirror
-                    ref={ed => (this.editorRefs[i] = ed)}
-                    options={{ mode: "css", theme: "neo" }}
-                    value={lists[item]}
-                    onBeforeChange={(editor, data, value) => {
-                      this.onEditorChange(item, value);
-                    }}
-                  />
-                  <p className="sgcreator-selector sgcreator-selector_close">
-                    {"}"}
-                  </p>
-                </div>
+            (item, idx, arr) =>
+              idx <= commonProps ? (
+                <Editor
+                  key={item}
+                  item={item}
+                  idx={idx}
+                  prefix={prefix}
+                  selector={selector}
+                  onEditorChange={(item, value) =>
+                    this.onEditorChange(item, value)
+                  }
+                  editorMounted={editor => this.editorRefs.push(editor)}
+                />
               ) : (
                 <div
                   className="sgcreator-item-box sgcreator-item-box_lists"
@@ -57,7 +54,7 @@ class Lists extends Component {
                     </ul>
                   </div>
                   <div className="sgcreator-tag-box">
-                    {i === 1
+                    {idx === 1
                       ? `<ul class="${prefix}-${arr[0]} ${prefix}-${item}">`
                       : `<ol class="${prefix}-${arr[0]} ${prefix}-${item}">`}
                     {<br />}
@@ -67,21 +64,18 @@ class Lists extends Component {
                     {<br />}
                     {`    <li>Minus, possimus, veniam, incidunt eligendi</li>`}
                     {<br />}
-                    {i === 1 ? `</ul>` : `</ol>`}
+                    {idx === 1 ? `</ul>` : `</ol>`}
                   </div>
-                  <div className="sgcreator-css-box">
-                    <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                    <CodeMirror
-                      options={{ mode: "css", theme: "neo" }}
-                      value={lists[item]}
-                      onBeforeChange={(editor, data, value) => {
-                        this.onEditorChange(item, value);
-                      }}
-                    />
-                    <p className="sgcreator-selector sgcreator-selector_close">
-                      {"}"}
-                    </p>
-                  </div>
+                  <Editor
+                    item={item}
+                    idx={idx}
+                    prefix={prefix}
+                    selector={selector}
+                    onEditorChange={(item, value) =>
+                      this.onEditorChange(item, value)
+                    }
+                    editorMounted={editor => this.editorRefs.push(editor)}
+                  />
                 </div>
               )
           )}

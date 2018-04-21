@@ -39,5 +39,5 @@
 }
 
 .CodeMirror-focused {
-  border: 1px solid var(--color_main);
+  border: 1px solid #5c80bc;
 }

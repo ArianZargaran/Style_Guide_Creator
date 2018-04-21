@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeLogoStyles } from "../state/logo/action-creators";
+import Editor from "../components/Editor";
 import "codemirror/mode/css/css";
 
 class Logo extends Component {
@@ -12,40 +12,40 @@ class Logo extends Component {
   }
 
   componentDidMount() {
-    this.editorRefs[0].editor.focus();
+    this.editorRefs[0].focus();
   }
 
   render() {
-    const logo = this.props.category.style;
     const prefix = this.props.appId.prefix;
+    const selector = this.props.category.style;
+    const stylesList = Object.keys(selector);
     const name = this.props.appId.name;
-    const stylesList = Object.keys(logo);
     const commonProps = 0;
 
     return (
       <section className="sgcreator-representation_section">
         <h1>Logo</h1>
-        <div className="sgcreator-item-box sgcreator-item-box_logo">
+        <div className="sgcreator-item-box">
           <p className="sgcreator-tag-box">Common properties to all Logos</p>
-          {stylesList.map((item, i, arr) => {
-            return i <= commonProps ? (
-              <div key={item} className="sgcreator-css-box">
-                <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                <CodeMirror
-                  ref={ed => (this.editorRefs[i] = ed)}
-                  options={{ mode: "css", theme: "neo" }}
-                  value={logo[item]}
-                  onBeforeChange={(editor, data, value) => {
-                    this.onEditorChange(item, value);
-                  }}
-                />
-                <p className="sgcreator-selector sgcreator-selector_close">
-                  {"}"}
-                </p>
-              </div>
+          {stylesList.map((item, idx, arr) => {
+            return idx <= commonProps ? (
+              <Editor
+                key={item}
+                item={item}
+                idx={idx}
+                prefix={prefix}
+                selector={selector}
+                onEditorChange={(item, value) =>
+                  this.onEditorChange(item, value)
+                }
+                editorMounted={editor => this.editorRefs.push(editor)}
+              />
             ) : (
-              <div className="sgcreator-item-box sgcreator-item-box_logo">
-                <div key={item} className="sgcreator-sample-box">
+              <div
+                key={item}
+                className="sgcreator-item-box sgcreator-item-box_logo"
+              >
+                <div className="sgcreator-sample-box">
                   <h1 className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
                     {name}
                   </h1>
@@ -55,20 +55,16 @@ class Logo extends Component {
                     ${name}
                   </h1>`}
                 </div>
-                <div className="sgcreator-css-box">
-                  <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                  <CodeMirror
-                    ref={ed => (this.editorRefs[i] = ed)}
-                    options={{ mode: "css", theme: "neo" }}
-                    value={logo[item]}
-                    onBeforeChange={(editor, data, value) => {
-                      this.onEditorChange(item, value);
-                    }}
-                  />
-                  <p className="sgcreator-selector sgcreator-selector_close">
-                    {"}"}
-                  </p>
-                </div>
+                <Editor
+                  item={item}
+                  idx={idx}
+                  prefix={prefix}
+                  selector={selector}
+                  onEditorChange={(item, value) =>
+                    this.onEditorChange(item, value)
+                  }
+                  editorMounted={editor => this.editorRefs.push(editor)}
+                />
               </div>
             );
           })}

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeIconsStyles } from "../state/icons/action-creators";
+import Editor from "../components/Editor";
 import "codemirror/mode/css/css";
 
 class Icons extends Component {
@@ -12,37 +12,34 @@ class Icons extends Component {
   }
 
   componentDidMount() {
-    this.editorRefs[0].editor.focus();
+    this.editorRefs[0].focus();
   }
 
   render() {
-    const icons = this.props.category.style;
     const prefix = this.props.appId.prefix;
-    const stylesList = Object.keys(icons);
+    const selector = this.props.category.style;
+    const stylesList = Object.keys(selector);
 
     return (
       <section className="sgcreator-representation_section">
         <h1>Icons</h1>
-        <div className="sgcreator-item-box sgcreator-item-box_icons">
+        <div className="sgcreator-item-box">
           <div className="sgcreator-sample-box">
             <i className={`${prefix}-icon fas fa-minus`} />
           </div>
           <div className="sgcreator-tag-box">
             {`<i class="${prefix}-icon fas fa-minus"></i>`}
           </div>
-          {stylesList.map((item, i) => (
-            <div className="sgcreator-css-box" key={item}>
-              <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-              <CodeMirror
-                ref={ed => (this.editorRefs[i] = ed)}
-                options={{ mode: "css", theme: "neo" }}
-                value={icons[item]}
-                onBeforeChange={(editor, data, value) => {
-                  this.onEditorChange(item, value);
-                }}
-              />
-              <p className="sgcreator-selector sgcreator-selector_close">{`}`}</p>
-            </div>
+          {stylesList.map((item, idx) => (
+            <Editor
+              key={item}
+              item={item}
+              idx={idx}
+              prefix={prefix}
+              selector={selector}
+              onEditorChange={(item, value) => this.onEditorChange(item, value)}
+              editorMounted={editor => this.editorRefs.push(editor)}
+            />
           ))}
         </div>
       </section>

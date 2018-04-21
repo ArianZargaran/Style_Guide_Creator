@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeTableStyles } from "../state/table/action-creators";
+import Editor from "../components/Editor";
 
 import "codemirror/mode/css/css";
 
@@ -13,13 +13,13 @@ class Table extends Component {
   }
 
   componentDidMount() {
-    this.editorRefs[0].editor.focus();
+    this.editorRefs[0].focus();
   }
 
   render() {
-    const table = this.props.category.style;
     const prefix = this.props.appId.prefix;
-    const stylesList = Object.keys(table);
+    const selector = this.props.category.style;
+    const stylesList = Object.keys(selector);
 
     return (
       <section className="sgcreator-representation_section">
@@ -98,19 +98,16 @@ class Table extends Component {
             {<br />}
             {`</table>`}
           </div>
-          {stylesList.map((item, i) => (
-            <div key={item} className="sgcreator-css-box">
-              <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-              <CodeMirror
-                ref={ed => (this.editorRefs[i] = ed)}
-                options={{ mode: "css", theme: "neo" }}
-                value={table[item]}
-                onBeforeChange={(editor, data, value) => {
-                  this.onEditorChange(item, value);
-                }}
-              />
-              <p className="sgcreator-selector sgcreator-selector_close">{`}`}</p>
-            </div>
+          {stylesList.map((item, idx) => (
+            <Editor
+              key={item}
+              item={item}
+              idx={idx}
+              prefix={prefix}
+              selector={selector}
+              onEditorChange={(item, value) => this.onEditorChange(item, value)}
+              editorMounted={editor => this.editorRefs.push(editor)}
+            />
           ))}
         </div>
       </section>

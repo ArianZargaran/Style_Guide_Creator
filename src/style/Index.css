@@ -4,9 +4,10 @@ body {
 
 /* HOOK */
 .sgcreator-hook {
-  grid-template-areas: "categories representation representation representation representation representation";
-  grid-template-columns: 1fr 5fr;
-  font-family: var(--text_font-family);
+  grid-template-areas: "categories representation";
+  grid-template-rows: 200px auto;
+  grid-template-columns: auto;
+  font-family: #5c80bc;
   display: grid;
   position: fixed;
   top: 0;
@@ -14,4 +15,13 @@ body {
   left: 0;
   right: 0;
   overflow: auto;
+}
+
+@media only screen and (min-width: 1050.01px) {
+  .sgcreator-hook {
+    background: tomato;
+    grid-template-areas: "categories representation representation representation representation representation";
+    grid-template-rows: none;
+    grid-template-columns: 1fr 5fr;
+  }
 }

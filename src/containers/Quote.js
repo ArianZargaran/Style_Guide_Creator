@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeQuoteStyles } from "../state/quote/action-creators";
+import Editor from "../components/Editor";
 import "codemirror/mode/css/css";
 
 class Quote extends Component {
@@ -12,13 +12,13 @@ class Quote extends Component {
   }
 
   componentDidMount() {
-    this.editorRefs[0].editor.focus();
+    this.editorRefs[0].focus();
   }
 
   render() {
-    const quote = this.props.category.style;
     const prefix = this.props.appId.prefix;
-    const stylesList = Object.keys(quote);
+    const selector = this.props.category.style;
+    const stylesList = Object.keys(selector);
 
     return (
       <section className="sgcreator-representation_section">
@@ -38,24 +38,16 @@ class Quote extends Component {
               {`</div>`}
             </div>
           </div>
-          {stylesList.map((item, i) => (
-            <div key={item} className="sgcreator-css-box">
-              <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-              <CodeMirror
-                ref={ed => (this.editorRefs[i] = ed)}
-                options={{
-                  mode: "css",
-                  theme: "neo"
-                }}
-                value={quote[item]}
-                onBeforeChange={(editor, data, value) => {
-                  this.onEditorChange(item, value);
-                }}
-              />
-              <p className="sgcreator-selector sgcreator-selector_close">
-                {`}`}
-              </p>
-            </div>
+          {stylesList.map((item, idx) => (
+            <Editor
+              key={item}
+              item={item}
+              idx={idx}
+              prefix={prefix}
+              selector={selector}
+              onEditorChange={(item, value) => this.onEditorChange(item, value)}
+              editorMounted={editor => this.editorRefs.push(editor)}
+            />
           ))}
         </div>
       </section>

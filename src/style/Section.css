@@ -3,7 +3,10 @@
   grid-area: representation;
   text-align: center;
   margin: 10px auto;
-  background: transparent;
+}
+
+.sgcreator-representation_section h1 {
+  font-family: "Courier New", monospace;
 }
 
 /* VISUAL REPRESENTATION SECTION BOXES */
@@ -28,5 +31,5 @@
 .sgcreator-error_message {
   position: absolute;
   float: right;
-  color: red;
+  color: tomato;
 }

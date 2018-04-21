@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeBreadcrumbsStyles } from "../state/breadcrumbs/action-creators";
+import Editor from "../components/Editor";
 import "../style/sgcreator-item-box/sgcreator-buttons.css";
 import "codemirror/mode/css/css";
 
@@ -13,13 +13,13 @@ class Breadcrumbs extends Component {
   }
 
   componentDidMount() {
-    this.editorRefs[0].editor.focus();
+    this.editorRefs[0].focus();
   }
 
   render() {
-    const breadcrumbs = this.props.category.style;
     const prefix = this.props.appId.prefix;
-    const stylesList = Object.keys(breadcrumbs);
+    const selector = this.props.category.style;
+    const stylesList = Object.keys(selector);
 
     return (
       <section className="sgcreator-representation_section">
@@ -47,24 +47,16 @@ class Breadcrumbs extends Component {
             {<br />}
             {`</ul>`}
           </div>
-          {stylesList.map((item, i, arr) => (
-            <div className="sgcreator-css-box" key={item}>
-              <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-              <CodeMirror
-                ref={ed => (this.editorRefs[i] = ed)}
-                options={{
-                  mode: "css",
-                  theme: "neo"
-                }}
-                value={breadcrumbs[item]}
-                onBeforeChange={(editor, data, value) => {
-                  this.onEditorChange(item, value);
-                }}
-              />
-              <p className="sgcreator-selector sgcreator-selector sgcreator-selector_close">
-                {"}"}
-              </p>
-            </div>
+          {stylesList.map((item, idx, arr) => (
+            <Editor
+              key={item}
+              item={item}
+              idx={idx}
+              prefix={prefix}
+              selector={selector}
+              onEditorChange={(item, value) => this.onEditorChange(item, value)}
+              editorMounted={editor => this.editorRefs.push(editor)}
+            />
           ))}
         </div>
       </section>

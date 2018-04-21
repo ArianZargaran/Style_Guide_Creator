@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Download from "./Download";
+import Download from "../components/Download";
 
 class Categories extends Component {
   constructor(props) {

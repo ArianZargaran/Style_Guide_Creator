@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeColorsStyles } from "../state/colors/action-creators";
+import Editor from "../components/Editor";
 import "codemirror/mode/css/css";
 
 class Colors extends Component {
@@ -12,38 +12,36 @@ class Colors extends Component {
   }
 
   componentDidMount() {
-    this.editorRefs[0].editor.focus();
+    this.editorRefs[0].focus();
   }
 
   render() {
-    const colors = this.props.category.style;
-    const stylesList = Object.keys(colors);
+    const selector = this.props.category.style;
+    const stylesList = Object.keys(selector);
     const prefix = this.props.appId.prefix;
 
     return (
       <section className="sgcreator-representation_section">
         <h1>Colors</h1>
         <div>
-          {stylesList.map((item, i) => (
-            <div className="sgcreator-item-box" key={item}>
+          {stylesList.map((item, idx) => (
+            <div key={item} className="sgcreator-item-box">
               <div className="sgcreator-sample-box">
                 <p className={`${prefix}-${item}`}>{item}</p>
+                <div className="sgcreator-tag-box">
+                  {`<div class="${prefix}-${item}"></div>`}
+                </div>
               </div>
-              <div className="sgcreator-tag-box">
-                {`<div class="${prefix}-${item}"></div>`}
-              </div>
-              <div className="sgcreator-css-box">
-                <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                <CodeMirror
-                  ref={ed => (this.editorRefs[i] = ed)}
-                  options={{ mode: "css", theme: "neo" }}
-                  value={colors[item]}
-                  onBeforeChange={(editor, data, value) => {
-                    this.onEditorChange(item, value);
-                  }}
-                />
-                <p className="sgcreator-selector sgcreator-selector_close">}</p>
-              </div>
+              <Editor
+                item={item}
+                idx={idx}
+                prefix={prefix}
+                selector={selector}
+                onEditorChange={(item, value) =>
+                  this.onEditorChange(item, value)
+                }
+                editorMounted={editor => this.editorRefs.push(editor)}
+              />
             </div>
           ))}
         </div>

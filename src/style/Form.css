@@ -16,17 +16,16 @@
   background: none;
   margin: 15px 0;
   cursor: pointer;
-  background: var(--color_main);
-  font-size: var(--h4_font-size);
-  color: var(--color_background);
-  border-color: var(--color_main);
+  background: #5c80bc;
+  color: #fff;
+  border-color: #5c80bc;
 }
 
 .sgcreator-form button:hover,
 .sgcreator-form button:focus {
   outline: none;
-  border: 1px solid var(--color_main);
-  background: var(--color_desaturated);
+  border: 1px solid #5c80bc;
+  background: #30323d;
 }
 
 .sgcreator-sgcreator-form button:after {
@@ -40,13 +39,13 @@
   margin: 10px;
   padding: 5px 10px;
   outline: none;
-  font-size: var(--h5_font-size);
-  border: var(--color_main);
+  font-size: 0.83em;
+  border: #5c80bc;
 }
 
 .sgcreator-form textarea {
   resize: vertical;
-  border: 1px solid var(--color_secondary);
+  border: 1px solid #cdd1c4;
   height: 350px;
 }
 
@@ -58,5 +57,5 @@
 
 .sgcreator-form input:focus,
 .sgcreator-form textarea:focus {
-  border: 1px solid var(--color_main);
+  border: 1px solid #5c80bc;
 }

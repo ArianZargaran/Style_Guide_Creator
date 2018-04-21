@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeTypographyStyles } from "../state/typography/action-creators";
+import Editor from "../components/Editor";
 import "codemirror/mode/css/css";
 
 class Typography extends Component {
@@ -12,18 +12,19 @@ class Typography extends Component {
   }
 
   componentDidMount() {
-    this.editorRefs[0].editor.focus();
+    this.editorRefs[0].focus();
   }
 
   render() {
-    const typography = this.props.category.style;
     const prefix = this.props.appId.prefix;
-    const stylesList = Object.keys(typography);
+    const selector = this.props.category.style;
+    const stylesList = Object.keys(selector);
+
     return (
       <section className="sgcreator-representation_section">
         <h1>Typography</h1>
         <div>
-          {stylesList.map((item, i) => (
+          {stylesList.map((item, idx) => (
             <div className="sgcreator-item-box" key={item}>
               <div className="sgcreator-sample-box">
                 <p className={`${prefix}-${item}`}>Lorem impsum dolor emet</p>
@@ -31,20 +32,16 @@ class Typography extends Component {
               <div className="sgcreator-tag-box">
                 {`<p class="${prefix}-${item}">Lorem impsum dolor emet</p>`}
               </div>
-              <div className="sgcreator-css-box">
-                <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-                <CodeMirror
-                  ref={ed => (this.editorRefs[i] = ed)}
-                  options={{ mode: "css", theme: "neo" }}
-                  value={typography[item]}
-                  onBeforeChange={(editor, data, value) => {
-                    this.onEditorChange(item, value);
-                  }}
-                />
-                <p className="sgcreator-selector sgcreator-selector_close">
-                  {`}`}
-                </p>
-              </div>
+              <Editor
+                item={item}
+                idx={idx}
+                prefix={prefix}
+                selector={selector}
+                onEditorChange={(item, value) =>
+                  this.onEditorChange(item, value)
+                }
+                editorMounted={editor => this.editorRefs.push(editor)}
+              />
             </div>
           ))}
         </div>

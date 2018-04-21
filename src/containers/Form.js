@@ -1,30 +1,29 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Controlled as CodeMirror } from "react-codemirror2";
 import { changeFormStyles } from "../state/form/action-creators";
+import Editor from "../components/Editor";
 import "codemirror/mode/css/css";
 
 class Form extends Component {
   constructor(props) {
     super(props);
     this.editorRefs = [];
-    this.state = this.props.category.style;
   }
 
   componentDidMount() {
-    this.editorRefs[0].editor.focus();
+    this.editorRefs[0].focus();
   }
 
   render() {
-    const form = this.props.category.style;
     const prefix = this.props.appId.prefix;
-    const stylesList = Object.keys(form);
+    const selector = this.props.category.style;
+    const stylesList = Object.keys(selector);
 
     return (
       <section className="sgcreator-representation_section">
         <h1>Form</h1>
-        <div className="sgcreator-item-box sgcreator-item-box_editorial-form">
+        <div className="sgcreator-item-box">
           <div className="sgcreator-sample-box">
             <div className={`${prefix}-form`}>
               <div>
@@ -75,19 +74,16 @@ class Form extends Component {
             {<br />}
             {`</form>`}
           </div>
-          {stylesList.map((item, i) => (
-            <div key={item} className="sgcreator-css-box">
-              <p className="sgcreator-selector sgcreator-selector_open">{`.${prefix}-${item} {`}</p>
-              <CodeMirror
-                ref={ed => (this.editorRefs[i] = ed)}
-                options={{ mode: "css", theme: "neo" }}
-                value={this.state[item]}
-                onBeforeChange={(editor, data, value) => {
-                  this.onEditorChange(item, value);
-                }}
-              />
-              <p className="sgcreator-selector sgcreator-selector_close">}</p>
-            </div>
+          {stylesList.map((item, idx) => (
+            <Editor
+              key={item}
+              item={item}
+              idx={idx}
+              prefix={prefix}
+              selector={selector}
+              onEditorChange={(item, value) => this.onEditorChange(item, value)}
+              editorMounted={editor => this.editorRefs.push(editor)}
+            />
           ))}
         </div>
       </section>
@@ -99,8 +95,6 @@ class Form extends Component {
   }
 
   onEditorChange = (item, value) => {
-    this.setState({ [item]: value });
-
     this.props.changeFormStyles({
       [item]: value
     });
