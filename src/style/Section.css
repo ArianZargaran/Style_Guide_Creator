@@ -1,35 +1,78 @@
-/* VISUAL REPRESENTATION SECTION */
 .sgcreator-representation_section {
-  grid-area: representation;
-  text-align: center;
-  margin: 10px auto;
+  display: none;
+}
+
+.sgcreator-representation_section {
+  display: none;
 }
 
 .sgcreator-representation_section h1 {
-  font-family: "Courier New", monospace;
+  display: none;
 }
 
 /* VISUAL REPRESENTATION SECTION BOXES */
 /* SAMPLE BOX */
 .sgcreator-item-box {
-  padding: 5px 0;
+  display: none;
 }
 
 .sgcreator-sample-box p {
-  margin-bottom: 0;
+  display: none;
 }
 
 /* TAG BOX */
 .sgcreator-tag-box {
-  padding: 7px 9px;
-  margin: 5px 0;
-  background: rgba(0, 0, 0, 0.1);
-  text-align: start;
+  display: none;
 }
 
 /* FORM ERROR MESSAGE */
 .sgcreator-error_message {
-  position: absolute;
-  float: right;
-  color: tomato;
+  display: none;
 }
+
+@media only screen and (min-width: 1023.01px) {
+  /* VISUAL REPRESENTATION SECTION */
+  .sgcreator-representation_section {
+    grid-area: representation;
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  .sgcreator-representation_section h1 {
+    font-family: "Courier New", monospace;
+  }
+
+  /* VISUAL REPRESENTATION SECTION BOXES */
+  /* SAMPLE BOX */
+  .sgcreator-item-box {
+    padding: 5px 0;
+  }
+
+  .sgcreator-sample-box p {
+    margin-bottom: 0;
+  }
+
+  /* TAG BOX */
+  .sgcreator-tag-box {
+    padding: 7px 9px;
+    margin: 5px 0;
+    background: rgba(0, 0, 0, 0.1);
+    text-align: start;
+  }
+
+  /* FORM ERROR MESSAGE */
+  .sgcreator-error_message {
+    position: absolute;
+    float: right;
+    color: tomato;
+  }
+}
+/* 
+P
+// 480px
+M
+//767px
+G
+//1023 
+XG
+*/

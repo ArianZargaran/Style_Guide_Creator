@@ -4,10 +4,11 @@ body {
 
 /* HOOK */
 .sgcreator-hook {
-  grid-template-areas: "categories representation";
-  grid-template-rows: 200px auto;
-  grid-template-columns: auto;
-  font-family: #5c80bc;
+  background: MediumSeaGreen;
+  grid-template-areas:
+    "categories"
+    "representation";
+  grid-template-rows: 70px auto;
   display: grid;
   position: fixed;
   top: 0;
@@ -15,13 +16,36 @@ body {
   left: 0;
   right: 0;
   overflow: auto;
+  font-family: Arial, sans-serif;
 }
 
-@media only screen and (min-width: 1050.01px) {
+@media only screen and (min-width: 480.01px) {
+  .sgcreator-hook {
+    background: lime;
+  }
+}
+
+@media only screen and (min-width: 767.01px) {
   .sgcreator-hook {
     background: tomato;
+  }
+}
+
+@media only screen and (min-width: 1023.01px) {
+  .sgcreator-hook {
+    background: #cceeff;
     grid-template-areas: "categories representation representation representation representation representation";
     grid-template-rows: none;
     grid-template-columns: 1fr 5fr;
   }
 }
+
+/* 
+P
+// 480px
+M
+//767px
+G
+//1023 
+XG
+*/

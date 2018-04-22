@@ -7,6 +7,7 @@ class Categories extends Component {
   constructor(props) {
     super(props);
     this.categories = [
+      "HOME",
       "Headers",
       "Typography",
       "Buttons",
@@ -54,10 +55,10 @@ class Categories extends Component {
   }
 
   formatUrl(category) {
-    const result = String(category)
+    let result = String(category)
       .toLowerCase()
       .replace(" ", "-");
-    return result;
+    return result === "home" ? "" : result;
   }
 }
 
