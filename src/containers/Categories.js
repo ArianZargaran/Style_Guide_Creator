@@ -34,7 +34,9 @@ class Categories extends Component {
           <h1 className="sgcreator-categories_header ">{name}</h1>
         </Link>
         <nav className="sgcreator-categories_list">
+          <i className="fas fa-arrow-right sgcreator-categories-list_arrow sgcreator-categories-list_arrow_right" />
           {this.renderIndexList()}
+          <i className="fas fa-arrow-left sgcreator-categories-list_arrow sgcreator-categories-list_arrow_left" />
         </nav>
         <Download data={this.props.data} />
       </section>
@@ -44,7 +46,7 @@ class Categories extends Component {
     return this.categories.map((category, idx) => {
       return (
         <Link
-          className="sgcreator-categories_list_item"
+          className="sgcreator-categories-list_item"
           to={this.formatUrl(category)}
           key={category}
         >
