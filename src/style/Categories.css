@@ -2,11 +2,10 @@
   display: flex;
   grid-area: categories;
   background: #5c80bc;
-  height: 170px;
   width: 100%;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  position: absolute;
 }
 
 .sgcreator-categories_section a {
@@ -40,7 +39,6 @@
 
 .sgcreator-categories_list {
   box-sizing: border-box;
-  overflow: hidden;
   height: 34px;
   width: 80%;
   margin: 0 auto;
@@ -53,14 +51,14 @@
   position: absolute;
   height: 34px;
   padding: 0.5rem 0.8rem;
-  bottom: 4px;
+  bottom: 0px;
 }
 
-.sgcreator-categories-list_arrow_left {
-  left: 5px;
-}
 .sgcreator-categories-list_arrow_right {
   right: 5px;
+}
+.sgcreator-categories-list_arrow_left {
+  left: 5px;
 }
 
 .sgcreator-categories-list_item {
@@ -71,21 +69,54 @@
   margin: 0 auto;
 }
 
-@media only screen and (min-width: 1023.01px) {
-  .sgcreator-categories_section {
-    height: 100%;
-    width: 200px;
+.enabled {
+  display: block;
+}
+
+.disabled {
+  display: none;
+}
+
+@media only screen and (min-width: 480.01px) {
+  .sgcreator-categories_list {
+    text-align: center;
+    flex-direction: row;
     align-items: center;
+    width: 100%;
+    height: auto;
   }
 
-  /* ROUNDED LOGO */
+  .sgcreator-categories-list_item {
+    cursor: pointer;
+    padding: 0.5rem 1.7rem;
+    text-align: center;
+  }
+
+  .enabled,
+  .disabled {
+    display: inline-block;
+  }
+
+  .sgcreator-categories-list_arrow,
+  .sgcreator-categories-list_arrow:before {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media only screen and (min-width: 1023.01px) {
+  .sgcreator-categories_section {
+    min-height: 100%;
+    width: 200px;
+    flex-wrap: nowrap;
+  }
+
   .sgcreator-categories_logo {
     height: 150px;
     width: 150px;
     background-size: 170px;
   }
 
-  /* CATEGORIES SECTION TITLE */
   .sgcreator-categories_header {
     margin-top: 20px;
     font-size: 34px;
@@ -95,13 +126,9 @@
   .sgcreator-categories_list {
     width: 100%;
     height: auto;
+    flex-direction: column;
   }
 
-  .sgcreator-categories-list_arrow {
-    display: none;
-  }
-
-  /* CATEGORIES SECTION LINK */
   .sgcreator-categories-list_item {
     display: block;
     cursor: pointer;
