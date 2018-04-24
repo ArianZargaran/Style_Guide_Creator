@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { changeBreadcrumbsStyles } from "../state/breadcrumbs/action-creators";
 import Editor from "../components/Editor";
-import "../style/sgcreator-item-box/sgcreator-buttons.css";
 import "codemirror/mode/css/css";
 
 class Breadcrumbs extends Component {

@@ -3,7 +3,6 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Editor from "../components/Editor";
 import { changeButtonStyles } from "../state/buttons/action-creators";
-import "../style/sgcreator-item-box/sgcreator-buttons.css";
 import "codemirror/mode/css/css";
 
 class Buttons extends Component {
