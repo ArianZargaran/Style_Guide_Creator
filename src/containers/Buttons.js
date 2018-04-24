@@ -25,12 +25,8 @@ class Buttons extends Component {
     return (
       <section className="sgcreator-representation_section">
         <h1>Buttons</h1>
-        <div>
-          <div className="sgcreator-item-box sgcreator-item-box_buttons">
-            <p className="sgcreator-tag-box">
-              Common propperties to all Buttons
-            </p>
-          </div>
+        <div className="sgcreator-item-box">
+          <p className="sgcreator-tag-box">Common propperties to all Buttons</p>
           {stylesList.map(
             (item, idx, arr) =>
               idx <= commonProps ? (

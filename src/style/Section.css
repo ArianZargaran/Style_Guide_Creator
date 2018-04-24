@@ -34,6 +34,11 @@
   color: tomato;
 }
 
+/* LAST BOX DARKER BACKGROUND */
+.sgcreator-item-box_buttons:last-child .sgcreator-sample-box {
+  background: #cdd2c4;
+}
+
 /* 
 P
 // 480px

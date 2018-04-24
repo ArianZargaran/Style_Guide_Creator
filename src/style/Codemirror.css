@@ -1,48 +1,47 @@
-@media only screen and (min-width: 1023.01px) {
-  .sgcreator-css-box {
-    text-align: left;
-    font-family: monospace;
-    position: relative;
-    padding: 10px 2px;
-  }
-
-  .sgcreator-css-box .sgcreator-selector {
-    background: transparent;
-    z-index: 99;
-    left: 10px;
-    position: absolute;
-  }
-
-  .sgcreator-css-box .sgcreator-selector_open {
-    top: 5px;
-  }
-
-  .sgcreator-css-box .sgcreator-selector_close {
-    bottom: 5px;
-  }
-
-  .CodeMirror {
-    height: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    transition: border ease-in-out 0.3s;
-  }
-
-  .cm-s-neo .CodeMirror-cursor {
-    width: auto;
-    background: transparent;
-    z-index: 1;
-    border-left: 2px solid #666;
-  }
-
-  .CodeMirror-scroll {
-    overflow: visible !important;
-  }
-
-  .CodeMirror-focused {
-    border: 1px solid #5c80bc;
-  }
+.sgcreator-css-box {
+  text-align: left;
+  font-family: monospace;
+  position: relative;
+  padding: 10px 2px;
 }
+
+.sgcreator-css-box .sgcreator-selector {
+  background: transparent;
+  z-index: 99;
+  left: 10px;
+  position: absolute;
+}
+
+.sgcreator-css-box .sgcreator-selector_open {
+  top: 5px;
+}
+
+.sgcreator-css-box .sgcreator-selector_close {
+  bottom: 5px;
+}
+
+.CodeMirror {
+  height: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  transition: border ease-in-out 0.3s;
+}
+
+.cm-s-neo .CodeMirror-cursor {
+  width: auto;
+  background: transparent;
+  z-index: 1;
+  border-left: 2px solid #666;
+}
+
+.CodeMirror-scroll {
+  overflow: visible !important;
+}
+
+.CodeMirror-focused {
+  border: 1px solid #5c80bc;
+}
+
 /* 
 P
 // 480px

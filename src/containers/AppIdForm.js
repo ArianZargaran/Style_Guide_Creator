@@ -47,7 +47,7 @@ class AppIdForm extends Component {
 
   renderFirstField = field => {
     return (
-      <div>
+      <div className="sgcreator-item-box">
         <label>{field.label}</label>
         <input type="text" {...field.input} autoFocus />
         <span className="sgcreator-error_message">
