@@ -1,66 +1,65 @@
-@media only screen and (min-width: 1023.01px) {
-  .sgcreator-form {
-    display: inline-block;
-    min-width: 350px;
-    margin: 12px auto;
-    padding: 20px 30px;
-    border-radius: 5px;
-  }
-
-  .sgcreator-form div {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .sgcreator-form button {
-    padding: 9px 12px;
-    background: none;
-    margin: 15px 0;
-    cursor: pointer;
-    background: #5c80bc;
-    color: #fff;
-    border-color: #5c80bc;
-  }
-
-  .sgcreator-form button:hover,
-  .sgcreator-form button:focus {
-    outline: none;
-    border: 1px solid #5c80bc;
-    background: #30323d;
-  }
-
-  .sgcreator-sgcreator-form button:after {
-    content: " >>>";
-  }
-
-  .sgcreator-form input,
-  .sgcreator-form textarea {
-    min-height: 2.5em;
-    vertical-align: middle;
-    margin: 10px;
-    padding: 5px 10px;
-    outline: none;
-    font-size: 0.83em;
-    border: #5c80bc;
-  }
-
-  .sgcreator-form textarea {
-    resize: vertical;
-    border: 1px solid #cdd1c4;
-    height: 350px;
-  }
-
-  .sgcreator-form input,
-  .sgcreator-form textarea {
-    border: 1px solid #ccc;
-    transition: border ease-in-out 0.3s;
-  }
-
-  .sgcreator-form input:focus,
-  .sgcreator-form textarea:focus {
-    border: 1px solid #5c80bc;
-  }
+.sgcreator-form {
+  display: inline-block;
+  min-width: 350px;
+  margin: 12px auto;
+  padding: 20px 30px;
+  border-radius: 5px;
 }
+
+.sgcreator-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.sgcreator-form button {
+  padding: 9px 12px;
+  background: none;
+  margin: 15px 0;
+  cursor: pointer;
+  background: #5c80bc;
+  color: #fff;
+  border-color: #5c80bc;
+}
+
+.sgcreator-form button:hover,
+.sgcreator-form button:focus {
+  outline: none;
+  border: 1px solid #5c80bc;
+  background: #30323d;
+}
+
+.sgcreator-sgcreator-form button:after {
+  content: " >>>";
+}
+
+.sgcreator-form input,
+.sgcreator-form textarea {
+  min-height: 2.5em;
+  vertical-align: middle;
+  margin: 10px;
+  padding: 5px 10px;
+  outline: none;
+  font-size: 0.83em;
+  border: #5c80bc;
+}
+
+.sgcreator-form textarea {
+  resize: vertical;
+  border: 1px solid #cdd1c4;
+  height: 350px;
+}
+
+.sgcreator-form input,
+.sgcreator-form textarea {
+  border: 1px solid #ccc;
+  transition: border ease-in-out 0.3s;
+}
+
+.sgcreator-form input:focus,
+.sgcreator-form textarea:focus {
+  border: 1px solid #5c80bc;
+}
+
 /* 
 P
 // 480px

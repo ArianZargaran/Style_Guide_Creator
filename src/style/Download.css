@@ -4,19 +4,36 @@
   font-family: Arial, sans-serif;
   position: absolute;
   right: 5px;
-  bottom: -50px;
+}
+
+@media only screen and (min-width: 480.01px) {
+  .sgcreator-download {
+    top: 0;
+  }
+}
+
+@media only screen and (min-width: 1023.01px) {
+  .sgcreator-download {
+    position: static;
+  }
 }
 
 .sgcreator-download a {
   display: inline-block;
   cursor: pointer;
   border: none;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   outline: none;
   background: #4d5061;
   color: #eee;
   padding: 0.7rem 0.5rem;
+}
+
+@media only screen and (min-width: 1023.01px) {
+  .sgcreator-download a {
+    font-size: 15px;
+  }
 }
 
 .sgcreator-download a:hover {
@@ -29,15 +46,6 @@
   color: #eee;
 }
 
-@media only screen and (min-width: 1023.01px) {
-  .sgcreator-download {
-    position: static;
-  }
-
-  .sgcreator-download a {
-    font-size: 15px;
-  }
-}
 /* 
 P
 // 480px

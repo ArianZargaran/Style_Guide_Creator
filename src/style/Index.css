@@ -4,11 +4,10 @@ body {
 
 /* HOOK */
 .sgcreator-hook {
-  background: MediumSeaGreen;
   grid-template-areas:
     "categories"
     "representation";
-  grid-template-rows: 70px auto;
+  grid-template-rows: fit-content(0) auto;
   display: grid;
   position: fixed;
   top: 0;
@@ -19,21 +18,8 @@ body {
   font-family: Arial, sans-serif;
 }
 
-@media only screen and (min-width: 480.01px) {
+@media only screen and (min-width: 1150.01px) {
   .sgcreator-hook {
-    background: lime;
-  }
-}
-
-@media only screen and (min-width: 767.01px) {
-  .sgcreator-hook {
-    background: tomato;
-  }
-}
-
-@media only screen and (min-width: 1023.01px) {
-  .sgcreator-hook {
-    background: #cceeff;
     grid-template-areas: "categories representation representation representation representation representation";
     grid-template-rows: none;
     grid-template-columns: 1fr 5fr;
