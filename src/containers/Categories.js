@@ -26,6 +26,10 @@ class Categories extends Component {
     ];
   }
 
+  // componentWillReceiveProps(nextProps) {
+  //   const locationChanged = nextProps.location !== this.props.location;
+  // }
+
   render() {
     const name = this.props.appId.name;
 
@@ -85,7 +89,6 @@ class Categories extends Component {
 
     return val === "home" ? "" : val;
   }
-}
 
 function mapStateToProps(state) {
   return {
