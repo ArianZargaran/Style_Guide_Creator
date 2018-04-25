@@ -24,12 +24,6 @@ class Categories extends Component {
       "Highlights",
       "Quote"
     ];
-
-    this.state = {
-      active: 0
-    };
-
-    console.log(props);
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -48,7 +42,10 @@ class Categories extends Component {
         <nav className="sgcreator-categories_list">
           {this.renderCategoriesList()}
         </nav>
-        <select onChange={this.changeSection.bind(this)}>
+        <select
+          className="sgcreator-categories_select"
+          onChange={this.changeSection.bind(this)}
+        >
           {this.renderSelectList()}
         </select>
         <Download data={this.props.data} />
@@ -59,9 +56,7 @@ class Categories extends Component {
     return this.categories.map((category, idx) => {
       return (
         <Link
-          className={`sgcreator-categories-list_item ${
-            this.state.active === idx ? "enabled" : "disabled"
-          }`}
+          className={`sgcreator-categories-list_item`}
           to={this.formatUrl(category)}
           key={category}
         >
@@ -82,40 +77,18 @@ class Categories extends Component {
   }
 
   changeSection(event) {
-    let val = event.target.value;
-
-    let result = String(val)
-      .toLowerCase()
-      .replace(" ", "-");
-
-    console.log(result);
-
-    // val === "home" ? (val = "") : val;
-
-    // this.props.history.push(`/${val}`);
+    let val = this.formatUrl(event.target.value);
+    this.props.history.push(`${val}`);
   }
 
   formatUrl(category) {
-    let result = String(category)
+    let regExp = /\s+/g;
+    let val = String(category)
       .toLowerCase()
-      .replace(" ", "-");
-    return result === "home" ? "" : result;
+      .replace(regExp, "-");
+
+    return val === "home" ? "" : val;
   }
-
-  // changeActive(num, ev) {
-  //   let newIdx = this.state.active + num;
-  //   if (newIdx < 0) {
-  //     newIdx = this.categories.length - 1;
-  //   }
-  //   if (newIdx >= this.categories.length) {
-  //     newIdx = 0;
-  //   }
-
-  //   this.setState({
-  //     active: newIdx
-  //   });
-  // }
-}
 
 function mapStateToProps(state) {
   return {
