@@ -9,7 +9,6 @@
 @media only screen and (min-width: 1150.01px) {
   .sgcreator-categories_section {
     width: 200px;
-    height: auto;
     flex-wrap: no-wrap;
   }
 }
