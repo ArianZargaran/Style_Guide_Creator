@@ -28,10 +28,17 @@ class Categories extends Component {
     this.state = {
       active: 0
     };
+
+    console.log(props);
   }
+
+  // componentWillReceiveProps(nextProps) {
+  //   const locationChanged = nextProps.location !== this.props.location;
+  // }
 
   render() {
     const name = this.props.appId.name;
+
     return (
       <section className="sgcreator-categories_section">
         <Link to="/">
@@ -39,21 +46,16 @@ class Categories extends Component {
           <h1 className="sgcreator-categories_header ">{name}</h1>
         </Link>
         <nav className="sgcreator-categories_list">
-          <i
-            className="fas fa-arrow-left sgcreator-categories-list_arrow sgcreator-categories-list_arrow_left"
-            onClick={this.changeActive.bind(this, -1)}
-          />
-          {this.renderIndexList()}
-          <i
-            className="fas fa-arrow-right sgcreator-categories-list_arrow sgcreator-categories-list_arrow_right"
-            onClick={this.changeActive.bind(this, +1)}
-          />
+          {this.renderCategoriesList()}
         </nav>
+        <select onChange={this.changeSection.bind(this)}>
+          {this.renderSelectList()}
+        </select>
         <Download data={this.props.data} />
       </section>
     );
   }
-  renderIndexList() {
+  renderCategoriesList() {
     return this.categories.map((category, idx) => {
       return (
         <Link
@@ -69,6 +71,30 @@ class Categories extends Component {
     });
   }
 
+  renderSelectList() {
+    return this.categories.map((category, idx) => {
+      return (
+        <option key={category} value={`${category}`}>
+          {category}
+        </option>
+      );
+    });
+  }
+
+  changeSection(event) {
+    let val = event.target.value;
+
+    let result = String(val)
+      .toLowerCase()
+      .replace(" ", "-");
+
+    console.log(result);
+
+    // val === "home" ? (val = "") : val;
+
+    // this.props.history.push(`/${val}`);
+  }
+
   formatUrl(category) {
     let result = String(category)
       .toLowerCase()
@@ -76,19 +102,19 @@ class Categories extends Component {
     return result === "home" ? "" : result;
   }
 
-  changeActive(num, ev) {
-    let newIdx = this.state.active + num;
-    if (newIdx < 0) {
-      newIdx = this.categories.length - 1;
-    }
-    if (newIdx >= this.categories.length) {
-      newIdx = 0;
-    }
+  // changeActive(num, ev) {
+  //   let newIdx = this.state.active + num;
+  //   if (newIdx < 0) {
+  //     newIdx = this.categories.length - 1;
+  //   }
+  //   if (newIdx >= this.categories.length) {
+  //     newIdx = 0;
+  //   }
 
-    this.setState({
-      active: newIdx
-    });
-  }
+  //   this.setState({
+  //     active: newIdx
+  //   });
+  // }
 }
 
 function mapStateToProps(state) {
