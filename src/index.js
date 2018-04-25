@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import Router from "./components/Router";
-
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/neo.css";
 

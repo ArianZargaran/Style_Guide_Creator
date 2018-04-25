@@ -41,10 +41,7 @@ class Buttons extends Component {
                   editorMounted={editor => this.editorRefs.push(editor)}
                 />
               ) : (
-                <div
-                  className="sgcreator-item-box sgcreator-item-box_buttons"
-                  key={idx}
-                >
+                <div key={item}>
                   <div className="sgcreator-sample-box">
                     <button className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
                       Learn more
