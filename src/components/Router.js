@@ -41,7 +41,11 @@ class Router extends Component {
       <BrowserRouter>
         <div className="sgcreator-hook">
           <style>{style}</style>
-          <Categories data={style} />
+          <Route
+            data={style}
+            path="/"
+            render={props => <Categories {...props} />}
+          />
           <Switch>
             <Route path="/quote" component={Quote} />
             <Route path="/featured-icons" component={FeaturedIcons} />

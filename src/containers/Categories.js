@@ -24,14 +24,11 @@ class Categories extends Component {
       "Highlights",
       "Quote"
     ];
-
-    this.state = {
-      active: 0
-    };
   }
 
   render() {
     const name = this.props.appId.name;
+
     return (
       <section className="sgcreator-categories_section">
         <Link to="/">
@@ -39,27 +36,23 @@ class Categories extends Component {
           <h1 className="sgcreator-categories_header ">{name}</h1>
         </Link>
         <nav className="sgcreator-categories_list">
-          <i
-            className="fas fa-arrow-left sgcreator-categories-list_arrow sgcreator-categories-list_arrow_left"
-            onClick={this.changeActive.bind(this, -1)}
-          />
-          {this.renderIndexList()}
-          <i
-            className="fas fa-arrow-right sgcreator-categories-list_arrow sgcreator-categories-list_arrow_right"
-            onClick={this.changeActive.bind(this, +1)}
-          />
+          {this.renderCategoriesList()}
         </nav>
+        <select
+          className="sgcreator-categories_select"
+          onChange={this.changeSection.bind(this)}
+        >
+          {this.renderSelectList()}
+        </select>
         <Download data={this.props.data} />
       </section>
     );
   }
-  renderIndexList() {
+  renderCategoriesList() {
     return this.categories.map((category, idx) => {
       return (
         <Link
-          className={`sgcreator-categories-list_item ${
-            this.state.active === idx ? "enabled" : "disabled"
-          }`}
+          className={`sgcreator-categories-list_item`}
           to={this.formatUrl(category)}
           key={category}
         >
@@ -69,25 +62,28 @@ class Categories extends Component {
     });
   }
 
-  formatUrl(category) {
-    let result = String(category)
-      .toLowerCase()
-      .replace(" ", "-");
-    return result === "home" ? "" : result;
+  renderSelectList() {
+    return this.categories.map((category, idx) => {
+      return (
+        <option key={category} value={`${category}`}>
+          {category}
+        </option>
+      );
+    });
   }
 
-  changeActive(num, ev) {
-    let newIdx = this.state.active + num;
-    if (newIdx < 0) {
-      newIdx = this.categories.length - 1;
-    }
-    if (newIdx >= this.categories.length) {
-      newIdx = 0;
-    }
+  changeSection(event) {
+    let val = this.formatUrl(event.target.value);
+    this.props.history.push(`${val}`);
+  }
 
-    this.setState({
-      active: newIdx
-    });
+  formatUrl(category) {
+    let regExp = /\s+/g;
+    let val = String(category)
+      .toLowerCase()
+      .replace(regExp, "-");
+
+    return val === "home" ? "" : val;
   }
 }
 
