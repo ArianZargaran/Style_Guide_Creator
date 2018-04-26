@@ -14,7 +14,34 @@
 /* VISUAL REPRESENTATION SECTION BOXES */
 /* SAMPLE BOX */
 .sgcreator-item-box {
-  padding: 5px 0;
+  margin: 0 5px;
+  background: lightgoldenrodyellow;
+  width: 380.01px;
+  max-width: 90%;
+}
+
+@media only screen and (min-width: 480.01px) {
+  .sgcreator-item-box {
+    width: 667.01px;
+    background: tomato;
+    max-width: 90%;
+  }
+}
+
+@media only screen and (min-width: 767.01px) {
+  .sgcreator-item-box {
+    width: 1050.01px;
+    background: lightgreen;
+    max-width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1150.01px) {
+  .sgcreator-item-box {
+    min-width: 1050.01px;
+    background: lightcyan;
+    max-width: 90%;
+  }
 }
 
 .sgcreator-sample-box {
