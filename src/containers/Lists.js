@@ -4,7 +4,6 @@ import { bindActionCreators } from "redux";
 import { changeListsStyles } from "../state/lists/action-creators";
 import Editor from "../components/Editor";
 import "codemirror/mode/css/css";
-import "../style/sgcreator-item-box/sgcreator-lists.css";
 
 class Lists extends Component {
   constructor(props) {

@@ -40,6 +40,14 @@
   color: tomato;
 }
 
+.sgcreator-item-box_lists {
+  text-align: start;
+}
+
+.sgcreator-item-box_lists .sgcreator-sample-box {
+  list-style-position: inside;
+}
+
 /* 
 P
 // 480px
