@@ -42,7 +42,7 @@ class Headers extends Component {
                   editorMounted={editor => this.editorRefs.push(editor)}
                 />
               ) : (
-                <div key={item} className="sgcreator-item-box">
+                <div key={item}>
                   <div className="sgcreator-sample-box">
                     <p className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
                       Lorem Ipsum

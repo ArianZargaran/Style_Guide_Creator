@@ -23,9 +23,9 @@ class Typography extends Component {
     return (
       <section className="sgcreator-representation_section">
         <h1>Typography</h1>
-        <div>
+        <div className="sgcreator-item-box">
           {stylesList.map((item, idx) => (
-            <div className="sgcreator-item-box" key={item}>
+            <div key={item}>
               <div className="sgcreator-sample-box">
                 <p className={`${prefix}-${item}`}>Lorem impsum dolor emet</p>
               </div>

@@ -4,7 +4,6 @@ import { bindActionCreators } from "redux";
 import { changeHighlightsStyles } from "../state/highlights/action-creators";
 import Editor from "../components/Editor";
 import "codemirror/mode/css/css";
-import "../style/sgcreator-item-box/sgcreator-highlights.css";
 
 class Highlights extends Component {
   constructor(props) {
@@ -43,10 +42,7 @@ class Highlights extends Component {
                 editorMounted={editor => this.editorRefs.push(editor)}
               />
             ) : (
-              <div
-                className="sgcreator-item-box sgcreator-item-box_highlights"
-                key={item}
-              >
+              <div className="sgcreator-item-box_highlights" key={item}>
                 <div className="sgcreator-sample-box">
                   <div className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
                     <h1 className="ya-header">Highlight</h1>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Download from "../components/Download";
+import _ from "lodash";
 
 class Categories extends Component {
   constructor(props) {
@@ -26,24 +27,31 @@ class Categories extends Component {
     ];
   }
 
+  componentDidMount() {
+    this.ref.value = this.reviewSelect();
+  }
+
   render() {
     const name = this.props.appId.name;
 
     return (
       <section className="sgcreator-categories_section">
-        <Link to="/">
+        <Link to="/" onClick={this.onLogoClick.bind(this, this.ref)}>
           <div className="sgcreator-categories_logo">{name}</div>
           <h1 className="sgcreator-categories_header ">{name}</h1>
         </Link>
         <nav className="sgcreator-categories_list">
           {this.renderCategoriesList()}
         </nav>
-        <select
-          className="sgcreator-categories_select"
-          onChange={this.changeSection.bind(this)}
-        >
-          {this.renderSelectList()}
-        </select>
+        <div className="sgcreator-categories_select-wrapper">
+          <select
+            className="sgcreator-categories_select"
+            onChange={this.onChangeSelection.bind(this)}
+            ref={ref => (this.ref = ref)}
+          >
+            {this.renderSelectOptions()}
+          </select>
+        </div>
         <Download data={this.props.data} />
       </section>
     );
@@ -62,7 +70,7 @@ class Categories extends Component {
     });
   }
 
-  renderSelectList() {
+  renderSelectOptions() {
     return this.categories.map((category, idx) => {
       return (
         <option key={category} value={`${category}`}>
@@ -72,7 +80,7 @@ class Categories extends Component {
     });
   }
 
-  changeSection(event) {
+  onChangeSelection(event) {
     let val = this.formatUrl(event.target.value);
     this.props.history.push(`${val}`);
   }
@@ -84,6 +92,17 @@ class Categories extends Component {
       .replace(regExp, "-");
 
     return val === "home" ? "" : val;
+  }
+
+  onLogoClick(el) {
+    el.value = "HOME";
+  }
+
+  reviewSelect() {
+    let slash = window.location.href.lastIndexOf("/");
+    let trim = window.location.href.substr(slash + 1, slash.length);
+    let value = _.startCase(trim);
+    return value === "" ? (value = "HOME") : value;
   }
 }
 

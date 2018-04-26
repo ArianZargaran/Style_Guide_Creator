@@ -25,7 +25,7 @@ class Lists extends Component {
     return (
       <section className="sgcreator-representation_section">
         <h1>Lists</h1>
-        <div className="sgcreator-item-box sgcreator-item-box_lists">
+        <div className="sgcreator-item-box">
           <p className="sgcreator-tag-box">Common properties to all Lists</p>
           {stylesList.map(
             (item, idx, arr) =>
@@ -42,10 +42,7 @@ class Lists extends Component {
                   editorMounted={editor => this.editorRefs.push(editor)}
                 />
               ) : (
-                <div
-                  className="sgcreator-item-box sgcreator-item-box_lists"
-                  key={item}
-                >
+                <div className="sgcreator-item-box_lists" key={item}>
                   <div className="sgcreator-sample-box">
                     <ul className={`${prefix}-${arr[0]} ${prefix}-${item}`}>
                       <li>Lorem ipsum dolor sit amet.</li>

@@ -23,14 +23,14 @@ class Colors extends Component {
     return (
       <section className="sgcreator-representation_section">
         <h1>Colors</h1>
-        <div>
+        <div className="sgcreator-item-box">
           {stylesList.map((item, idx) => (
-            <div key={item} className="sgcreator-item-box">
+            <div key={item}>
               <div className="sgcreator-sample-box">
                 <p className={`${prefix}-${item}`}>{item}</p>
-                <div className="sgcreator-tag-box">
-                  {`<div class="${prefix}-${item}"></div>`}
-                </div>
+              </div>
+              <div className="sgcreator-tag-box">
+                {`<div class="${prefix}-${item}"></div>`}
               </div>
               <Editor
                 item={item}

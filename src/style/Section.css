@@ -3,9 +3,11 @@
   grid-area: representation;
   text-align: center;
   margin: 10px auto;
+  position: relative;
 }
 
-.sgcreator-representation_section h1 {
+.sgcreator-representation_section h1,
+.sgcreator-representation_section h2 {
   font-family: "Courier New", monospace;
 }
 
@@ -13,6 +15,10 @@
 /* SAMPLE BOX */
 .sgcreator-item-box {
   padding: 5px 0;
+}
+
+.sgcreator-sample-box {
+  background: #fff;
 }
 
 .sgcreator-sample-box p {
@@ -32,11 +38,6 @@
   position: absolute;
   float: right;
   color: tomato;
-}
-
-/* LAST BOX DARKER BACKGROUND */
-.sgcreator-item-box_buttons:last-child .sgcreator-sample-box {
-  background: #cdd2c4;
 }
 
 /* 

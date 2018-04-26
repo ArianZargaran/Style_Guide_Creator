@@ -40,7 +40,7 @@ class Links extends Component {
                 editorMounted={editor => this.editorRefs.push(editor)}
               />
             ) : (
-              <div key={item} className="sgcreator-item-box">
+              <div key={item}>
                 <div className="sgcreator-sample-box">
                   <a
                     href="#"

@@ -16,38 +16,40 @@ class AppIdForm extends Component {
   render() {
     const { handleSubmit, children = "Form" } = this.props;
     return (
-      <form
-        className="sgcreator-form"
-        onSubmit={handleSubmit(this.onSubmit.bind(this))}
-      >
-        <h2>{children}</h2>
-        <Field
-          ref={ed => (this.firstFieldRef = ed)}
-          withRef
-          type="text"
-          label="App Name"
-          name="name"
-          component={this.renderFirstField}
-        />
-        <Field
-          type="text"
-          label="CSS classes prefix"
-          name="prefix"
-          component={this.renderField}
-        />
-        <Field
-          label="Global CSS variables"
-          name={`style[":root"]`}
-          component={this.renderTextArea}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <div className="sgcreator-item-box">
+        <form
+          className="sgcreator-form"
+          onSubmit={handleSubmit(this.onSubmit.bind(this))}
+        >
+          <h2>{children}</h2>
+          <Field
+            ref={ed => (this.firstFieldRef = ed)}
+            withRef
+            type="text"
+            label="App Name"
+            name="name"
+            component={this.renderFirstField}
+          />
+          <Field
+            type="text"
+            label="CSS classes prefix"
+            name="prefix"
+            component={this.renderField}
+          />
+          <Field
+            label="Global CSS variables"
+            name={`style[":root"]`}
+            component={this.renderTextArea}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     );
   }
 
   renderFirstField = field => {
     return (
-      <div className="sgcreator-item-box">
+      <div>
         <label>{field.label}</label>
         <input type="text" {...field.input} autoFocus />
         <span className="sgcreator-error_message">

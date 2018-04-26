@@ -4,7 +4,7 @@ const quote = {
 font-size: calc(var(--h1_font-size));
 padding: 1px 20px 20px 20px;
 position: relative;
-z-index: -2;`,
+z-index: 2;`,
 
     "quote p::before": `content: "“";
 font-size: calc(var(--h1_font-size) + 100px);
