@@ -7,7 +7,7 @@ export default class Download extends Component {
   }
 
   render() {
-    const data = this.props;
+    const { data } = this.props;
     return (
       <div className="sgcreator-download ">
         <a
@@ -26,7 +26,6 @@ export default class Download extends Component {
   }
 
   downloadStyle(data, el, filename) {
-    data = data.data;
     el.setAttribute(
       "href",
       "data:text/css;charset=utf-8," + encodeURIComponent(data)

@@ -33,6 +33,7 @@ class Categories extends Component {
 
   render() {
     const name = this.props.appId.name;
+    const { data } = this.props;
 
     return (
       <section className="sgcreator-categories_section">
@@ -52,7 +53,7 @@ class Categories extends Component {
             {this.renderSelectOptions()}
           </select>
         </div>
-        <Download data={this.props.data} />
+        <Download data={data} />
       </section>
     );
   }
